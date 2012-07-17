@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titre: MyString
+  source: MyString
+  auteur: 1
+  preparation: MyString
+  cuisson: MyString
+  marinage: MyString
+  portion: MyString
+  ingredient: MyText
+  instruction: MyText
+  note: MyText
+  accompagnement: MyString
+  vin: MyString
+
+two:
+  titre: MyString
+  source: MyString
+  auteur: 1
+  preparation: MyString
+  cuisson: MyString
+  marinage: MyString
+  portion: MyString
+  ingredient: MyText
+  instruction: MyText
+  note: MyText
+  accompagnement: MyString
+  vin: MyString

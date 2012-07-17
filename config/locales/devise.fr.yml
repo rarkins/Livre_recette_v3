@@ -1,0 +1,58 @@
+
+fr:
+  errors:
+    messages:
+      expired: "est exprire, faites une nouvelle demande"
+      not_found: "non trouve"
+      already_confirmed: "a deja ete confirme, esayer de vous authentifier"
+      not_locked: "n'etait pas verrouille"
+      not_saved:
+        one: "1 erreur a empeche %{resource} d'etre sauvegarde:"
+        other: "%{count} erreurs ont empeche %{resource} d'etre sauvegarde:"
+
+  devise:
+    failure:
+      already_authenticated: 'Vous etes deja authentifie.'
+      unauthenticated: 'Vous devez vous authentifier ou vous enregistrer avant de pouvoir continuer'
+      unconfirmed: 'Vous devez confirmer votre compte avant de continuer.'
+      locked: 'Votre compte est verrouille.'
+      invalid: 'Email ou mot de passe invalide.'
+      invalid_token: 'Token d'authentification invalide'
+      timeout: 'Votre session a expire, authentifiez vous a nouveau pour continuer.'
+      inactive: 'Votre compte n'etait toujours pas actif.'
+    sessions:
+      signed_in: 'Authentification reussie.'
+      signed_out: 'Deconnexion reussie.'
+    passwords:
+      send_instructions: 'Vous receverez un email contenant les instructions indiquant comment reinitialiser votre mo de passe dans quelques minutes.'
+      updated: 'Votre mot de passe a ete change avec succes. Vous etes maintenant connecte.'
+      updated_not_active: 'Votre mot de passe a ete change avec succes.'
+      send_paranoid_instructions: "Si votre email existe dansnotre base de donnees, vous receverz un lien avec instruction des restauration a votre adresse email dans quelques minutes."
+      no_token: "Vous ne pouvez acceder a cette page sans que vous ne proveniez d'une courriel de reinitialisation de mot de passe. Si cela s'avere etre le cas, soyez certain d'utiliser l'adresse URL complete."
+    confirmations:
+      send_instructions: 'Vous receverez un email contenant les instructions indiquant comment reinitialiser votre mo de passe dans quelques minutes.'
+      send_paranoid_instructions: "Si votre email existe dansnotre base de donnees, vous receverz un lien avec instruction des restauration a votre adresse email dans quelques minutes."
+      confirmed: 'Votre compte a ete confirme avec succes. Vous etes maintenant connectes.'
+    registrations:
+      signed_up: 'Bienvenue! Votre enregistrement a reussi.'
+      signed_up_but_unconfirmed: 'Un message avec unlien de confirmation a ete envoye a votre adresse email. Veuillez ouvrir le lien pour activer votre compte.'
+      signed_up_but_inactive: 'Vous vous etes enregistre avec succes. Cependant, vous ne pouvez vous connecter car votre compte n'est pas encore active.'
+      signed_up_but_locked: 'Vous vous etes enregistre avec succes. Cependant, vous ne pouvez vous connecter car votre compte est verrouille.'
+      updated: 'Votre compte a ete mis a jours avec succes.'
+      update_needs_confirmation: "Votre compte a ete mis a jours avec succes, masi nous avons besoin de verifier votre adresse email. Veuillez verifier vos emails et cliquer sur le lien de confirmation pour finaliser le changement d'adresse."
+      destroyed: 'Aurevoir! Votre compte a ete efface avec succes. en esperant vous revoir bientot.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account has been unlocked successfully. Please sign in to continue.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+    omniauth_callbacks:
+      success: 'Successfully authenticated from %{kind} account.'
+      failure: 'Could not authenticate you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
+

@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titre:</b>
+  <%= @recette.titre %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @recette.source %>
+</p>
+
+<p>
+  <b>Auteur:</b>
+  <%= @recette.auteur %>
+</p>
+
+<p>
+  <b>Preparation:</b>
+  <%= @recette.preparation %>
+</p>
+
+<p>
+  <b>Cuisson:</b>
+  <%= @recette.cuisson %>
+</p>
+
+<p>
+  <b>Marinage:</b>
+  <%= @recette.marinage %>
+</p>
+
+<p>
+  <b>Portion:</b>
+  <%= @recette.portion %>
+</p>
+
+<p>
+  <b>Ingredient:</b>
+  <%= @recette.ingredient %>
+</p>
+
+<p>
+  <b>Instruction:</b>
+  <%= @recette.instruction %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @recette.note %>
+</p>
+
+<p>
+  <b>Accompagnement:</b>
+  <%= @recette.accompagnement %>
+</p>
+
+<p>
+  <b>Vin:</b>
+  <%= @recette.vin %>
+</p>
+
+
+<%= link_to 'Edit', edit_recette_path(@recette) %> |
+<%= link_to 'Back', recettes_path %>
