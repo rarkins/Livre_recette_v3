@@ -26,5 +26,9 @@ module ApplicationHelper
     data = ActiveRecord::Base.connection.execute(sql)
     data[0][0]
   end
-
+  
+  def show_recette_info(une_recette)
+    Recette.find(une_recette)
+  end
+ 
 end

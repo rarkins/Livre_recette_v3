@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  
+  before_filter :user_is_admin?, :except => [:show, :index]
+  
   # GET /categories
   # GET /categories.json
   def index
@@ -17,8 +20,10 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @current_page = "categories"
-    
+
     @category = Category.find(params[:id])
+
+    recettes_pour_category(@category[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,7 +35,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new.json
   def new
     @current_page = "categories"
-    
+
     @category = Category.new
 
     respond_to do |format|
@@ -91,4 +96,18 @@ class CategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  ### start of private block
+  private
+
+  def recettes_pour_category(une_categorie)
+    sql = "select recette_id from categories_recettes where category_id = #{une_categorie}"
+    p data = ActiveRecord::Base.connection.execute(sql)
+    @recettes = []
+    data.each do |row|
+      @recettes << row[0]
+    end
+    p @recettes
+  end
+
 end

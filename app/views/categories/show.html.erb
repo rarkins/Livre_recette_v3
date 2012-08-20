@@ -1,13 +1,26 @@
+<div id="intro">
+	<h3><%= @category.nom %></h3>
+</div>
 <div id="left">
 	<p id="notice">
 		<%= notice %>
 	</p>
+	<table width="100%">
+		<tr align="left">
+			<th>Recettes</th><th>Auteur</th>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<% @recettes.each do |recette| %>
+		<tr>
+			<td><%= link_to(show_recette_info(recette).titre, recette_path(recette) ) %></td><td><%= get_username(show_recette_info(recette).auteur) %></td>
+		</tr>
+		<% end %>
+	</table>
 
-	<p>
-		<b>Nom:</b>
-		<%= @category.nom %>
-	</p>
 </div>
+
 <div id="right">
 	<%= link_to 'Modifier', edit_category_path(@category) %> |
 	<%= link_to 'Retour', categories_path %>
