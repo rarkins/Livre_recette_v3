@@ -1,5 +1,8 @@
-<h2>Resend unlock instructions</h2>
+<div id="intro">
+	<h3>Instructions de d&eacute;v&eacute;rouillage</h3>
+</div>
 
+<div id="left">
 <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -8,5 +11,7 @@
 
   <div><%= f.submit "Resend unlock instructions" %></div>
 <% end %>
-
+</div>
+<div id="right">
 <%= render "devise/shared/links" %>
+</div>

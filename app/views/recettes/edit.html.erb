@@ -1,6 +1,10 @@
-<h1>Editing recette</h1>
-
+<div id="intro">
+	<h3>Modification d'une recette</h3>
+</div>
+<div id="left">
 <%= render 'form' %>
-
-<%= link_to 'Show', @recette %> |
-<%= link_to 'Back', recettes_path %>
+</div>
+<div id="right">
+<%= link_to 'Voir', @recette %> |
+<%= link_to 'Retour', recettes_path %>
+</div>

@@ -1,0 +1,31 @@
+<div id="intro">
+	<h3>Liste des cat&eacute;gories</h3>
+</div>
+<div id="left">
+	<table width="100%">
+		<tr align="left">
+			<th>Nom</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td colspan="4">
+			<hr />
+			</td>
+		</tr>
+		<% @categories.each do |category| %>
+		<tr align="left">
+			<td><%= link_to category.nom, category %></td>
+			<td><%= pluralize(nombre_recette_pour_category(category), "recette") %></td>
+			<td><%= link_to 'Modifier', edit_category_path(category) %></td>
+			<td><%= link_to 'Effacer', category, method: :delete, data: { confirm: 'Etes-vous certain?' } %></td>
+		</tr>
+		<% end %>
+	</table>
+
+	<br />
+</div>
+<div id="right">
+	<%= link_to 'Nouvelle Categorie', new_category_path %>
+</div>

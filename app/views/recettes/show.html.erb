@@ -1,65 +1,81 @@
-<p id="notice"><%= notice %></p>
+<div id="intro">
+	<h3> <%= @recette.titre %> </h3>
+</div>
+<div id="left">
 
-<p>
-  <b>Titre:</b>
-  <%= @recette.titre %>
-</p>
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<p>
-  <b>Source:</b>
-  <%= @recette.source %>
-</p>
+	<p>
+		<b>Source:</b>
+		<% if check_if_link(@recette.source) then %>
+		<a href="<%= @recette.source %>" target ="_blank"><%= @recette.source %></a>
+		<% else %>
+		<%= @recette.source %>
+		<% end %>
+	</p>
 
-<p>
-  <b>Auteur:</b>
-  <%= @recette.auteur %>
-</p>
+	<p>
+		<b>Auteur:</b>
+		<%= get_username(@recette.auteur) %>
+	</p>
+	<p>
+		<b>Cat&eacute;gories:</b>:
+		<br />
+		<% @recette.categories.each do |cat| %>
+		<%= cat.nom %>
+		<br />
+		<% end %>
+	</p>
+	<p>
+		<b>Preparation:</b>
+		<%= @recette.preparation %>
+	</p>
 
-<p>
-  <b>Preparation:</b>
-  <%= @recette.preparation %>
-</p>
+	<p>
+		<b>Cuisson:</b>
+		<%= @recette.cuisson %>
+	</p>
 
-<p>
-  <b>Cuisson:</b>
-  <%= @recette.cuisson %>
-</p>
+	<p>
+		<b>Marinage:</b>
+		<%= @recette.marinage %>
+	</p>
 
-<p>
-  <b>Marinage:</b>
-  <%= @recette.marinage %>
-</p>
+	<p>
+		<b>Portion:</b>
+		<%= @recette.portion %>
+	</p>
 
-<p>
-  <b>Portion:</b>
-  <%= @recette.portion %>
-</p>
+	<p>
+		<b>Ingredient:</b>
+		<%= @recette.ingredient %>
+	</p>
 
-<p>
-  <b>Ingredient:</b>
-  <%= @recette.ingredient %>
-</p>
+	<p>
+		<b>Instruction:</b>
+		<%= @recette.instruction %>
+	</p>
 
-<p>
-  <b>Instruction:</b>
-  <%= @recette.instruction %>
-</p>
+	<p>
+		<b>Note:</b>
+		<%= @recette.note %>
+	</p>
 
-<p>
-  <b>Note:</b>
-  <%= @recette.note %>
-</p>
+	<p>
+		<b>Accompagnement:</b>
+		<%= @recette.accompagnement %>
+	</p>
 
-<p>
-  <b>Accompagnement:</b>
-  <%= @recette.accompagnement %>
-</p>
+	<p>
+		<b>Vin:</b>
+		<%= @recette.vin %>
+	</p>
+</div>
 
-<p>
-  <b>Vin:</b>
-  <%= @recette.vin %>
-</p>
-
-
-<%= link_to 'Edit', edit_recette_path(@recette) %> |
-<%= link_to 'Back', recettes_path %>
+<div id="right">
+	<%= link_to 'Modifier', edit_recette_path(@recette) %> |
+	<%= link_to 'Retour', recettes_path %> |
+	<%= link_to 'Effacer', @recette, confirm: 'Etes-Vous Certain?', method: :delete %>
+</div>

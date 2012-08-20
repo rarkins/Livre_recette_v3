@@ -1,7 +1,7 @@
 LivreRecettesV3::Application.routes.draw do
-  resources :recettes
+  resources :categories
 
-  devise_for :admins
+  resources :recettes
 
   devise_for :users
 

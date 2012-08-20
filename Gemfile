@@ -9,7 +9,6 @@ gem 'sqlite3'
 
 gem 'thin'
 gem 'eventmachine' , ">= 1.0.0.beta"
-gem 'bourbon'
 gem 'devise'
 
 group :development do

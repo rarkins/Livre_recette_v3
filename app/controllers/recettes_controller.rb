@@ -2,6 +2,8 @@ class RecettesController < ApplicationController
   # GET /recettes
   # GET /recettes.json
   def index
+    @current_page = "recettes"
+
     @recettes = Recette.all
 
     respond_to do |format|
@@ -13,8 +15,11 @@ class RecettesController < ApplicationController
   # GET /recettes/1
   # GET /recettes/1.json
   def show
-    @recette = Recette.find(params[:id])
+    @current_page = "recettes"
 
+    @recette = Recette.find(params[:id])
+    @categories = Category.all
+      
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @recette }
@@ -24,8 +29,9 @@ class RecettesController < ApplicationController
   # GET /recettes/new
   # GET /recettes/new.json
   def new
+    @current_page = "recettes"
     @recette = Recette.new
-
+    @categories = Category.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @recette }
@@ -34,14 +40,16 @@ class RecettesController < ApplicationController
 
   # GET /recettes/1/edit
   def edit
+    @current_page = "recettes"
     @recette = Recette.find(params[:id])
   end
 
   # POST /recettes
   # POST /recettes.json
   def create
+    @current_page = "recettes"
     @recette = Recette.new(params[:recette])
-
+    @recette.auteur = current_user[:id]
     respond_to do |format|
       if @recette.save
         format.html { redirect_to @recette, notice: 'Recette was successfully created.' }
@@ -56,7 +64,9 @@ class RecettesController < ApplicationController
   # PUT /recettes/1
   # PUT /recettes/1.json
   def update
+    @current_page = "recettes"
     @recette = Recette.find(params[:id])
+    params[:recette][:category_ids] ||= []
 
     respond_to do |format|
       if @recette.update_attributes(params[:recette])
@@ -72,6 +82,7 @@ class RecettesController < ApplicationController
   # DELETE /recettes/1
   # DELETE /recettes/1.json
   def destroy
+    @current_page = "recettes"
     @recette = Recette.find(params[:id])
     @recette.destroy
 

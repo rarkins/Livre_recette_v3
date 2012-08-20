@@ -1,45 +1,31 @@
-<h1>Listing recettes</h1>
+<div id="intro">
+	<h3>Liste des recettes</h3>
+</div>
 
-<table>
-  <tr>
-    <th>Titre</th>
-    <th>Source</th>
-    <th>Auteur</th>
-    <th>Preparation</th>
-    <th>Cuisson</th>
-    <th>Marinage</th>
-    <th>Portion</th>
-    <th>Ingredient</th>
-    <th>Instruction</th>
-    <th>Note</th>
-    <th>Accompagnement</th>
-    <th>Vin</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @recettes.each do |recette| %>
-  <tr>
-    <td><%= recette.titre %></td>
-    <td><%= recette.source %></td>
-    <td><%= recette.auteur %></td>
-    <td><%= recette.preparation %></td>
-    <td><%= recette.cuisson %></td>
-    <td><%= recette.marinage %></td>
-    <td><%= recette.portion %></td>
-    <td><%= recette.ingredient %></td>
-    <td><%= recette.instruction %></td>
-    <td><%= recette.note %></td>
-    <td><%= recette.accompagnement %></td>
-    <td><%= recette.vin %></td>
-    <td><%= link_to 'Show', recette %></td>
-    <td><%= link_to 'Edit', edit_recette_path(recette) %></td>
-    <td><%= link_to 'Destroy', recette, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Recette', new_recette_path %>
+<div id="left">
+	<table width="100%%" border="0">
+		<tr align="left">
+			<th>Titre</th>
+			<th>Auteur</th>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<% @recettes.each do |recette| %>
+		<tr>
+			<td><%= link_to recette.titre, recette %></td>
+			<td><%= get_username(recette.auteur) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+<div id="right">
+	<% if current_user then %>
+	<p>
+		Bonjour <b><%= current_user.username %></b>
+	</p>
+	<% end %>
+	<%= link_to 'Nouvelle Recette', new_recette_path %>
+</div>

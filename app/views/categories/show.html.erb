@@ -1,0 +1,14 @@
+<div id="left">
+	<p id="notice">
+		<%= notice %>
+	</p>
+
+	<p>
+		<b>Nom:</b>
+		<%= @category.nom %>
+	</p>
+</div>
+<div id="right">
+	<%= link_to 'Modifier', edit_category_path(@category) %> |
+	<%= link_to 'Retour', categories_path %>
+</div>
