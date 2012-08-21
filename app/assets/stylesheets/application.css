@@ -59,7 +59,7 @@ p {
 }
 #content {
 	margin: 0 auto;
-	width: 900px;
+	width: 1180px;
 }
 #top {
 	float: right;
@@ -93,7 +93,7 @@ p {
 }
 #left {
 	float: left;
-	width: 500px;
+	width: 900px;
 	margin: 0 0 15px;
 }
 #right {
