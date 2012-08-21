@@ -137,6 +137,7 @@ GEM
     warden (1.2.1)
       rack (>= 1.0)
     watchr (0.7)
+    wymeditor (0.5.0.rc2)
 
 PLATFORMS
   x86-mingw32
@@ -156,3 +157,4 @@ DEPENDENCIES
   thin
   uglifier (>= 1.0.3)
   watchr
+  wymeditor

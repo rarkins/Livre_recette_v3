@@ -1,4 +1,8 @@
 class RecettesController < ApplicationController
+  
+  before_filter :do_authentication, only: [:edit, :update, :destroy]
+  before_filter :signed_in?, only: [:new]
+  
   # GET /recettes
   # GET /recettes.json
   def index

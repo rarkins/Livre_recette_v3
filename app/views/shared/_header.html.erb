@@ -19,3 +19,8 @@
 			</li>
 		</ul>
 	</div>
+	<% if flash[:SecurityWarning] %>
+	<div id="SecurityWarning">
+		<%= flash[:SecurityWarning] %>
+	</div>
+	<% end %>

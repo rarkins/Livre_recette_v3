@@ -50,32 +50,36 @@
 
 	<p>
 		<b>Ingredient:</b>
-		<%= @recette.ingredient %>
+		<%= raw(@recette.ingredient) %>
 	</p>
 
 	<p>
 		<b>Instruction:</b>
-		<%= @recette.instruction %>
+		<%= raw(@recette.instruction) %>
 	</p>
 
 	<p>
 		<b>Note:</b>
-		<%= @recette.note %>
+		<%= raw(@recette.note) %>
 	</p>
 
 	<p>
 		<b>Accompagnement:</b>
-		<%= @recette.accompagnement %>
+		<%= raw(@recette.accompagnement) %>
 	</p>
 
 	<p>
 		<b>Vin:</b>
-		<%= @recette.vin %>
+		<%= raw(@recette.vin) %>
 	</p>
 </div>
 
 <div id="right">
+	<% if do_authentication then %>
 	<%= link_to 'Modifier', edit_recette_path(@recette) %> |
-	<%= link_to 'Retour', recettes_path %> |
+	<% end  %>
+	<%= link_to 'Retour', recettes_path %>
+	<% if do_authentication then %> |
 	<%= link_to 'Effacer', @recette, confirm: 'Etes-Vous Certain?', method: :delete %>
+	<% end %>
 </div>

@@ -14,7 +14,7 @@
 <% end %>
 
 <div class="field">
-	<%= f.label :titre %>
+	<b><%= f.label :titre %></b>
 	<br />
 	<%= f.text_field :titre %>
 </div>
@@ -56,27 +56,27 @@
 <div class="field">
 	<%= f.label :ingredient %>
 	<br />
-	<%= f.text_area :ingredient %>
+	<%= f.text_area :ingredient, :class => "wymeditor" %>
 </div>
 <div class="field">
 	<%= f.label :instruction %>
 	<br />
-	<%= f.text_area :instruction %>
+	<%= f.text_area :instruction, :class => "wymeditor"  %>
 </div>
 <div class="field">
 	<%= f.label :note %>
 	<br />
-	<%= f.text_area :note %>
+	<%= f.text_area :note, :class => "wymeditor"  %>
 </div>
 <div class="field">
 	<%= f.label :accompagnement %>
 	<br />
-	<%= f.text_field :accompagnement %>
+	<%= f.text_field :accompagnement, :class => "wymeditor"  %>
 </div>
 <div class="field">
 	<%= f.label :vin %>
 	<br />
-	<%= f.text_field :vin %>
+	<%= f.text_field :vin, :class => "wymeditor"  %>
 </div>
 <div class="actions">
 	<%= f.submit 'Soumettre' %>

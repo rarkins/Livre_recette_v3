@@ -18,8 +18,12 @@
 		<tr align="left">
 			<td><%= link_to category.nom, category %></td>
 			<td><%= pluralize(nombre_recette_pour_category(category), "recette") %></td>
-			<td><%= link_to 'Modifier', edit_category_path(category) %></td>
-			<td><%= link_to 'Effacer', category, method: :delete, data: { confirm: 'Etes-vous certain?' } %></td>
+			<td> <% if user_is_admin? then %>
+			<%= link_to 'Modifier', edit_category_path(category) %>
+			<% end %> </td>
+			<td><% if user_is_admin? then %>
+			<%= link_to 'Effacer', category, method: :delete, data: { confirm: 'Etes-vous certain?' } %>
+			<% end %> </td>
 		</tr>
 		<% end %>
 	</table>
@@ -27,5 +31,12 @@
 	<br />
 </div>
 <div id="right">
+	<% if current_user then %>
+	<p>
+		Bonjour <b><%= current_user.username %></b>
+	</p>
+	<% end %>
+	<% if user_is_admin? then %>
 	<%= link_to 'Nouvelle Categorie', new_category_path %>
+	<% end %>
 </div>

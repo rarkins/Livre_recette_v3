@@ -26,9 +26,28 @@ module ApplicationHelper
     data = ActiveRecord::Base.connection.execute(sql)
     data[0][0]
   end
-  
+
   def show_recette_info(une_recette)
     Recette.find(une_recette)
   end
- 
+
+  def user_is_author?
+    if current_user then
+      @recette = Recette.find(params[:id])
+      @recette[:auteur] == current_user[:id]
+    end
+  end
+
+  def user_is_admin?
+    if current_user then
+      current_user.admin
+    end
+  end
+
+  def do_authentication
+    if user_is_author? or user_is_admin? then
+    true
+    end
+  end
+
 end

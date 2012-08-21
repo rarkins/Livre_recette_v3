@@ -1,5 +1,11 @@
 #notice {
-  color: green; }
+  color: green; 
+  }
+
+#SecurityWarning {
+  color:red;
+  position: absolute; top: 200px
+}
 
 .field_with_errors {
   padding: 2px;
