@@ -21,7 +21,7 @@
 		<%= get_username(@recette.auteur) %>
 	</p>
 	<p>
-		<b>Cat&eacute;gories:</b>:
+		<b>Cat&eacute;gories:</b>
 		<br />
 		<% @recette.categories.each do |cat| %>
 		<%= cat.nom %>
@@ -52,12 +52,12 @@
 		<b>Ingredient:</b>
 		<%= raw(@recette.ingredient) %>
 	</p>
-
+	<p><hr /></p>
 	<p>
 		<b>Instruction:</b>
 		<%= raw(@recette.instruction) %>
 	</p>
-
+	<p><hr /></p>
 	<p>
 		<b>Note:</b>
 		<%= raw(@recette.note) %>

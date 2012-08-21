@@ -19,7 +19,7 @@
 	<%= f.text_field :titre %>
 </div>
 <div class="field">
-	<%= f.label :categorie %>
+	<b><%= f.label :categorie %></b>
 	<br />
 	<% for category in Category.find(:all) %>
 	<div>
@@ -29,55 +29,56 @@
 	<% end %>
 </div>
 <div class="field">
-	<%= f.label :source %>
+	<b><%= f.label :source %></b>
 	<br />
 	<%= f.text_field :source %>
 </div>
 <div class="field">
-	<%= f.label :preparation %>
+	<b><%= f.label :preparation %></b>
 	<br />
 	<%= f.text_field :preparation %>
 </div>
 <div class="field">
-	<%= f.label :cuisson %>
+	<b><%= f.label :cuisson %></b>
 	<br />
 	<%= f.text_field :cuisson %>
 </div>
 <div class="field">
-	<%= f.label :marinage %>
+	<b><%= f.label :marinage %></b>
 	<br />
 	<%= f.text_field :marinage %>
 </div>
 <div class="field">
-	<%= f.label :portion %>
+	<b><%= f.label :portion %></b>
 	<br />
 	<%= f.text_field :portion %>
 </div>
 <div class="field">
-	<%= f.label :ingredient %>
+	<b><%= f.label :ingredient %></b>
 	<br />
 	<%= f.text_area :ingredient, :class => "wymeditor" %>
 </div>
 <div class="field">
-	<%= f.label :instruction %>
+	<b><%= f.label :instruction %></b>
 	<br />
 	<%= f.text_area :instruction, :class => "wymeditor"  %>
 </div>
 <div class="field">
-	<%= f.label :note %>
+	<b><%= f.label :note %></b>
 	<br />
 	<%= f.text_area :note, :class => "wymeditor"  %>
 </div>
 <div class="field">
-	<%= f.label :accompagnement %>
+	<b><%= f.label :accompagnement %></b>
 	<br />
 	<%= f.text_field :accompagnement, :class => "wymeditor"  %>
 </div>
 <div class="field">
-	<%= f.label :vin %>
+	<b><%= f.label :vin %></b>
 	<br />
 	<%= f.text_field :vin, :class => "wymeditor"  %>
 </div>
+<br />
 <div class="actions">
 	<%= f.submit 'Soumettre' %>
 </div>
