@@ -1,0 +1,21 @@
+<div id="intro">
+	<h3><%= get_username(@user[:id]) %></h3>
+</div>
+<div id="left">
+	<table width="100%%">
+		<tr>
+			<th>Recettes</th>
+		</tr>
+		<tr>
+			<td>
+			<hr />
+			</td>
+		</tr>
+		<% @recettes.each do |recette| %>
+		<tr>
+			<td><%= link_to recette[:titre], recette_path(recette[:id]) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+<div id="right"></div>

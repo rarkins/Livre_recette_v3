@@ -12,73 +12,77 @@
 	</ul>
 </div>
 <% end %>
+<table width="100%">
+	<tr>
+		<th colspan="2"><%= f.label :titre %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.text_field :titre, :size => 128 %></td>
+	</tr>
+	<tr>
+		<th colspan="2"><%= f.label :categories %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><% for category in Category.find(:all) %>
+		<div>
+			<%= check_box_tag "recette[category_ids][]", category.id, @recette.categories.include?(category) %>
+			<%= category.nom %>
+		</div> <% end %></td>
+	</tr>
+	<tr>
+		<th colspan="2"><%= f.label :source %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.text_field :source, :size => 128 %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :preparation %></th>
+		<th><%= f.label :cuisson %></th>
+	</tr>
+	<tr>
+		<td><%= f.text_field :preparation %></td>
+		<td><%= f.text_field :cuisson %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :marinage %></th>
+		<th><%= f.label :portion %></th>
+	</tr>
+	<tr>
+		<td><%= f.text_field :marinage %></td>
+		<td><%= f.text_field :portion %></td>
+	</tr>
+	<tr>
+		<th colspan="2"><%= f.label :ingredient %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.text_area :ingredient, :class => "wymeditor" %></td>
+	</tr>
+	<tr>
+		<th colspan="2"><%= f.label :instruction %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.text_area :instruction, :class => "wymeditor", :rows => 20  %></td>
+	</tr>
+	<tr>
+		<th colspan="2"><%= f.label :note %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.text_area :note, :class => "wymeditor"  %></td>
+	</tr>
+	<tr>
+		<th colspan="2"><%= f.label :accompagnement %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.text_field :accompagnement, :class => "wymeditor"  %></td>
+	</tr>
+	<tr>
+		<th colspan="2"><%= f.label :vin %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.text_field :vin, :class => "wymeditor"  %></td>
+	</tr>
+</table>
 
-<div class="field">
-	<b><%= f.label :titre %></b>
-	<br />
-	<%= f.text_field :titre %>
-</div>
-<div class="field">
-	<b><%= f.label :categorie %></b>
-	<br />
-	<% for category in Category.find(:all) %>
-	<div>
-		<%= check_box_tag "recette[category_ids][]", category.id, @recette.categories.include?(category) %>
-		<%= category.nom %>
-	</div>
-	<% end %>
-</div>
-<div class="field">
-	<b><%= f.label :source %></b>
-	<br />
-	<%= f.text_field :source %>
-</div>
-<div class="field">
-	<b><%= f.label :preparation %></b>
-	<br />
-	<%= f.text_field :preparation %>
-</div>
-<div class="field">
-	<b><%= f.label :cuisson %></b>
-	<br />
-	<%= f.text_field :cuisson %>
-</div>
-<div class="field">
-	<b><%= f.label :marinage %></b>
-	<br />
-	<%= f.text_field :marinage %>
-</div>
-<div class="field">
-	<b><%= f.label :portion %></b>
-	<br />
-	<%= f.text_field :portion %>
-</div>
-<div class="field">
-	<b><%= f.label :ingredient %></b>
-	<br />
-	<%= f.text_area :ingredient, :class => "wymeditor" %>
-</div>
-<div class="field">
-	<b><%= f.label :instruction %></b>
-	<br />
-	<%= f.text_area :instruction, :class => "wymeditor"  %>
-</div>
-<div class="field">
-	<b><%= f.label :note %></b>
-	<br />
-	<%= f.text_area :note, :class => "wymeditor"  %>
-</div>
-<div class="field">
-	<b><%= f.label :accompagnement %></b>
-	<br />
-	<%= f.text_field :accompagnement, :class => "wymeditor"  %>
-</div>
-<div class="field">
-	<b><%= f.label :vin %></b>
-	<br />
-	<%= f.text_field :vin, :class => "wymeditor"  %>
-</div>
-<br />
 <div class="actions">
 	<%= f.submit 'Soumettre' %>
 </div>

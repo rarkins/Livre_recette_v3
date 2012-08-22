@@ -57,6 +57,12 @@ p {
 	margin: 5px 0 15px;
 	line-height: 1.6em;
 }
+th {
+	text-align:left;
+}
+td {
+	padding-bottom:15px;
+}
 #content {
 	margin: 0 auto;
 	width: 1180px;

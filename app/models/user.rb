@@ -10,5 +10,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   validates :username, :presence => true
-
+  has_many :recettes
 end

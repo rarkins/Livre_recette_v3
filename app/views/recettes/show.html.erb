@@ -7,71 +7,87 @@
 		<%= notice %>
 	</p>
 
-	<p>
-		<b>Source:</b>
-		<% if check_if_link(@recette.source) then %>
-		<a href="<%= @recette.source %>" target ="_blank"><%= @recette.source %></a>
-		<% else %>
-		<%= @recette.source %>
-		<% end %>
-	</p>
-
-	<p>
-		<b>Auteur:</b>
-		<%= get_username(@recette.auteur) %>
-	</p>
-	<p>
-		<b>Cat&eacute;gories:</b>
-		<br />
-		<% @recette.categories.each do |cat| %>
-		<%= cat.nom %>
-		<br />
-		<% end %>
-	</p>
-	<p>
-		<b>Preparation:</b>
-		<%= @recette.preparation %>
-	</p>
-
-	<p>
-		<b>Cuisson:</b>
-		<%= @recette.cuisson %>
-	</p>
-
-	<p>
-		<b>Marinage:</b>
-		<%= @recette.marinage %>
-	</p>
-
-	<p>
-		<b>Portion:</b>
-		<%= @recette.portion %>
-	</p>
-
-	<p>
-		<b>Ingredient:</b>
-		<%= raw(@recette.ingredient) %>
-	</p>
-	<p><hr /></p>
-	<p>
-		<b>Instruction:</b>
-		<%= raw(@recette.instruction) %>
-	</p>
-	<p><hr /></p>
-	<p>
-		<b>Note:</b>
-		<%= raw(@recette.note) %>
-	</p>
-
-	<p>
-		<b>Accompagnement:</b>
-		<%= raw(@recette.accompagnement) %>
-	</p>
-
-	<p>
-		<b>Vin:</b>
-		<%= raw(@recette.vin) %>
-	</p>
+	<table width="100%" border="0" padding="5">
+		<tr>
+			<th colspan="2">Source:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><% if check_if_link(@recette[:source]) then %> <a href="<%= @recette[:source] %>" target ="_blank"><%= @recette[:source] %></a> <% else %>
+			<%= @recette[:source] %>
+			<% end %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Auteur:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><%= link_to get_username(@recette[:user_id]), user_path(@recette[:user_id]) %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Cat&eacute;gories:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><% @recette.categories.each do |cat| %>
+			<%= cat.nom %>
+			<br />
+			<% end %></td>
+		</tr>
+		<tr>
+			<th>Preparation:</th>
+			<th>Cuisson:</th>
+		</tr>
+		<tr>
+			<td><%= @recette.preparation %></td>
+			<td><%= @recette.cuisson %></td>
+		</tr>
+		<tr>
+			<th>Marinage:</th>
+			<th>Portion:</th>
+		</tr>
+		<tr>
+			<td><%= @recette.marinage %></td>
+			<td><%= @recette.portion %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Ingredients:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><%= raw(@recette.ingredient) %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<tr>
+			<th colspan="2">Instructions:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><%= raw(@recette.instruction) %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<tr>
+			<th colspan="2">Note:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><%= raw(@recette.note) %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Accompagnement:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><%= raw(@recette.accompagnement) %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Vin:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><%= raw(@recette.vin) %></td>
+		</tr>
+	</table>
 </div>
 
 <div id="right">

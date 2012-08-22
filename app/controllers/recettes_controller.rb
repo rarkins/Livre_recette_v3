@@ -53,7 +53,7 @@ class RecettesController < ApplicationController
   def create
     @current_page = "recettes"
     @recette = Recette.new(params[:recette])
-    @recette.auteur = current_user[:id]
+    @recette.user_id = current_user[:id]
     respond_to do |format|
       if @recette.save
         format.html { redirect_to @recette, notice: 'Recette was successfully created.' }

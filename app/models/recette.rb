@@ -20,5 +20,5 @@ class Recette < ActiveRecord::Base
   validates :vin, :allow_blank => true, :length => {:within => 3..32}
   
   has_and_belongs_to_many :categories
-  
+  belongs_to :users
 end

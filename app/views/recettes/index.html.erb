@@ -16,7 +16,7 @@
 		<% @recettes.each do |recette| %>
 		<tr>
 			<td><%= link_to recette.titre, recette %></td>
-			<td><%= get_username(recette.auteur) %></td>
+			<td><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]) %></td>
 		</tr>
 		<% end %>
 	</table>
