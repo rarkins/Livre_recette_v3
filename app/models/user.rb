@@ -10,5 +10,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   validates :username, :presence => true
-  has_many :recettes
+  has_many :recettes, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 end

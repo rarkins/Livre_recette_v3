@@ -1,9 +1,14 @@
 LivreRecettesV3::Application.routes.draw do
   resources :categories
 
-  resources :recettes
+  resources :recettes do
+    resource :comments
+  end
+  
   devise_for :users
-  resources :users
+  resources :users do
+    resource :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

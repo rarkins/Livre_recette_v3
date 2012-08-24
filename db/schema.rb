@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822133910) do
+ActiveRecord::Schema.define(:version => 20120822173445) do
 
   create_table "categories", :force => true do |t|
     t.string   "nom",        :null => false
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20120822133910) do
   end
 
   add_index "categories_recettes", ["recette_id", "category_id"], :name => "index_categories_recettes_on_recette_id_and_category_id"
+
+  create_table "comments", :force => true do |t|
+    t.text     "content",    :null => false
+    t.integer  "user_id",    :null => false
+    t.integer  "recette_id", :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "recettes", :force => true do |t|
     t.string   "titre",          :null => false

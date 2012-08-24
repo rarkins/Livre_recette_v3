@@ -1,5 +1,5 @@
 class RecettesController < ApplicationController
-  
+
   before_filter :do_authentication, only: [:edit, :update, :destroy]
   before_filter :signed_in?, only: [:new]
   
@@ -23,7 +23,10 @@ class RecettesController < ApplicationController
 
     @recette = Recette.find(params[:id])
     @categories = Category.all
-      
+
+    @comments = Recette.find(params[:id]).comments
+    @comment = Comment.new
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @recette }

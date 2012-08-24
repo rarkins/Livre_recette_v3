@@ -87,7 +87,29 @@
 		<tr>
 			<td colspan="2"><%= raw(@recette.vin) %></td>
 		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
 	</table>
+	<div id="comments">
+		<% if current_user then %>
+		<%= render 'comments' %>
+		<% end %>
+		<table width="100%">
+			<tr><th>Commentaires:<br /><br /></th></tr>
+			<% @comments.each do |comment| %>
+			<tr>
+				<td><h4><%= get_username(comment[:user_id]) %></h4></td>
+			</tr>
+			<tr>
+				<td><%= raw(comment[:content]) %></td>
+			</tr>
+			<tr><td><hr /></td></tr>
+			<% end %>
+		</table>
+	</div>
 </div>
 
 <div id="right">
