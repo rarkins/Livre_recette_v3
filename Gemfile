@@ -12,6 +12,10 @@ gem 'eventmachine' , ">= 1.0.0.beta"
 gem 'devise'
 gem 'tinymce-rails'
 
+group :production do
+  gem "pg"
+end
+
 group :development do
   gem 'spork', '~> 0.9.0.rc'
   gem 'sqlite3'
