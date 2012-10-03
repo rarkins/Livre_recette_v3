@@ -41,7 +41,6 @@ describe Recette do
     it { should accept_values_for(:accompagnement, nil) }
     it { should accept_values_for(:accompagnement, "sample accompagnement") }
     it { should_not accept_values_for(:accompagnement, "a") }
-    it { should_not accept_values_for(:accompagnement, "a"*256) }
   end
 
   describe "cuisson" do

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def user_is_author?
     if current_user then
       @recette = Recette.find(params[:id])
-      @recette[:auteur] == current_user[:id]
+      @recette[:user_id] == current_user[:id]
     end
   end
 
