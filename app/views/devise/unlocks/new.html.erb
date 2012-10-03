@@ -5,11 +5,11 @@
 <div id="left">
 <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.submit "Resend unlock instructions" %></div>
+ <table width="100%">
+ 	<tr><th><%= f.label :email %></th></tr>
+ 	<tr><td><%= f.email_field :email %></td></tr>
+ 	<tr><td><%= f.submit "Resend unlock instructions" %></td></tr>
+ </table>
 <% end %>
 </div>
 <div id="right">
