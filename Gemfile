@@ -5,7 +5,7 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 
 gem 'thin'
 gem 'eventmachine' , ">= 1.0.0.beta"
@@ -14,6 +14,7 @@ gem 'tinymce-rails'
 
 group :development do
   gem 'spork', '~> 0.9.0.rc'
+  gem 'sqlite3'
 end
 
 group :test do
@@ -22,6 +23,7 @@ group :test do
   gem 'rspec-rails'
   gem 'watchr'
   gem 'factory_girl_rails'
+  gem 'sqlite3'
 end
 
 # Gems used only for assets and not required
