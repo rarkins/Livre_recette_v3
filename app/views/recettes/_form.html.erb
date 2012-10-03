@@ -22,13 +22,33 @@
 	<tr>
 		<th colspan="2"><%= f.label :categories %></th>
 	</tr>
+	
 	<tr>
-		<td colspan="2"><% for category in Category.find(:all) %>
-		<div>
+		<td colspan="2"><table width="100%" border="0">
+	<% 
+	count = 1
+	just_changed = false
+	for category in Category.find(:all) 
+	%>
+	<% if just_changed then %>
+	<tr>
+		<% just_changed = false %>
+	<% end %>
+		<td>
 			<%= check_box_tag "recette[category_ids][]", category.id, @recette.categories.include?(category) %>
 			<%= category.nom %>
-		</div> <% end %></td>
+		</td>
+	<% if (count % 4 == 0) then %>
 	</tr>
+	<% just_changed = true %>
+	<% end %>
+	<% 
+		count += 1
+		end 
+	%>
+	</tr>
+	</table>
+	</td>
 	<tr>
 		<th colspan="2"><%= f.label :source %></th>
 	</tr>
@@ -55,31 +75,31 @@
 		<th colspan="2"><%= f.label :ingredient %></th>
 	</tr>
 	<tr>
-		<td colspan="2"><%= f.text_area :ingredient, :class => "wymeditor" %></td>
+		<td colspan="2"><%= f.text_area :ingredient,:class => "tinymce", :cols => 90 %></td>
 	</tr>
 	<tr>
 		<th colspan="2"><%= f.label :instruction %></th>
 	</tr>
 	<tr>
-		<td colspan="2"><%= f.text_area :instruction, :class => "wymeditor", :rows => 20  %></td>
+		<td colspan="2"><%= f.text_area :instruction,:class => "tinymce", :rows => 20, :cols => 90   %></td>
 	</tr>
 	<tr>
 		<th colspan="2"><%= f.label :note %></th>
 	</tr>
 	<tr>
-		<td colspan="2"><%= f.text_area :note, :class => "wymeditor"  %></td>
+		<td colspan="2"><%= f.text_area :note,:class => "tinymce", :cols => 90   %></td>
 	</tr>
 	<tr>
 		<th colspan="2"><%= f.label :accompagnement %></th>
 	</tr>
 	<tr>
-		<td colspan="2"><%= f.text_field :accompagnement, :class => "wymeditor"  %></td>
+		<td colspan="2"><%= f.text_area :accompagnement, :class => "tinymce", :cols => 40, :rows => 5  %></td>
 	</tr>
 	<tr>
 		<th colspan="2"><%= f.label :vin %></th>
 	</tr>
 	<tr>
-		<td colspan="2"><%= f.text_field :vin, :class => "wymeditor"  %></td>
+		<td colspan="2"><%= f.text_area :vin,:class => "tinymce", :cols => 40, :rows => 5 %></td>
 	</tr>
 </table>
 

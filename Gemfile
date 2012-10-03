@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem 'thin'
 gem 'eventmachine' , ">= 1.0.0.beta"
 gem 'devise'
-gem  "wymeditor"
+gem 'tinymce-rails'
 
 group :development do
   gem 'spork', '~> 0.9.0.rc'

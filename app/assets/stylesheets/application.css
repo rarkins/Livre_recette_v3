@@ -35,11 +35,13 @@ h1 {
 	margin: 20px 0 50px;
 	font-size: 4em;
 	color: #fff;
+	font-family: kaushan-script, serif;
 }
 th {
 	font-size: 1.4em;
 	font-weight: bold;
 	margin: 0 0 20px;
+	font-family: muli, serif;
 }
 h2 {
 	font-size: 2.4em;
@@ -49,6 +51,9 @@ h2 {
 h2 a:hover {
 	background: #A82A15;
 	color: #fff;
+}
+h3 {
+	font-family: muli, serif;
 }
 .hr {
 	color: #ccc;
@@ -62,6 +67,10 @@ th {
 }
 td {
 	padding-bottom:15px;
+	font-family: pt-sans-caption, serif;
+}
+li {
+	font-family: pt-sans-caption, serif;
 }
 #content {
 	margin: 0 auto;

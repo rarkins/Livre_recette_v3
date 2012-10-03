@@ -5,22 +5,23 @@
 	<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
 	<%= devise_error_messages! %>
 	<%= f.hidden_field :reset_password_token %>
-
-	<div>
-		<%= f.label :password, "Nouveau mot de passe" %>
-		<br />
-		<%= f.password_field :password %>
-	</div>
-
-	<div>
-		<%= f.label :password_confirmation, "Confirmer nouveau mot de passe" %>
-		<br />
-		<%= f.password_field :password_confirmation %>
-	</div>
-
-	<div>
-		<%= f.submit "Soumettre changement" %>
-	</div>
+	<table>
+		<tr>
+			<th><%= f.label :password, "Nouveau mot de passe" %></th>
+		</tr>
+		<tr>
+			<td><%= f.password_field :password %></td>
+		</tr>
+		<tr>
+			<th><%= f.label :password_confirmation, "Confirmer nouveau mot de passe" %></th>
+		</tr>
+		<tr>
+			<td><%= f.password_field :password_confirmation %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit "Soumettre changement" %></td>
+		</tr>
+	</table>
 	<% end %>
 </div>
 <div id="right">
