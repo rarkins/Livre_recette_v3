@@ -1,0 +1,30 @@
+<div id="intro">
+	<h3><%= @recette.titre %> - Commentaires</h3>
+</div>
+<div id="left">
+	<p id="notice">
+		<%= notice %>
+	</p>
+	<table width="100%">
+		<tr align="left">
+			<th>Auteur</th><th>Commentaire</th>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<% @comments.each do |comment| %>
+		<tr>
+			<td><%= link_to get_user_id_name(comment.user_id), user_path(comment.user_id) %></td>
+			<td><%= raw(comment.content) %></td>
+			<td><%= link_to 'Modifier', edit_comment_path(comment.id) %></td>
+			<td><%= link_to 'Effacer', comment, method: :delete, data: { confirm: 'Etes-vous certain?' } %></td>
+
+		</tr>
+		<% end %>
+	</table>
+
+</div>
+
+<div id="right">
+	<%= link_to 'Retour', recette_path(@recette) %>
+</div>

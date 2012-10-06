@@ -24,7 +24,7 @@ class RecettesController < ApplicationController
     @recette = Recette.find(params[:id])
     @categories = Category.all
 
-    @comments = Recette.find(params[:id]).comments
+    @comments = Recette.find(params[:id]).comments.limit(3)
     @comment = Comment.new
 
     respond_to do |format|

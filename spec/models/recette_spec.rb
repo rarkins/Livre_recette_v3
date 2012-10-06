@@ -31,9 +31,9 @@ describe Recette do
 
   describe "auteur" do
   # using the accept_values_for gem
-    it { should_not accept_values_for(:auteur, nil) }
-    it { should accept_values_for(:auteur, 1) }
-    it { should_not accept_values_for(:auteur, "a") }
+    it { should_not accept_values_for(:user_id, nil) }
+    it { should accept_values_for(:user_id, 1) }
+    it { should_not accept_values_for(:user_id, "a") }
   end
 
   describe "accompagnement" do

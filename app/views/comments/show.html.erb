@@ -1,0 +1,27 @@
+<div id="intro">
+	<h3>Commentaire</h3>
+</div>
+<div id="left">
+	<p id="notice">
+		<%= notice %>
+	</p>
+	<table width="100%">
+		<tr align="left">
+			<th>Commentaire</th>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td><%= raw(@comment.content) %></td>
+		</tr>
+		
+	</table>
+
+</div>
+
+<div id="right">
+	<%= link_to 'Modifier', edit_comment_path(@comment) %> |
+	<%= link_to 'Retour', recette_path(@comment.recette_id) %>
+</div>

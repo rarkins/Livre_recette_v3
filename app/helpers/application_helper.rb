@@ -49,5 +49,9 @@ module ApplicationHelper
     true
     end
   end
+  
+  def get_user_id_name(an_id)
+    User.find(an_id).username
+  end
 
 end
