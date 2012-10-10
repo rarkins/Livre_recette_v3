@@ -2,6 +2,7 @@ LivreRecettesV3::Application.routes.draw do
   resources :categories
   resources :comments
   
+  
   resources :recettes do
     resource :comments
   end

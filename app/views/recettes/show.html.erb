@@ -98,15 +98,24 @@
 		<%= render 'comments' %>
 		<% end %>
 		<table width="100%">
-			<tr><th>Commentaires:<br /><br /></th></tr>
+			<tr>
+				<th>3 derniers commentaires:
+				<br />
+				<br />
+				</th><td><%= link_to 'Voir tous les commentaires', recette_comments_path(@recette) %></td>
+			</tr>
 			<% @comments.each do |comment| %>
 			<tr>
-				<td><h4><%= get_username(comment[:user_id]) %></h4></td>
+				<td><h4><%= get_username(comment[:user_id]) %></h4></td><td><%= link_to 'Effacer', comment, method: :delete, data: { confirm: 'Etes-vous certain?' }, notice: 'Commentaire effacer' %> | <%= link_to('Modifier', edit_comment_path(comment)) %></td>
 			</tr>
 			<tr>
-				<td><%= raw(comment[:content]) %></td>
+				<td colspan="2"><%= raw(comment[:content]) %></td>
 			</tr>
-			<tr><td><hr /></td></tr>
+			<tr>
+				<td colspan="2">
+				<hr />
+				</td>
+			</tr>
 			<% end %>
 		</table>
 	</div>

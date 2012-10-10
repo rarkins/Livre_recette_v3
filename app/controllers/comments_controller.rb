@@ -9,9 +9,13 @@ class CommentsController < ApplicationController
     end
   end
 
-
   def create
-    @recette = Recette.find(params[:recette_id])
+    if params[:comment][:recette_id] == nil then
+      @recette = Recette.find(params[:recette_id])
+    else
+      @recette = Recette.find(params[:comment][:recette_id])
+    end
+
     @comment = @recette.comments.new(:content => params[:comment][:content], :user_id => current_user[:id], :recette_id => @recette[:id])
 
     respond_to do |format|
@@ -27,7 +31,7 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
-    @recette = @comment.recette_id
+    @recette = Recette.find(@comment.recette_id)
   end
 
   def update
@@ -52,10 +56,11 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to recette_comments_path(@recette) }
+      format.html { redirect_to recette_comments_path(@recette), notice: 'Comment was successfully deleted.'  }
       format.json { head :no_content }
     end
 
   end
+
 
 end
