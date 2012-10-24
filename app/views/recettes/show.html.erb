@@ -51,7 +51,7 @@
 			<th colspan="2">Ingredients:</th>
 		</tr>
 		<tr>
-			<td colspan="2"><%= raw(@recette.ingredient) %></td>
+			<td colspan="2" class="td_padded"><%= raw(@recette.ingredient) %></td>
 		</tr>
 		<tr>
 			<td colspan="2">
@@ -62,7 +62,7 @@
 			<th colspan="2">Instructions:</th>
 		</tr>
 		<tr>
-			<td colspan="2"><%= raw(@recette.instruction) %></td>
+			<td colspan="2" class="td_padded"><%= raw(@recette.instruction) %></td>
 		</tr>
 		<tr>
 			<td colspan="2">
@@ -73,19 +73,19 @@
 			<th colspan="2">Note:</th>
 		</tr>
 		<tr>
-			<td colspan="2"><%= raw(@recette.note) %></td>
+			<td colspan="2" class="td_padded"><%= raw(@recette.note) %></td>
 		</tr>
 		<tr>
 			<th colspan="2">Accompagnement:</th>
 		</tr>
 		<tr>
-			<td colspan="2"><%= raw(@recette.accompagnement) %></td>
+			<td colspan="2" class="td_padded"><%= raw(@recette.accompagnement) %></td>
 		</tr>
 		<tr>
 			<th colspan="2">Vin:</th>
 		</tr>
 		<tr>
-			<td colspan="2"><%= raw(@recette.vin) %></td>
+			<td colspan="2" class="td_padded"><%= raw(@recette.vin) %></td>
 		</tr>
 		<tr>
 			<td colspan="2">
@@ -109,7 +109,7 @@
 				<td><h4><%= get_username(comment[:user_id]) %></h4></td><td><%= link_to 'Effacer', comment, method: :delete, data: { confirm: 'Etes-vous certain?' }, notice: 'Commentaire effacer' %> | <%= link_to('Modifier', edit_comment_path(comment)) %></td>
 			</tr>
 			<tr>
-				<td colspan="2"><%= raw(comment[:content]) %></td>
+				<td colspan="2" class="td_padded"><%= raw(comment[:content]) %></td>
 			</tr>
 			<tr>
 				<td colspan="2">

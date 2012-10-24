@@ -1,4 +1,5 @@
 @import "recettes";
+@import "comments";
 @import "scaffolds";
 
 /*
@@ -22,6 +23,8 @@ body {
 	font: .9em Georgia, "Times New Roman", Sans-Serif;
 	background: url('bg.gif') repeat-x;
 	color: #333;
+	margin-left:15px;
+	margin-right:15px;
 }
 a {
 	color: #A82A15;
@@ -67,14 +70,22 @@ th {
 }
 td {
 	padding-bottom:15px;
+	padding-left:15px;
 	font-family: pt-sans-caption, serif;
 }
+
+.td_padded {
+	padding-bottom:15px;
+	padding-left:35px;
+	font-family: pt-sans-caption, serif;
+}
+
 li {
 	font-family: pt-sans-caption, serif;
 }
 #content {
 	margin: 0 auto;
-	width: 1180px;
+	width: 100%;
 }
 #top {
 	float: right;
@@ -108,12 +119,12 @@ li {
 }
 #left {
 	float: left;
-	width: 900px;
+	width: 80%;
 	margin: 0 0 15px;
 }
 #right {
 	float: right;
-	width: 280px;
+	width: 20%;
 }
 #right h3 {
 	border-bottom: 1px solid #ccc;
