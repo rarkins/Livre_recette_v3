@@ -32,6 +32,15 @@
 			<% end %></td>
 		</tr>
 		<tr>
+			<td colspan="2"> <%
+			if @recette.photo then
+			@recette.photo.each do |photo| %>
+			<%= cl_image_tag(photo.path, { size: '125x125', crop: :fit }) %>
+			<% end
+			end
+			%> </td>
+		</tr>
+		<tr>
 			<th>Preparation:</th>
 			<th>Cuisson:</th>
 		</tr>

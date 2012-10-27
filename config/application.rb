@@ -60,5 +60,9 @@ module LivreRecettesV3
     
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # specify which ORM you wish to use by attachinary
+    require "attachinary/orm/active_record" # active_record
+    
   end
 end

@@ -1,5 +1,5 @@
 class Recette < ActiveRecord::Base
-  attr_accessible :accompagnement, :user_id, :cuisson, :ingredient, :instruction, :marinage, :note, :portion, :preparation, :source, :titre, :vin, :category_ids
+  attr_accessible :accompagnement, :user_id, :cuisson, :ingredient, :instruction, :marinage, :note, :portion, :preparation, :source, :titre, :vin, :category_ids, :photos
 
   validates_numericality_of :user_id, :presence => true
   validates :cuisson, :allow_blank => true, :length => {:within => 3..32}
@@ -19,7 +19,10 @@ class Recette < ActiveRecord::Base
   validates :vin, :allow_blank => true, :length => {:within => 3..256}
 
   validates :accompagnement, :allow_blank => true, :length => {:within => 3..1024}
-
+    
+  
+  has_attachment :photo, accept: [:jpg, :png, :gif], maximum: 1
+  
   has_and_belongs_to_many :categories
   belongs_to :users
 

@@ -1,4 +1,7 @@
 LivreRecettesV3::Application.routes.draw do
+  
+  mount Attachinary::Engine => "/attachinary"
+  
   resources :categories
   resources :comments
   

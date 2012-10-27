@@ -11,6 +11,10 @@ gem 'thin'
 gem 'eventmachine' , ">= 1.0.0.beta"
 gem 'devise'
 gem 'tinymce-rails'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'attachinary'
+
 
 group :production do
   gem "pg"
