@@ -14,7 +14,6 @@ gem 'tinymce-rails'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'attachinary'
-gem 'bourbon'
 
 
 group :production do

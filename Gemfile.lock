@@ -37,8 +37,6 @@ GEM
       rails (~> 3.2)
     aws_cf_signer (0.1.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
-    bourbon (2.1.1)
-      sass (>= 3.1)
     builder (3.0.4)
     carrierwave (0.7.0)
       activemodel (>= 3.2.0)
@@ -161,7 +159,6 @@ PLATFORMS
 DEPENDENCIES
   accept_values_for
   attachinary
-  bourbon
   carrierwave
   cloudinary
   coffee-rails (~> 3.2.1)
