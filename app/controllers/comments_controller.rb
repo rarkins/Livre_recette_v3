@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+
+  before_filter :do_authentication, only: [:edit, :update, :destroy]
+  before_filter :signed_in?, only: [:new]
+  
   def show
     if params[:recette_id] != nil then
       @recette = Recette.find(params[:recette_id])
@@ -61,6 +65,5 @@ class CommentsController < ApplicationController
     end
 
   end
-
 
 end

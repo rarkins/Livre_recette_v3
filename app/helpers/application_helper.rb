@@ -33,11 +33,23 @@ module ApplicationHelper
 
   def user_is_author?
     if current_user then
-      @recette = Recette.find(params[:id])
+
+      if params[:id] == nil then
+        @recette = Recette.find(params[:recette_id])
+      else
+        @recette = Recette.find(params[:id])
+      end
       @recette[:user_id] == current_user[:id]
     end
   end
-
+  
+  def user_is_author_comments?(an_id)
+    if current_user then
+       @comment = Comment.find(an_id)
+       @comment[:user_id] == current_user[:id]
+    end
+  end
+  
   def user_is_admin?
     if current_user then
       current_user.admin
@@ -49,7 +61,13 @@ module ApplicationHelper
     true
     end
   end
-  
+
+  def do_authentication_comments(an_id)
+    if user_is_author_comments?(an_id) or user_is_admin? then
+    true
+    end
+  end
+
   def get_user_id_name(an_id)
     User.find(an_id).username
   end

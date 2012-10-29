@@ -20,6 +20,16 @@
 		<td colspan="2"><%= f.text_field :titre, :size => 128 %></td>
 	</tr>
 	<tr>
+	<th colspan="2">
+		<%= f.label :photo %>
+	</th>
+	</tr>
+	<tr>
+	<td colspan="2">
+		<%= f.attachinary_file_field :photo %>	
+	</td>
+	</tr>
+	<tr>
 		<th colspan="2"><%= f.label :categories %></th>
 	</tr>
 	
@@ -46,25 +56,10 @@
 		count += 1
 		end 
 	%>
+	<%= raw(fill_blanks(count)) %>
 	</tr>
 	</table>
 	</td>
-	<tr>
-	<th colspan="2">
-		<%= f.label :photo %>
-	</th>
-	</tr>
-	<tr>
-	<td colspan="2">
-		<%= f.attachinary_file_field :photo %>	
-	</td>
-	</tr>
-	<tr>
-		<th colspan="2"><%= f.label :source %></th>
-	</tr>
-	<tr>
-		<td colspan="2"><%= f.text_field :source, :size => 128 %></td>
-	</tr>
 	<tr>
 		<th><%= f.label :preparation %></th>
 		<th><%= f.label :cuisson %></th>
@@ -110,6 +105,12 @@
 	</tr>
 	<tr>
 		<td colspan="2"><%= f.text_area :vin,:class => "tinymce", :cols => 40, :rows => 5 %></td>
+	</tr>
+	<tr>
+		<th colspan="2"><%= f.label :source %></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.text_field :source, :size => 128 %></td>
 	</tr>
 </table>
 

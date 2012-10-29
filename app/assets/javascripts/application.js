@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require tinymce-jquery
 //= require cloudinary
 //= require attachinary
 //= require application
+//= require_tree .

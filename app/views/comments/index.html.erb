@@ -16,8 +16,12 @@
 		<tr>
 			<td><%= link_to get_user_id_name(comment.user_id), user_path(comment.user_id) %></td>
 			<td><%= raw(comment.content) %></td>
-			<td><%= link_to 'Modifier', edit_comment_path(comment.id) %></td>
-			<td><%= link_to 'Effacer', comment, method: :delete, data: { confirm: 'Etes-vous certain?' } %></td>
+			<td><% if do_authentication_comments(comment[:id]) then %>
+			<%= link_to 'Modifier', edit_comment_path(comment[:id]) %>
+			<% end %> </td>
+			<td> <% if do_authentication_comments(comment[:id]) then %>
+			<%= link_to 'Effacer', comment, method: :delete, data: { confirm: 'Etes-vous certain?' } %>
+			<% end %> </td>
 
 		</tr>
 		<% end %>
