@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   validates :username, :presence => true
   has_many :recettes, :dependent => :destroy
   has_many :comments, :dependent => :destroy
+  
+  letsrate_rater
 end

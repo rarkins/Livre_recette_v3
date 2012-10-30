@@ -1,5 +1,7 @@
 LivreRecettesV3::Application.routes.draw do
   
+  match '/rate' => 'rater#create', :as => 'rate'
+
   mount Attachinary::Engine => "/attachinary"
   
   resources :categories
