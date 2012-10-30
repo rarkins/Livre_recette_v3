@@ -436,7 +436,7 @@
 		click			: undefined,
 		half			: false,
 		halfShow		: true,
-		hints			: ['bad', 'poor', 'regular', 'good', 'gorgeous'],
+		hints			: ['Degeux', 'Mauvais', 'Ordinaire', 'Bon', 'Excellent'],
 		iconRange		: undefined,
 		mouseover		: undefined,
 		noRatedMsg		: 'not rated yet',
