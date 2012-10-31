@@ -1,6 +1,6 @@
 LivreRecettesV3::Application.routes.draw do
   
-  match '/rate' => 'rater#create', :as => 'rate'
+  
 
   mount Attachinary::Engine => "/attachinary"
   
@@ -11,6 +11,8 @@ LivreRecettesV3::Application.routes.draw do
   resources :recettes do
     resource :comments
   end
+  
+  match '/rate' => 'rater#create', :as => 'rate'
   
   devise_for :users
   resources :users do
