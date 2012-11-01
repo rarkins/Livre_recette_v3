@@ -28,6 +28,7 @@ class Recette < ActiveRecord::Base
 
   has_many :comments, :dependent => :destroy
   accepts_nested_attributes_for :comments, :allow_destroy => true
+  validates_associated :comments
   
   letsrate_rateable "gout"
 
