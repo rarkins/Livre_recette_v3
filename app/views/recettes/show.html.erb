@@ -130,9 +130,11 @@
 				<br />
 				</th><td><%= link_to "Voir tous les commentaires (#{@comments.count})", recette_comments_path(@recette) %></td>
 			</tr>
-			<% @comments.each do |comment| %>
+			<% @comments.each do |comment|
+				p comment
+				 %>
 			<tr>
-				<td><h4><%= get_username(comment[:user_id]) %></h4></td><td><% if do_authentication_comments(comment[:id]) then %> <%= link_to 'Effacer', comment, method: :delete, data: { confirm: 'Etes-vous certain?' }, notice: 'Commentaire effacer' %> | <%= link_to('Modifier', edit_comment_path(comment)) %> <% end %></td>
+				<td><h4><%= get_username(comment[:user_id]) %></h4></td><td><% if do_authentication_comments(comment[:id]) then %> <%= link_to 'Effacer', comment, method: :delete, notice: 'Commentaire effacer' %> | <%= link_to('Modifier', edit_comment_path(comment)) %> <% end %></td>
 			</tr>
 			<tr>
 				<td colspan="2" class="td_padded"><%= raw(comment[:content]) %></td>

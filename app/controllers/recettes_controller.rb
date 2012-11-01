@@ -2,7 +2,6 @@ class RecettesController < ApplicationController
 
   before_filter :do_authentication, only: [:edit, :update, :destroy]
   before_filter :signed_in?, only: [:new]
-  
   # GET /recettes
   # GET /recettes.json
   def index
@@ -58,7 +57,7 @@ class RecettesController < ApplicationController
     @recette = Recette.new(params[:recette])
     @recette.user_id = current_user[:id]
     respond_to do |format|
-      if @recette.save
+      if verify_recaptcha(:model => @recette, :message => 'Il y a une erreur avec le reCAPTCHA!') && @recette.save
         format.html { redirect_to @recette, notice: 'Recette was successfully created.' }
         format.json { render json: @recette, status: :created, location: @recette }
       else
@@ -76,7 +75,7 @@ class RecettesController < ApplicationController
     params[:recette][:category_ids] ||= []
 
     respond_to do |format|
-      if @recette.update_attributes(params[:recette])
+      if verify_recaptcha(:model => @recette, :message => 'Il y a une erreur avec le reCAPTCHA!') && @recette.update_attributes(params[:recette])
         format.html { redirect_to @recette, notice: 'Recette was successfully updated.' }
         format.json { head :no_content }
       else

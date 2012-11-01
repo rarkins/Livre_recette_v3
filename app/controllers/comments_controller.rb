@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_filter :do_authentication, only: [:edit, :update, :destroy]
+  before_filter :do_authentication_comments, only: [:edit, :update, :destroy]
   before_filter :signed_in?, only: [:new]
   
   def show
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     @comment = @recette.comments.new(:content => params[:comment][:content], :user_id => current_user[:id], :recette_id => @recette[:id])
 
     respond_to do |format|
-      if @comment.save
+      if verify_recaptcha(:model => @recette, :message => 'Il y a une erreur avec le reCAPTCHA!') && @comment.save
         format.html { redirect_to recette_path(@recette), notice: 'Comment was successfully created.' }
         format.json { render json: @recette, status: :created, location: @recette }
       else
@@ -34,7 +34,8 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
+     @comment = Comment.find(params[:id])
+    p "$$$$$$$$"
     @recette = Recette.find(@comment.recette_id)
   end
 
@@ -44,7 +45,7 @@ class CommentsController < ApplicationController
     @recette = @comment.recette_id
 
     respond_to do |format|
-      if @comment.update_attributes(params[:comment])
+      if verify_recaptcha(:model => @comment, :message => 'Il y a une erreur avec le reCAPTCHA!') && @comment.update_attributes(params[:recette])
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else
@@ -65,5 +66,20 @@ class CommentsController < ApplicationController
     end
 
   end
-
+  
+  private
+   def do_authentication_comments
+    if user_is_author_comments?(params[:id]) or user_is_admin? then
+    true
+    end
+  end
+  
+  def user_is_author_comments?(an_id)
+    if current_user then
+       @comment = Comment.find(an_id)
+       @comment[:user_id] == current_user[:id]
+    end
+  end
+  
+  
 end

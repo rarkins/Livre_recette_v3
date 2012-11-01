@@ -2,6 +2,7 @@
 <%= f.label :ajouter_un_commentaire %>
 
 <%= f.text_area :content, :class => "tinymce", :cols => 90 %>
+<%= recaptcha_tags %>
 <p>
 	<%= f.submit "Ajouter le commentaire" %>
 </p>
