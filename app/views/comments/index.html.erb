@@ -13,7 +13,7 @@
 			<td colspan="2"></td>
 		</tr>
 		<% @comments.each do |comment| %>
-		<tr>
+		<tr valign="top">
 			<td><%= link_to get_user_id_name(comment.user_id), user_path(comment.user_id) %></td>
 			<td><%= raw(comment.content) %></td>
 			<td><% if do_authentication_comments(comment[:id]) then %>

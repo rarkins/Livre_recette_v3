@@ -47,6 +47,7 @@ class CommentsController < ApplicationController
     @current_page = "recettes"
     @comment = Comment.find(params[:id])
     @recette = @comment.recette_id
+    @comment[:content] = params[:comment][:content]
 
     respond_to do |format|
       if @comment.update_attributes(params[:recette])
