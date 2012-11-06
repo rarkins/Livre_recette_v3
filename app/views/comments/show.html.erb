@@ -2,8 +2,10 @@
 	<h3>Commentaire</h3>
 </div>
 <div id="left">
-	<p id="notice">
-		<%= notice %>
+	<%= flash[:notice] %>
+	</p>
+	<p id="error">
+		<%= flash[:error] %>
 	</p>
 	<table width="100%">
 		<tr align="left">
@@ -12,11 +14,11 @@
 		<tr>
 			<td></td>
 		</tr>
-		
+
 		<tr>
 			<td><%= raw(@comment.content) %></td>
 		</tr>
-		
+
 	</table>
 
 </div>

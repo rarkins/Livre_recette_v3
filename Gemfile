@@ -5,8 +5,6 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
-
 gem 'thin'
 gem 'eventmachine' , ">= 1.0.0.beta"
 gem 'devise'
@@ -15,7 +13,10 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'attachinary'
 gem 'letsrate'
-gem 'recaptcha', :require => 'recaptcha/rails'
+gem 'devise_security_extension'
+gem 'rails_email_validator'
+gem 'easy_captcha'
+gem 'rmagick'
 
 
 

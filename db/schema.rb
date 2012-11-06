@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(:version => 20121030124757370) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "old_passwords", :force => true do |t|
+    t.string   "encrypted_password",       :limit => 128, :null => false
+    t.string   "password_salt"
+    t.integer  "password_archivable_id",                  :null => false
+    t.string   "password_archivable_type",                :null => false
+    t.datetime "created_at"
+  end
+
+  add_index "old_passwords", ["password_archivable_type", "password_archivable_id"], :name => "index_password_archivable"
+
   create_table "rates", :force => true do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -107,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20121030124757370) do
     t.boolean  "admin",                  :default => false
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.datetime "password_changed_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

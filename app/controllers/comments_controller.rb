@@ -2,7 +2,12 @@ class CommentsController < ApplicationController
 
   before_filter :do_authentication_comments, only: [:edit, :update, :destroy]
   before_filter :signed_in?, only: [:new]
-  
+ 
+  def new
+    @recette = Recette.find(params[:recette_id])
+    @comment = @recette.comments.new(:user_id => current_user[:id], :recette_id => @recette[:id])
+  end
+
   def show
     if params[:recette_id] != nil then
       @recette = Recette.find(params[:recette_id])
@@ -23,19 +28,18 @@ class CommentsController < ApplicationController
     @comment = @recette.comments.new(:content => params[:comment][:content], :user_id => current_user[:id], :recette_id => @recette[:id])
 
     respond_to do |format|
-      if verify_recaptcha(:model => @recette, :message => 'Il y a une erreur avec le reCAPTCHA!') && @comment.save
+      if @comment.save
         format.html { redirect_to recette_path(@recette), notice: 'Comment was successfully created.' }
         format.json { render json: @recette, status: :created, location: @recette }
       else
-        format.html { render 'new', error: @comment.errors }
+        format.html { redirect_to recette_path(@recette), error: @comment.errors }
         format.json { render json: @recette.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def edit
-     @comment = Comment.find(params[:id])
-    p "$$$$$$$$"
+    @comment = Comment.find(params[:id])
     @recette = Recette.find(@comment.recette_id)
   end
 
@@ -45,7 +49,7 @@ class CommentsController < ApplicationController
     @recette = @comment.recette_id
 
     respond_to do |format|
-      if verify_recaptcha(:model => @comment, :message => 'Il y a une erreur avec le reCAPTCHA!') && @comment.update_attributes(params[:recette])
+      if @comment.update_attributes(params[:recette])
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else
@@ -66,20 +70,20 @@ class CommentsController < ApplicationController
     end
 
   end
-  
+
   private
-   def do_authentication_comments
+
+  def do_authentication_comments
     if user_is_author_comments?(params[:id]) or user_is_admin? then
     true
     end
   end
-  
+
   def user_is_author_comments?(an_id)
     if current_user then
-       @comment = Comment.find(an_id)
-       @comment[:user_id] == current_user[:id]
+      @comment = Comment.find(an_id)
+      @comment[:user_id] == current_user[:id]
     end
   end
-  
-  
+
 end

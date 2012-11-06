@@ -30,6 +30,12 @@
 			<td><%= f.password_field :password_confirmation %></td>
 		</tr>
 		<tr>
+			<td><%= captcha_tag %></td>
+		</tr>
+		<tr>
+			<td><%= text_field_tag :captcha %></td>
+		</tr>
+		<tr>
 			<td><%= f.submit "Soumettre" %></td>
 		</tr>
 	</table>

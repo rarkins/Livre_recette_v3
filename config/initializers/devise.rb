@@ -1,10 +1,10 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # ==> Mailer Configuration
-  # Configure the e-mail address which will be shown in Devise::Mailer,
-  # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "livre_recettes@invalid_email.com"
+# ==> Mailer Configuration
+# Configure the e-mail address which will be shown in Devise::Mailer,
+# note that it will be overwritten if you use your own mailer class with default "from" parameter.
+  config.mailer_sender = "info@nosrecettes.ca"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -125,7 +125,7 @@ Devise.setup do |config|
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
   # config.timeout_in = 30.minutes
-  
+
   # If true, expires auth token on session timeout.
   # config.expire_auth_token_on_timeout = false
 
@@ -229,4 +229,45 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
+
+  # Should the password expire (e.g 3.months)
+  # config.expire_password_after = 3.months
+
+  # Need 1 char of A-Z, a-z and 0-9
+  # config.password_regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/
+
+  # How often save old passwords in archive
+  # config.password_archiving_count = 5
+
+  # Deny old password (true, false, count)
+  # config.deny_old_passwords = true
+
+  # captcha integration for recover form
+  # config.captcha_for_recover = true
+
+  # captcha integration for sign up form
+  config.captcha_for_sign_up = true
+
+  # captcha integration for sign in form
+  # config.captcha_for_sign_in = true
+
+  # captcha integration for unlock form
+  config.captcha_for_unlock = true
+
+# security_question integration for recover form
+# this automatically enables captchas (captcha_for_recover, as fallback)
+# config.security_question_for_recover = false
+
+# security_question integration for unlock form
+# this automatically enables captchas (captcha_for_unlock, as fallback)
+# config.security_question_for_unlock = false
+
+# security_question integration for confirmation form
+# this automatically enables captchas (captcha_for_confirmation, as fallback)
+# config.security_question_for_confirmation = false
+
+# ==> Configuration for :expirable
+# Time period for account expiry from last_activity_at
+#config.expire_after = 90.days
+
 end

@@ -1,13 +1,15 @@
 <div id="intro">
 	<h3> <%= @recette.titre %> </h3>
-	 <%= rating_for @recette, "gout" %>
+	<%= rating_for @recette, "gout" %>
 </div>
 <div id="left">
 
 	<p id="notice">
-		<%= notice %>
+		<%= flash[:notice] %>
 	</p>
-
+	<p id="error">
+		<%= flash[:error] %>
+	</p>
 	<table width="100%" border="0" padding="5">
 		<tr>
 			<td colspan="2"> <% if @recette.photo then %>
@@ -128,11 +130,9 @@
 				<th>Derniers commentaires:
 				<br />
 				<br />
-				</th><td><%= link_to "Voir tous les commentaires (#{@comments.count})", recette_comments_path(@recette) %></td>
+				</th><td><%= link_to "Voir tous les commentaires", recette_comments_path(@recette) %></td>
 			</tr>
-			<% @comments.each do |comment|
-				p comment
-				 %>
+			<% @comments.each do |comment| %>
 			<tr>
 				<td><h4><%= get_username(comment[:user_id]) %></h4></td><td><% if do_authentication_comments(comment[:id]) then %> <%= link_to 'Effacer', comment, method: :delete, notice: 'Commentaire effacer' %> | <%= link_to('Modifier', edit_comment_path(comment)) %> <% end %></td>
 			</tr>

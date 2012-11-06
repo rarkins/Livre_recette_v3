@@ -2,6 +2,8 @@ LivreRecettesV3::Application.routes.draw do
   
   
 
+  captcha_route
+
   mount Attachinary::Engine => "/attachinary"
   
   resources :categories
