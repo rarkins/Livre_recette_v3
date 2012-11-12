@@ -56,7 +56,7 @@ class RecettesController < ApplicationController
     @current_page = "recettes"
     @recette = Recette.new(params[:recette])
     @recette.user_id = current_user[:id]
-    if params[:comment] != [] then
+    if params[:comment] != nil then
       @comment = @recette.comments.new(:content => params[:comment][:content], :user_id => current_user[:id], :recette_id => @recette[:id])
     end
     respond_to do |format|
