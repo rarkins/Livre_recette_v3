@@ -2,6 +2,11 @@ class RecettesController < ApplicationController
 
   before_filter :do_authentication, only: [:edit, :update, :destroy]
   before_filter :signed_in?, only: [:new]
+  
+  def home
+    @last_recettes = Recette.find(:all, :order => 'id DESC', :limit => 3)
+  end
+  
   # GET /recettes
   # GET /recettes.json
   def index

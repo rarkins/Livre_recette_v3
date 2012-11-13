@@ -16,6 +16,8 @@ LivreRecettesV3::Application.routes.draw do
   
   match '/rate' => 'rater#create', :as => 'rate'
   
+  match '/home' => 'recettes#home'
+  
   devise_for :users
   resources :users do
     resource :comments
@@ -70,7 +72,7 @@ LivreRecettesV3::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'recettes#index'
+  root :to => 'recettes#home'
 
 # See how all your routes lay out with "rake routes"
 
