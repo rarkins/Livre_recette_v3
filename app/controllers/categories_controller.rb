@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
-  
+
   before_filter :do_authentication_admin, :except => [:show, :index]
-  
   # GET /categories
   # GET /categories.json
   def index
@@ -101,11 +100,11 @@ class CategoriesController < ApplicationController
   private
 
   def recettes_pour_category(une_categorie)
-    sql = "select recette_id from categories_recettes where category_id = #{une_categorie}"
-    data = ActiveRecord::Base.connection.execute(sql)
+    data = Category.find(une_categorie).recettes
     @recettes = []
     data.each do |row|
-      @recettes << row[0]
+
+      @recettes << row[:id]
     end
     @recettes
   end
