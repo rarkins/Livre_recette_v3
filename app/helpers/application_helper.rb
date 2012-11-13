@@ -22,9 +22,7 @@ module ApplicationHelper
   end
 
   def nombre_recette_pour_category(une_categorie)
-    sql = "select count(1) from categories_recettes where category_id = #{une_categorie[:id]}"
-    data = ActiveRecord::Base.connection.execute(sql)
-    data[0][0]
+    Category.find(une_categorie).recettes.count
   end
 
   def show_recette_info(une_recette)
