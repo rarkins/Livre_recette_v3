@@ -13,8 +13,9 @@
 			<td colspan="2"></td>
 		</tr>
 		<% @recettes.each do |recette| %>
+		<% p recette %>
 		<tr>
-			<td><%= link_to(show_recette_info(recette).titre, recette_path(recette) ) %></td>
+			<td><%= link_to(show_recette_info(recette)[:titre], recette_path(recette) ) %></td>
 			<td><%= link_to(get_username(show_recette_info(recette).user_id), user_path(show_recette_info(recette).user_id)) %></td>
 		</tr>
 		<% end %>
