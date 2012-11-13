@@ -28,6 +28,7 @@ module ApplicationHelper
   end
 
   def show_recette_info(une_recette)
+    p une_recette
     Recette.find(une_recette)
   end
 
