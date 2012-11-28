@@ -2,6 +2,7 @@
 	<div id="header">
 		<a href="<%= home_path %>"><h1><span class="hr">Nos</span> Recettes</h1></a>
 		<ul id="top">
+			<li><a href="mailto:info (at) nosrecettes (dot) ca">Contact</a></li>
 			<% if !current_user  then%>
 			<li>
 				<%= link_to 'Connexion', new_user_session_path, :class => current_page?("connexion") %>

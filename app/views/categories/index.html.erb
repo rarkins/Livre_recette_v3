@@ -35,6 +35,7 @@
 	<p>
 		Bonjour <b><%= current_user.username %></b>
 	</p>
+	<p><%= link_to 'Nouvelle Recette', new_recette_path %></p>
 	<% end %>
 	<% if user_is_admin? then %>
 	<%= link_to 'Nouvelle Categorie', new_category_path %>

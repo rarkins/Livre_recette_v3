@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 
     @current_page = "categories"
 
-    @categories = Category.all
+    @categories = Category.find(:all, :order => "nom")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -100,7 +100,7 @@ class CategoriesController < ApplicationController
   private
 
   def recettes_pour_category(une_categorie)
-    data = Category.find(une_categorie).recettes
+    data = Category.find(une_categorie).recettes.order("titre asc")
     @recettes = []
     data.each do |row|
 

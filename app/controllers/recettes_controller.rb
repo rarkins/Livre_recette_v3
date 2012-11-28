@@ -12,7 +12,7 @@ class RecettesController < ApplicationController
   def index
     @current_page = "recettes"
 
-    @recettes = Recette.all
+    @recettes = Recette.find(:all, :order => "titre asc")
 
     respond_to do |format|
       format.html # index.html.erb
