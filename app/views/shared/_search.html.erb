@@ -1,0 +1,7 @@
+<div id="search">
+	<%= form_tag home_path, :method => 'get' do %>
+	<%= label_tag :Recherche %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Soumettre", :name => nil %>
+	<% end %>
+</div>

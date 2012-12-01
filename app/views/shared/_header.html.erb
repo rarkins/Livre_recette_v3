@@ -1,27 +1,39 @@
 <div id="content">
 	<div id="header">
 		<a href="<%= home_path %>"><h1><span class="hr">Nos</span> Recettes</h1></a>
-		<ul id="top">
-			<li><a href="mailto:info (at) nosrecettes (dot) ca">Contact</a></li>
-			<% if !current_user  then%>
-			<li>
-				<%= link_to 'Connexion', new_user_session_path, :class => current_page?("connexion") %>
-			</li>
-			<% else %>
-			<li>
-				<%= link_to 'Deconnexion', destroy_user_session_path, :method => :delete %>
-			</li>
-			<% end %>
-			<li>
-				<%= link_to 'Recettes', recettes_path, :class => current_page?("recettes") %>
-			</li>
-			<li>
-				<%= link_to 'Categories', categories_path, :class => current_page?("categories") %>
-			</li>
-		</ul>
+		<table align="right">
+			<tr>
+				<td>
+				<ul id="top">
+					<li>
+						<a href="mailto:info (at) nosrecettes (dot) ca">Contact</a>
+					</li>
+					<% if !current_user  then%>
+					<li>
+						<%= link_to 'Connexion', new_user_session_path, :class => current_page?("connexion") %>
+					</li>
+					<% else %>
+					<li>
+						<%= link_to 'Deconnexion', destroy_user_session_path, :method => :delete %>
+					</li>
+					<% end %>
+					<li>
+						<%= link_to 'Recettes', recettes_path, :class => current_page?("recettes") %>
+					</li>
+					<li>
+						<%= link_to 'Categories', categories_path, :class => current_page?("categories") %>
+					</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td align="right"><%= render 'shared/search' %></td>
+			</tr>
+
+		</table>
 	</div>
 	<% if flash[:SecurityWarning] %>
 	<div id="SecurityWarning">
 		<%= flash[:SecurityWarning] %>
 	</div>
 	<% end %>
+

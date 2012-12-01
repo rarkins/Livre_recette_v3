@@ -1,0 +1,23 @@
+<table width="100%%">
+<% if params[:search] == nil then %>
+
+	<tr>
+		<td colspan="2"><h3>Nos 3 derni&egrave;res recettes</h3></td>
+	</tr>
+	<% end %>
+	<tr align="left">
+		<th>Titre</th>
+		<th>Auteur</th>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<hr />
+		</td>
+	</tr>
+	<% @recettes.each do |recette| %>
+	<tr>
+		<td><%= link_to recette.titre, recette %></td>
+		<td><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]) %></td>
+	</tr>
+	<% end %>
+</table>

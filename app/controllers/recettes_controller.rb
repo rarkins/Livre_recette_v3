@@ -2,11 +2,14 @@ class RecettesController < ApplicationController
 
   before_filter :do_authentication, only: [:edit, :update, :destroy]
   before_filter :signed_in?, only: [:new]
-  
   def home
-    @last_recettes = Recette.find(:all, :order => 'id DESC', :limit => 3)
+    @recettes = Recette.search(params[:search])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @recettes }
+    end
   end
-  
+
   # GET /recettes
   # GET /recettes.json
   def index
