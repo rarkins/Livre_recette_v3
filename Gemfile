@@ -17,10 +17,11 @@ gem 'devise_security_extension'
 gem 'rails_email_validator'
 gem 'easy_captcha'
 gem 'rmagick', :require => false
-gem 'newrelic_rpm'
+
 
 
 group :production do
+  gem 'newrelic_rpm'
   gem "pg"
 end
 
