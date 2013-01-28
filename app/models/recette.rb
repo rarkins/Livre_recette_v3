@@ -35,7 +35,7 @@ class Recette < ActiveRecord::Base
   
   def self.search(search)
     if search
-      find(:all, :conditions => ['titre LIKE ? or ingredient like ?', "%#{search}%", "%#{search}%"], :order => "titre")
+      find(:all, :conditions => ['lower(titre) LIKE ? or lower(ingredient) like ?', "%#{search.downcase}%", "%#{search.downcase}%"], :order => "titre")
     else
       find(:all, :order => 'id DESC', :limit => 3)
     end
