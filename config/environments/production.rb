@@ -77,5 +77,5 @@ LivreRecettesV3::Application.configure do
     :password           => 'cg1xcg6e',
     :domain         => 'heroku.com'
   }
-
+  
 end

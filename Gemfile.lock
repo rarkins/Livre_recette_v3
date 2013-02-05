@@ -32,20 +32,20 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    attachinary (1.2.1)
+    attachinary (1.2.2)
       cloudinary (~> 1.0.41)
       rails (~> 3.2)
     aws_cf_signer (0.1.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
-    better_errors (0.3.2)
+    better_errors (0.5.0)
       coderay (>= 1.0.0)
-      erubis (>= 2.7.0)
+      erubis (>= 2.6.6)
     binding_of_caller (0.6.8)
     builder (3.0.4)
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
-    cloudinary (1.0.43)
+    cloudinary (1.0.44)
       aws_cf_signer
       rest-client
     coderay (1.0.8)
@@ -94,7 +94,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.19)
+    mime-types (1.20.1)
     multi_json (1.5.0)
     newrelic_rpm (3.5.6.46)
     orm_adapter (0.4.0)
@@ -103,7 +103,7 @@ GEM
     rack (1.4.4)
     rack-cache (1.2)
       rack (>= 0.4)
-    rack-ssl (1.3.2)
+    rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -179,7 +179,7 @@ GEM
     warden (1.2.1)
       rack (>= 1.0)
     watchr (0.7)
-    yard (0.8.3)
+    yard (0.8.4)
 
 PLATFORMS
   x86-mingw32
@@ -203,7 +203,7 @@ DEPENDENCIES
   pg
   rails (~> 3.2.11)
   rails_email_validator
-  rmagick
+  rmagick (= 2.13.1)
   rspec-rails
   sass-rails (~> 3.2.3)
   spork (~> 0.9.0.rc)

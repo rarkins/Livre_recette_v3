@@ -16,8 +16,7 @@ gem 'letsrate'
 gem 'devise_security_extension'
 gem 'rails_email_validator'
 gem 'easy_captcha'
-gem 'rmagick', :require => false
-
+gem 'rmagick', "2.13.1", :require => false
 
 
 group :production do

@@ -12,7 +12,7 @@ class Recette < ActiveRecord::Base
 
   validates :preparation, :length => {:within => 3..32}
 
-  validates :source, :allow_blank => true, :length => {:within => 3..256}
+  validates :source, :allow_blank => true, :length => {:within => 3..1024}
 
   validates :titre, :length => {:within => 3..128}
 
