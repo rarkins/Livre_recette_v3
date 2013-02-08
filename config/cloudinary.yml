@@ -1,19 +1,19 @@
 ---
 development:
   cloud_name: livre-recettes
-  api_key:  => ENV['CLOUDINARY_USERNAME'] 
-  api_secret: => ENV['CLOUDINARY_PASSWORD'] 
+  api_key: '197361346777557'
+  api_secret: gYA2TIFBYNLgtePgAPpsi1iU8-A
   enhance_image_tag: true
   static_image_support: false
 production:
   cloud_name: livre-recettes
-  api_key:  => ENV['CLOUDINARY_USERNAME'] 
-  api_secret: => ENV['CLOUDINARY_PASSWORD'] 
+  api_key: '197361346777557'
+  api_secret: gYA2TIFBYNLgtePgAPpsi1iU8-A
   enhance_image_tag: true
   static_image_support: true
 test:
   cloud_name: livre-recettes
-  api_key:  => ENV['CLOUDINARY_USERNAME'] 
-  api_secret: => ENV['CLOUDINARY_PASSWORD'] 
+  api_key: '197361346777557'
+  api_secret: gYA2TIFBYNLgtePgAPpsi1iU8-A
   enhance_image_tag: true
   static_image_support: false
