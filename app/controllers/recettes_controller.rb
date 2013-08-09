@@ -14,8 +14,15 @@ class RecettesController < ApplicationController
   # GET /recettes.json
   def index
     @current_page = "recettes"
-
-    @recettes = Recette.find(:all, :order => "titre asc")
+    if params != nil then
+      if params[:sort] == "creation" then
+        @recettes = Recette.find(:all, :order => "id desc")
+      else
+        @recettes = Recette.find(:all, :order => "titre asc")
+      end
+    else
+      @recettes = Recette.find(:all, :order => "titre asc")
+    end
 
     respond_to do |format|
       format.html # index.html.erb

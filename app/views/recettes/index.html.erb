@@ -1,8 +1,10 @@
 <div id="intro">
 	<h3>Liste des recettes</h3>
 </div>
+<div id="sort"><%= generate_sort_link %></div>
 
 <div id="left">
+	
 	<table width="100%%" border="0">
 		<tr align="left">
 			<th>Titre</th>
@@ -15,7 +17,7 @@
 		</tr>
 		<% @recettes.each do |recette| %>
 		<tr>
-			<td><%= link_to recette.titre, recette %></td>
+			<td><%= link_to recette.titre, recette %> <%= rating_for recette, "gout" %></td>
 			<td><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]) %></td>
 		</tr>
 		<% end %>

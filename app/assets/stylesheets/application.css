@@ -3,11 +3,9 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
+ *= require_tree .
  *= require_mixins
-*/
-
- 
+ */
 
 /*
 
@@ -30,8 +28,8 @@ body {
 	font: .9em Georgia, "Times New Roman", Sans-Serif;
 	background: url('bg.gif') repeat-x;
 	color: #333;
-	margin-left:15px;
-	margin-right:15px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 a {
 	color: #A82A15;
@@ -73,17 +71,17 @@ p {
 	line-height: 1.6em;
 }
 th {
-	text-align:left;
+	text-align: left;
 }
 td {
-	padding-bottom:15px;
-	padding-left:15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
 	font-family: pt-sans-caption, serif;
 }
 
 .td_padded {
-	padding-bottom:15px;
-	padding-left:35px;
+	padding-bottom: 15px;
+	padding-left: 35px;
 	font-family: pt-sans-caption, serif;
 }
 
@@ -125,6 +123,13 @@ li {
 	margin: 0 0 30px;
 }
 
+#sort {
+	font-size: 0.9em;
+	font-family: pt-sans-caption, serif;
+	float: right;
+	width: 80%;
+	margin-left: 15px;
+}
 #left {
 	float: left;
 	width: 80%;
