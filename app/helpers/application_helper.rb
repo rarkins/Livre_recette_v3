@@ -26,7 +26,7 @@ module ApplicationHelper
   end
 
   def show_recette_info(une_recette)
-     Recette.find(une_recette)
+    Recette.find(une_recette)
   end
 
   def user_is_author?
@@ -40,14 +40,14 @@ module ApplicationHelper
       @recette[:user_id] == current_user[:id]
     end
   end
-  
+
   def user_is_author_comments?(an_id)
     if current_user then
-       @comment = Comment.find(an_id)
-       @comment[:user_id] == current_user[:id]
+      @comment = Comment.find(an_id)
+      @comment[:user_id] == current_user[:id]
     end
   end
-  
+
   def user_is_admin?
     if current_user then
       current_user.admin
@@ -65,11 +65,16 @@ module ApplicationHelper
     true
     end
   end
-  
- 
 
   def get_user_id_name(an_id)
     User.find(an_id).username
   end
 
+  def generate_title
+    if @recette != nil then
+      "#{@recette[:titre]} - Nos Recettes"
+    else
+      "Nos Recettes"
+    end
+  end
 end

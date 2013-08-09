@@ -25,5 +25,7 @@ module RecettesHelper
       raw("Trier par titre | " + link_to("Trier par ordre d'ajout", recettes_path+"?sort=creation"))
     end
   end
+  
+ 
 
 end
