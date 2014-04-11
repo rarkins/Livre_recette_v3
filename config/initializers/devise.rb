@@ -254,20 +254,20 @@ Devise.setup do |config|
   # captcha integration for unlock form
   config.captcha_for_unlock = true
 
-# security_question integration for recover form
-# this automatically enables captchas (captcha_for_recover, as fallback)
-# config.security_question_for_recover = false
+  # security_question integration for recover form
+  # this automatically enables captchas (captcha_for_recover, as fallback)
+  # config.security_question_for_recover = false
 
-# security_question integration for unlock form
-# this automatically enables captchas (captcha_for_unlock, as fallback)
-# config.security_question_for_unlock = false
+  # security_question integration for unlock form
+  # this automatically enables captchas (captcha_for_unlock, as fallback)
+  # config.security_question_for_unlock = false
 
-# security_question integration for confirmation form
-# this automatically enables captchas (captcha_for_confirmation, as fallback)
-# config.security_question_for_confirmation = false
+  # security_question integration for confirmation form
+  # this automatically enables captchas (captcha_for_confirmation, as fallback)
+  # config.security_question_for_confirmation = false
 
-# ==> Configuration for :expirable
-# Time period for account expiry from last_activity_at
-#config.expire_after = 90.days
-
+  # ==> Configuration for :expirable
+  # Time period for account expiry from last_activity_at
+  #config.expire_after = 90.days
+  config.secret_key = 'a6d1840a048c16fdc0025986dd91d477f75f9c99eda3744b168f750b7663542c716d95b52a5c4815d330f713880506108130b73b492975deb0e1d49840598c95'
 end
