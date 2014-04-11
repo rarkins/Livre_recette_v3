@@ -18,10 +18,10 @@ gem 'rails_email_validator'
 gem 'easy_captcha'
 gem 'rmagick', "2.13.1", :require => false
 
-
 group :production do
   gem 'newrelic_rpm'
   gem "pg"
+  gem 'rails_12factor'
 end
 
 group :development do
