@@ -223,7 +223,7 @@ DEPENDENCIES
   letsrate (= 1.0.8)
   newrelic_rpm
   pg
-  rails (~> 3.2.11)
+  rails
   rails_12factor
   rails_email_validator
   rmagick (= 2.13.3)
