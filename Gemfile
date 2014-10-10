@@ -6,7 +6,7 @@ gem 'rails', '~> 3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'thin'
-gem 'eventmachine' , ">= 1.0.0.beta"
+gem 'eventmachine'
 gem 'devise'
 gem 'tinymce-rails'
 gem 'carrierwave'
@@ -16,7 +16,7 @@ gem 'letsrate', "1.0.8"
 gem 'devise_security_extension'
 gem 'rails_email_validator'
 gem 'easy_captcha'
-gem 'rmagick', "2.13.1", :require => false
+gem 'rmagick', "2.13.3", :require => false
 
 group :production do
   gem 'newrelic_rpm'
@@ -26,7 +26,7 @@ end
 
 group :development do
   gem 'spork', '~> 0.9.0.rc'
-  gem 'sqlite3'
+  gem 'pg'
   gem "better_errors"
   gem "binding_of_caller"
 end
