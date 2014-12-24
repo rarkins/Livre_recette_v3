@@ -33,7 +33,6 @@ end
 
 group :test do
   gem 'accept_values_for'
-  gem 'spork', '~> 0.9.0.rc'
   gem 'rspec-rails'
   gem 'watchr'
   gem 'factory_girl_rails'
