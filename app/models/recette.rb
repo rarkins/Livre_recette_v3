@@ -19,9 +19,9 @@ class Recette < ActiveRecord::Base
   validates :vin, :allow_blank => true, :length => {:within => 3..256}
 
   validates :accompagnement, :allow_blank => true, :length => {:within => 3..1024}
-  
+
   validates :categories, :presence => true
-  
+
   has_attachment :photo, accept: [:jpg, :png, :gif], maximum: 1
 
   has_and_belongs_to_many :categories
@@ -30,14 +30,11 @@ class Recette < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   accepts_nested_attributes_for :comments, :allow_destroy => true
   validates_associated :comments
-
-  letsrate_rateable "gout"
-  
   def self.search(search)
     if search
-      find(:all, :conditions => ['lower(titre) LIKE ? or lower(ingredient) like ?', "%#{search.downcase}%", "%#{search.downcase}%"], :order => "titre")
+      self.where(['lower(titre) LIKE ? or lower(ingredient) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%"]).order("titre")
     else
-      find(:all, :order => 'id DESC', :limit => 3)
+      self.order('id DESC').limit(3)
     end
   end
 

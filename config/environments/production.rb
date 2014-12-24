@@ -4,6 +4,9 @@ LivreRecettesV3::Application.configure do
 # Code is not reloaded between requests
   config.cache_classes = true
 
+  # new requirement for rails 4.2
+  config.eager_load = true
+
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -77,5 +80,5 @@ LivreRecettesV3::Application.configure do
     :password           => 'cg1xcg6e',
     :domain         => 'heroku.com'
   }
-  
+
 end

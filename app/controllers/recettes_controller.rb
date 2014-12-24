@@ -16,12 +16,12 @@ class RecettesController < ApplicationController
     @current_page = "recettes"
     if params != nil then
       if params[:sort] == "creation" then
-        @recettes = Recette.find(:all, :order => "id desc")
+        @recettes = Recette.all.order("id desc")
       else
-        @recettes = Recette.find(:all, :order => "titre asc")
+        @recettes = Recette.all.order("titre asc")
       end
     else
-      @recettes = Recette.find(:all, :order => "titre asc")
+      @recettes = Recette.all.order("titre asc")
     end
 
     respond_to do |format|

@@ -14,9 +14,9 @@ LivreRecettesV3::Application.routes.draw do
     resource :comments
   end
   
-  match '/rate' => 'rater#create', :as => 'rate'
-  
-  match '/home' => 'recettes#home'
+  match '/rate' => 'rater#create', :via => [:get], :as => 'rate'
+
+  match '/home' => 'recettes#home', :via => [:get]
   
   devise_for :users
   resources :users do

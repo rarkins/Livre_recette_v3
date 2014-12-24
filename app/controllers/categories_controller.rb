@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 
     @current_page = "categories"
 
-    @categories = Category.find(:all, :order => "nom")
+    @categories = Category.all.order("nom")
 
     respond_to do |format|
       format.html # index.html.erb
