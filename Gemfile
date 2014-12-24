@@ -18,16 +18,14 @@ gem 'rails_email_validator'
 gem 'easy_captcha'
 gem 'rmagick', "2.13.3", :require => false
 gem 'protected_attributes'
-
+gem "pg"
 group :production do
   gem 'newrelic_rpm'
-  gem "pg"
   gem 'rails_12factor'
 end
 
 group :development do
   gem 'spork', '~> 0.9.0.rc'
-  gem 'pg'
   gem "better_errors"
   gem "binding_of_caller"
   gem 'web-console', '~> 2.0'
@@ -39,7 +37,6 @@ group :test do
   gem 'rspec-rails'
   gem 'watchr'
   gem 'factory_girl_rails'
-  gem 'sqlite3'
 end
 
 # Gems used only for assets and not required
