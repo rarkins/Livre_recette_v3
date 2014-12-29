@@ -1,10 +1,10 @@
-<div id="intro">
-	<h3>Bienvenue sur Nos Recettes</h3>
-</div>
-<div id="left">
+<div id="content">
+	<h3>Bienvenue sur Nos Recettes</h3> <% if current_user then %>
+	<%= current_user.username %>
+	<% end %>
+
 	<%= render 'results'%>
-</div>
-<div id="right">
+
 	<% if current_user then %>
 	<p>
 		Bonjour <b><%= current_user.username %></b>

@@ -17,3 +17,9 @@
 //= require attachinary
 //= require application
 //= require_tree .
+
+$(function() {
+  $('#soumettre').click(function() {
+    $('#search_form').submit();
+  });
+});

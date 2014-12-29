@@ -5,17 +5,37 @@
 		<%= stylesheet_link_tag "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 		<%= cloudinary_js_config %>
-		
 		<%= csrf_meta_tags %>
 		<%= tinymce_assets %>
 		<%= tinymce %>
-		<script src="http://use.edgefonts.net/kaushan-script.js"></script>
-		<script src="http://use.edgefonts.net/muli.js"></script>
-		<script src="http://use.edgefonts.net/pt-sans-caption.js"></script>
 	</head>
-	<body>
+	<body marginheight="0" marginwidth="0" leftmargin="0" topMargin="0">
+
 		<%= render 'shared/header'%>
+		<div id="topmenu">
+			<ul class="topmenu">
+				<li class="topmenu">
+					<%= link_to 'Recettes', recettes_path, :class => current_page?("recettes") %>
+				</li>
+				<li class="topmenu">
+					<%= link_to 'Categories', categories_path, :class => current_page?("categories") %>
+				</li>
+				<li class="topmenu">
+					<a href="mailto:info (at) nosrecettes (dot) ca">Contact</a>
+				</li>
+				<% if !current_user  then%>
+				<li class="topmenu">
+					<%= link_to 'Connexion', new_user_session_path, :class => current_page?("connexion") %>
+				</li>
+				<% else %>
+				<li class="topmenu">
+					<%= link_to 'Deconnexion', destroy_user_session_path, :method => :delete %>
+				</li>
+				<% end %>
+			</ul>
+		</div>
 		<%= yield %>
+
 		<%= render 'shared/footer'%>
 	</body>
 </html>
