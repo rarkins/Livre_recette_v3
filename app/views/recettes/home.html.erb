@@ -1,8 +1,8 @@
 <div id="content">
 	<% if current_user then %>
-	<%= "Bienvenue #{get_username(current_user)} sur Nos Recettes" %>
+	<h2><%= "Bienvenue #{get_username(current_user)} sur Nos Recettes" %></h2>
 	<% end %>
 
 	<%= render 'results'%>
-	
+
 </div>

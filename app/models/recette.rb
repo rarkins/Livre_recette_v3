@@ -34,7 +34,7 @@ class Recette < ActiveRecord::Base
     if search
       self.where(['lower(titre) LIKE ? or lower(ingredient) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%"]).order("titre")
     else
-      self.order('id DESC').limit(3)
+      self.order('id DESC').limit(10)
     end
   end
 

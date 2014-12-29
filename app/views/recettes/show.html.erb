@@ -1,165 +1,166 @@
-<div id="intro">
+<div id="contenu">
 	<h3> <%= @recette.titre %> </h3>
-</div>
-<div id="left">
 
-	<p id="notice">
-		<%= flash[:notice] %>
-	</p>
-	<p id="error">
-		<%= flash[:error] %>
-	</p>
-	<table width="100%" border="0" padding="5">
-		<tr>
-			<td colspan="2"> <% if @recette.photo then %>
-			<%= link_to(cl_image_tag(@recette.photo.path, { size: '125x125', crop: :fit }), "http://res.cloudinary.com/livre-recettes/image/upload/#{@recette.photo.path}", target: :blank)%>
-			<% end %> </td>
-		</tr>
-		<tr>
-			<th colspan="2">Cat&eacute;gories:</th>
-		</tr>
-		<tr>
-			<td colspan="2">
-			<table width="100%" border="0">
-				<%
-				count = 1
-				just_changed = false
-				@recette.categories.each do |categorie|
-				%>
-				<% if just_changed then %>
-				<tr>
-					<% just_changed = false %>
-					<% end %>
-					<td><%= categorie.nom %></td>
-					<% if (count % 4 == 0) then %>
-				</tr>
-				<% just_changed = true %>
-				<% end %>
-				<%
-				count += 1
-				end
-				%>
-				<%= raw(fill_blanks(count)) %>
-		</tr>
-	</table></td>
-	</tr>
-	<tr>
-		<th>Preparation:</th>
-		<th>Cuisson:</th>
-	</tr>
-	<tr>
-		<td><%= @recette.preparation %></td>
-		<td><%= @recette.cuisson %></td>
-	</tr>
-	<tr>
-		<th>Marinage:</th>
-		<th>Portion:</th>
-	</tr>
-	<tr>
-		<td><%= @recette.marinage %></td>
-		<td><%= @recette.portion %></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-		<hr />
-		</td>
-	</tr>
-	<tr>
-		<th colspan="2">Ingredients:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.ingredient) %></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-		<hr />
-		</td>
-	</tr>
-	<tr>
-		<th colspan="2">Instructions:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.instruction) %></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-		<hr />
-		</td>
-	</tr>
-	<tr>
-		<th colspan="2">Note:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.note) %></td>
-	</tr>
-	<tr>
-		<th colspan="2">Accompagnement:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.accompagnement) %></td>
-	</tr>
-	<tr>
-		<th colspan="2">Vin:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.vin) %></td>
-	</tr>
-	<tr>
-		<th colspan="2">Source:</th>
-	</tr>
-	<tr>
-		<td colspan="2"><% if check_if_link(@recette[:source]) then %> <a href="<%= @recette[:source] %>" target ="_blank"><%= @recette[:source] %></a> <% else %>
-		<%= @recette[:source] %>
-		<% end %></td>
-	</tr>
-	<tr>
-		<th colspan="2">Auteur:</th>
-	</tr>
-	<tr>
-		<td colspan="2"><%= link_to get_username(@recette[:user_id]), user_path(@recette[:user_id]) %></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-		<hr />
-		</td>
-	</tr>
-	</table>
-	<div id="comments">
-		<% if current_user then %>
-		<%= render 'comments' %>
-		<% end %>
-		<% if @comments != [] then %>
-		<table width="100%">
+	<div id="left">
+
+		<p id="notice">
+			<%= flash[:notice] %>
+		</p>
+		<p id="error">
+			<%= flash[:error] %>
+		</p>
+		<table width="100%" border="0" padding="5">
 			<tr>
-				<th>Derniers commentaires:
-				<br />
-				<br />
-				</th><td><%= link_to "Voir tous les commentaires", recette_comments_path(@recette) %></td>
-			</tr>
-			<% @comments.each do |comment| %>
-			<tr>
-				<td><h4><%= get_username(comment[:user_id]) %></h4></td><td><% if do_authentication_comments(comment[:id]) then %> <%= link_to 'Effacer', comment, method: :delete, notice: 'Commentaire effacer' %> | <%= link_to('Modifier', edit_comment_path(comment)) %> <% end %></td>
+				<td colspan="2"> <% if @recette.photo then %>
+				<%= link_to(cl_image_tag(@recette.photo.path, { size: '125x125', crop: :fit }), "http://res.cloudinary.com/livre-recettes/image/upload/#{@recette.photo.path}", target: :blank)%>
+				<% end %> </td>
 			</tr>
 			<tr>
-				<td colspan="2" class="td_padded"><%= raw(comment[:content]) %></td>
+				<th colspan="2">Cat&eacute;gories:</th>
 			</tr>
 			<tr>
 				<td colspan="2">
-				<hr />
-				</td>
+				<table width="100%" border="0">
+					<%
+					count = 1
+					just_changed = false
+					@recette.categories.each do |categorie|
+					%>
+					<% if just_changed then %>
+					<tr>
+						<% just_changed = false %>
+						<% end %>
+						<td><%= categorie.nom %></td>
+						<% if (count % 4 == 0) then %>
+					</tr>
+					<% just_changed = true %>
+					<% end %>
+					<%
+					count += 1
+					end
+					%>
+					<%= raw(fill_blanks(count)) %>
 			</tr>
-			<% end %>
+		</table></td>
+		</tr>
+		<tr>
+			<th>Preparation:</th>
+			<th>Cuisson:</th>
+		</tr>
+		<tr>
+			<td><%= @recette.preparation %></td>
+			<td><%= @recette.cuisson %></td>
+		</tr>
+		<tr>
+			<th>Marinage:</th>
+			<th>Portion:</th>
+		</tr>
+		<tr>
+			<td><%= @recette.marinage %></td>
+			<td><%= @recette.portion %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<tr>
+			<th colspan="2">Ingredients:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.ingredient) %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<tr>
+			<th colspan="2">Instructions:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.instruction) %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<tr>
+			<th colspan="2">Note:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.note) %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Accompagnement:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.accompagnement) %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Vin:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.vin) %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Source:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><% if check_if_link(@recette[:source]) then %> <a href="<%= @recette[:source] %>" target ="_blank"><%= @recette[:source] %></a> <% else %>
+			<%= @recette[:source] %>
+			<% end %></td>
+		</tr>
+		<tr>
+			<th colspan="2">Auteur:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><%= link_to get_username(@recette[:user_id]), user_path(@recette[:user_id]) %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
 		</table>
+		<div id="comments">
+			<% if current_user then %>
+			<%= render 'comments' %>
+			<% end %>
+			<% if @comments != [] then %>
+			<table width="100%">
+				<tr>
+					<th>Derniers commentaires:
+					<br />
+					<br />
+					</th><td><%= link_to "Voir tous les commentaires", recette_comments_path(@recette) %></td>
+				</tr>
+				<% @comments.each do |comment| %>
+				<tr>
+					<td><h4><%= get_username(comment[:user_id]) %></h4></td><td><% if do_authentication_comments(comment[:id]) then %> <%= link_to 'Effacer', comment, method: :delete, notice: 'Commentaire effacer' %> | <%= link_to('Modifier', edit_comment_path(comment)) %> <% end %></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="td_padded"><%= raw(comment[:content]) %></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<hr />
+					</td>
+				</tr>
+				<% end %>
+			</table>
+			<% end %>
+		</div>
+	</div>
+
+	<div id="right">
+		<% if do_authentication then %>
+		<%= link_to 'Modifier', edit_recette_path(@recette) %> |
+		<% end  %>
+		<%= link_to 'Retour', recettes_path %>
+		<% if do_authentication then %> |
+		<%= link_to 'Effacer', @recette, confirm: 'Etes-Vous Certain?', method: :delete %>
 		<% end %>
 	</div>
-</div>
-
-<div id="right">
-	<% if do_authentication then %>
-	<%= link_to 'Modifier', edit_recette_path(@recette) %> |
-	<% end  %>
-	<%= link_to 'Retour', recettes_path %>
-	<% if do_authentication then %> |
-	<%= link_to 'Effacer', @recette, confirm: 'Etes-Vous Certain?', method: :delete %>
-	<% end %>
 </div>

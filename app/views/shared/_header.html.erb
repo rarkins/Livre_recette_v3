@@ -1,10 +1,4 @@
 <div id="header">
 	<%= render 'shared/search' %>
 	<h1><a href="<%= home_path %>"><span class="nos">Nos</span> Recettes</a></h1>
-
-	<% if flash[:SecurityWarning] %>
-	<div id="SecurityWarning">
-		<%= flash[:SecurityWarning] %>
-	</div>
-	<% end %>
 </div>

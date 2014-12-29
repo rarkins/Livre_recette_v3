@@ -1,34 +1,28 @@
-<div id="intro">
+<div id="content">
 	<h3>Liste des recettes</h3>
-</div>
-<div id="sort"><%= generate_sort_link %></div>
 
-<div id="left">
-	
-	<table width="100%%" border="0">
-		<tr align="left">
-			<th>Titre</th>
-			<th>Auteur</th>
-		</tr>
-		<tr>
-			<td colspan="2">
-			<hr />
-			</td>
-		</tr>
-		<% @recettes.each do |recette| %>
-		<tr>
-			<td><%= link_to recette.titre, recette %></td>
-			<td><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]) %></td>
-		</tr>
-		<% end %>
-	</table>
-</div>
-<div id="right">
-	<% if current_user then %>
-	<p>
-		Bonjour <b><%= current_user.username %></b>
-	</p>
-	<%= link_to 'Nouvelle Recette', new_recette_path %>
-	<% end %>
-	
+	<div id="sort">
+		<%= generate_sort_link %>
+	</div>
+
+	<div id="left">
+
+		<table width="100%%" border="0">
+			<tr align="left">
+				<th>Titre</th>
+				<th>Auteur</th>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<hr />
+				</td>
+			</tr>
+			<% @recettes.each do |recette| %>
+			<tr>
+				<td><%= link_to recette.titre, recette %></td>
+				<td><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]) %></td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
 </div>

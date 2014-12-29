@@ -34,6 +34,13 @@
 				<% end %>
 			</ul>
 		</div>
+		<div id="messages">
+			<% if flash[:SecurityWarning] %>
+			<div id="SecurityWarning">
+				<%= flash[:SecurityWarning] %>
+			</div>
+			<% end %>
+		</div>
 		<%= yield %>
 
 		<%= render 'shared/footer'%>

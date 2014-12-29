@@ -81,4 +81,13 @@ module ApplicationHelper
       "Nos Recettes"
     end
   end
+  
+  def get_row_color(a_count)
+    if a_count % 2 == 1 then
+      "#ffffff"
+    else
+      "#cccccc"
+    end
+  end
+  
 end

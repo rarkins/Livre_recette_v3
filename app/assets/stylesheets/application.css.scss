@@ -31,7 +31,7 @@
 						margin-top: 15px;
 						margin-left: 20px;
 						a {
-								color: #FB6648;
+								color: #ECDFBD;
 								text-decoration: none;
 								background-color: #20457C;
 								padding-left: 5px;
@@ -45,7 +45,7 @@
 								@include border-left-radius(5px);
 						}
 						a:hover {
-									color: #ECDFBD;
+									color: #FB6648;
 						}
 			}
 
@@ -62,16 +62,16 @@
 					list-style-type: none;
 			}
 			a {
-					color: #FB6648;
+					color: #ECDFBD;
 					text-decoration: none;
 					font-size:16px;			
 
 			}
 			.current{
-						color:#ECDFBD;
+						color:#FB6648;
 			}
 			a:hover {
-						color: #ECDFBD;
+						color: #FB6648;
 			}
 			li {
 					display: inline;
@@ -79,7 +79,7 @@
 			}
 }
 #content {
-			margin-top:90px;
+			padding-top:60px;
 			margin-left:40px;
 			font-family:           $helvetica;
 			font-size:16px;
@@ -92,11 +92,15 @@
 						color: #5E3448;
 			}
 			td {
-					padding-bottom:10px;
+					padding-top:5px;
+					padding-bottom:5px;
+					padding-left:5px;
 			}
-			
+			tr:hover {
+          				background-color: #ffff99;
+        	}
 			.nouvelle_recette {
-								color: #FB6648;
+								color: #ECDFBD;
 								text-decoration: none;
 								background-color: #20457C;
 								padding-left: 5px;
@@ -109,7 +113,67 @@
 								@include border-bottom-radius(5px);
 								@include border-left-radius(5px);
 						}
+			th {
+				color:#5E3448;
+			}
+			h3{
+				padding-top:15px;
+				color:#5E3448;
+			}
+			h2 {
+				color:#20457C;
+			}
 			
+}
+#contenu {
+			padding-top:60px;
+			margin-left:40px;
+			font-family:           $helvetica;
+			font-size:16px;
+			a {
+					font-family:        $helvetica;
+					text-decoration: none;
+					color: #FB6648;
+			}
+			a:hover {
+						color: #5E3448;
+			}
+			td {
+					padding-top:5px;
+					padding-bottom:5px;
+					padding-left:5px;
+			}
 			
-			
+			.nouvelle_recette {
+								color: #ECDFBD;
+								text-decoration: none;
+								background-color: #20457C;
+								padding-left: 5px;
+								padding-right: 5px;
+								padding-top: 5px;
+								padding-bottom: 5px;
+								margin-left:15px;
+								@include border-top-radius(5px);
+								@include border-right-radius(5px);
+								@include border-bottom-radius(5px);
+								@include border-left-radius(5px);
+						}
+			th {
+				color:#5E3448;
+			}
+			h3{
+				padding-top:15px;
+				color:#5E3448;
+			}
+			h2 {
+				color:#20457C;
+			}
+}
+#messages {
+	margin-left: 	40px;
+	margin-top:		100px;
+	margin-bottom:	-60px;
+	font-family:    $helvetica;
+	font-weight:	bold;
+	color:			#FF0000;
 }

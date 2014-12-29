@@ -4,6 +4,7 @@ class RecettesController < ApplicationController
   before_filter :signed_in?, only: [:new]
   def home
     @recettes = Recette.search(params[:search])
+    @pos = 0
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @recettes }
