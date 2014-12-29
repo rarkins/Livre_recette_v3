@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+
+
+ *= require_mixins
+ */
+
+
+@import "bourbon";
+/* line 2, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 5, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/scaffolds.css.scss */
+#error {
+  color: red;
+}
+
+/* line 8, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/scaffolds.css.scss */
+#SecurityWarning {
+  color: red;
+  position: absolute;
+  top: 220px;
+}
+
+/* line 13, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 18, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 25, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 29, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  padding-top: 10px;
+  font-size: 14px;
+}
