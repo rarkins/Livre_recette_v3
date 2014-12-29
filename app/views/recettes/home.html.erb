@@ -1,15 +1,8 @@
 <div id="content">
-	<h3>Bienvenue sur Nos Recettes</h3> <% if current_user then %>
-	<%= current_user.username %>
+	<% if current_user then %>
+	<%= "Bienvenue #{get_username(current_user)} sur Nos Recettes" %>
 	<% end %>
 
 	<%= render 'results'%>
-
-	<% if current_user then %>
-	<p>
-		Bonjour <b><%= current_user.username %></b>
-	</p>
-	<%= link_to 'Nouvelle Recette', new_recette_path %>
-	<% end %>
-
+	
 </div>

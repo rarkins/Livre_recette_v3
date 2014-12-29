@@ -6,7 +6,11 @@ module ApplicationHelper
   end
 
   def get_username(an_id)
-    User.find(an_id).username
+    
+    email = User.find(an_id).email
+    
+    email[0..email.index("@")-1]
+    
   end
 
   def check_if_link(a_source)

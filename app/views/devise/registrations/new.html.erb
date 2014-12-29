@@ -12,12 +12,6 @@
 			<td><%= f.email_field :email %></td>
 		</tr>
 		<tr>
-			<th><%= f.label :username %></th>
-		</tr>
-		<tr>
-			<td><%= f.text_field :username %></td>
-		</tr>
-		<tr>
 			<th><%= f.label :password %></th>
 		</tr>
 		<tr>
@@ -30,10 +24,7 @@
 			<td><%= f.password_field :password_confirmation %></td>
 		</tr>
 		<tr>
-			<td><%= captcha_tag %></td>
-		</tr>
-		<tr>
-			<td><%= text_field_tag :captcha %></td>
+			<td><%= recaptcha_tags %></td>
 		</tr>
 		<tr>
 			<td><%= f.submit "Soumettre" %></td>

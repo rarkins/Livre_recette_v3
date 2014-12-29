@@ -8,79 +8,108 @@
  */
 
 #header {
-	position: absolute;
-	margin-left: 15%;
-	top: 50px;
-	width: 70%;
-	background-color: #ECDFBD;
-	font-family:           $helvetica;
-	h1 {
-	text-align: right;
-	padding-right: 25px;
-	margin-top: -30px;
-	font-size: golden-ratio(18px,  1);
-	.nos{
-		color:#3B3A35;	
-	}
-	a {
-	color: #5E3448;
-	text-decoration: none;
-}
-}
+			position: absolute;
+			top: 50px;
+			width: 100%;
+			background-color: #ECDFBD;
+			font-family:           $helvetica;
+			h1 {
+					text-align: right;
+					padding-right: 25px;
+					margin-top: -30px;
+					font-size: golden-ratio(21px,  1);
+					.nos{
+							color:#3B3A35;	
+					}
+					a {
+							color: #5E3448;
+							text-decoration: none;
+					}
+			}
 
-#search {
-	margin-top: 15px;
-	margin-left: 20px;
-	a {
-		color: #FB6648;
-		text-decoration: none;
-		background-color: #20457C;
-		padding-left: 5px;
-		padding-right: 5px;
-		padding-top: 5px;
-		padding-bottom: 5px;@include border-top-radius(5px);
-		margin-left:15px;
-		@include border-right-radius(5px);
-		@include border-bottom-radius(5px);
-		@include border-left-radius(5px);
-		}
-		a:hover {
-			color: #ECDFBD;
-		}
-	}
+			#search {
+						margin-top: 15px;
+						margin-left: 20px;
+						a {
+								color: #FB6648;
+								text-decoration: none;
+								background-color: #20457C;
+								padding-left: 5px;
+								padding-right: 5px;
+								padding-top: 5px;
+								padding-bottom: 5px;
+								margin-left:15px;
+								@include border-top-radius(5px);
+								@include border-right-radius(5px);
+								@include border-bottom-radius(5px);
+								@include border-left-radius(5px);
+						}
+						a:hover {
+									color: #ECDFBD;
+						}
+			}
 
 }
 #topmenu {
-	top: 0px;
-	height: 50px;
-	margin-left: 15%;
-	width: 70%;
-	align: center;
-	margin-top: -30px;
-	padding-top: 30px;
-	background-color: #20457C;ul {
-	font-family:          $helvetica;
-	list-style-type: none;a {
-	color: #FB6648;
-	text-decoration: none;
-}
-a:hover {
-	color: #ECDFBD;
-}
-}
+			top: 0px;
+			height: 50px;
+			width: 100%;
+			margin-top: -30px;
+			padding-top: 30px;
+			background-color: #20457C;
+			ul {
+					font-family:          $helvetica;
+					list-style-type: none;
+			}
+			a {
+					color: #FB6648;
+					text-decoration: none;
+					font-size:16px;			
 
-li {
-	display: inline;
-	padding-right: 25px;
-}
+			}
+			.current{
+						color:#ECDFBD;
+			}
+			a:hover {
+						color: #ECDFBD;
+			}
+			li {
+					display: inline;
+					padding-right: 25px;
+			}
 }
 #content {
-	font-family:           $helvetica;a {
-	font-family:        $helvetica;
-	text-decoration: none;
-	color: #FB6648;
-}
-a:hover {
-	color: #5E3448;
-}
+			margin-top:90px;
+			margin-left:40px;
+			font-family:           $helvetica;
+			font-size:16px;
+			a {
+					font-family:        $helvetica;
+					text-decoration: none;
+					color: #FB6648;
+			}
+			a:hover {
+						color: #5E3448;
+			}
+			td {
+					padding-bottom:10px;
+			}
+			
+			.nouvelle_recette {
+								color: #FB6648;
+								text-decoration: none;
+								background-color: #20457C;
+								padding-left: 5px;
+								padding-right: 5px;
+								padding-top: 5px;
+								padding-bottom: 5px;
+								margin-left:15px;
+								@include border-top-radius(5px);
+								@include border-right-radius(5px);
+								@include border-bottom-radius(5px);
+								@include border-left-radius(5px);
+						}
+			
+			
+			
 }

@@ -15,8 +15,7 @@ gem 'attachinary'
 gem 'letsrate', "1.0.8"
 gem 'devise_security_extension'
 gem 'rails_email_validator'
-gem 'easy_captcha'
-gem 'rmagick', "2.13.3", :require => false
+gem "recaptcha", :require => "recaptcha/rails"
 gem 'protected_attributes'
 gem "pg"
 group :production do

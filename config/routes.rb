@@ -1,28 +1,23 @@
 LivreRecettesV3::Application.routes.draw do
-  
-  
-
-  captcha_route
 
   mount Attachinary::Engine => "/attachinary"
-  
+
   resources :categories
   resources :comments
-  
-  
+
   resources :recettes do
     resource :comments
   end
-  
+
   match '/rate' => 'rater#create', :via => [:get], :as => 'rate'
 
   match '/home' => 'recettes#home', :via => [:get]
-  
+
   devise_for :users
   resources :users do
     resource :comments
   end
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

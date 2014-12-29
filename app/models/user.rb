@@ -6,12 +6,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :secure_validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
+  attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  validates :username, :presence => true
   has_many :recettes, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   
-  letsrate_rater
 end
