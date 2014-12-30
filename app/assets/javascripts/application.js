@@ -23,3 +23,33 @@ $(function() {
     $('#search_form').submit();
   });
 });
+$(function() {
+  $('#soumettre_categorie').click(function() {
+    $('#new_category').submit();
+  });
+});
+$(function() {
+  $('#connexion').click(function() {
+    $('#new_user').submit();
+  });
+});
+$(function() {
+  $('#sign_up').click(function() {
+    $('#new_user').submit();
+  });
+});
+$(function() {
+  $('#instructions').click(function() {
+    $('#new_user').submit();
+  });
+});
+$(function() {
+  $('#Commentaire').click(function() {
+    $('#new_comment').submit();
+  });
+});
+$(function() {
+  $('#Soumettre').click(function() {
+    $('#edit_comment').submit();
+  });
+});

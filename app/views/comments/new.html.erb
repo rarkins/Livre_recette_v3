@@ -1,9 +1,6 @@
-<div id="intro">
+<div id="contenu">
 	<h3><%= @recette[:titre] %> - Nouveau commentaire</h3>
-</div>
-<div id="left">
+
 	<%= render 'form' %>
-</div>
-<div id="right">
-	<%= link_to 'Retour', recette_path(@comment.recette_id) %>
+	<%= link_to 'Retour', recette_path(@comment.recette_id), :class => "actions" %>
 </div>

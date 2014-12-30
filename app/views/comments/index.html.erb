@@ -1,28 +1,29 @@
-<div id="intro">
+<div id="contenu">
 	<h3><%= @recette.titre %> - Commentaires</h3>
-</div>
-<div id="left">
 	<p id="notice">
 		<%= flash[:notice] %>
 	</p>
 	<p id="error">
 		<%= flash[:error] %>
 	</p>
-	<table width="100%">
+	<table width="100%" border="0">
+		<tr align="center" class="actions">
+			<td colspan="4"><%= link_to 'Retour', recette_path(@recette) %></td>
+		</tr>
 		<tr align="left">
-			<th>Auteur</th><th>Commentaire</th>
+			<th>Auteur</th><th colspan="3">Commentaire</th>
 		</tr>
 		<tr>
-			<td colspan="2"></td>
+			<td colspan="4"></td>
 		</tr>
 		<% @comments.each do |comment| %>
 		<tr valign="top">
-			<td><%= link_to get_user_id_name(comment.user_id), user_path(comment.user_id) %></td>
+			<td><%= link_to get_username(comment.user_id), user_path(comment.user_id) %></td>
 			<td><%= raw(comment.content) %></td>
-			<td><% if do_authentication_comments(comment[:id]) then %>
+			<td class="actions"><% if do_authentication_comments(comment[:id]) then %>
 			<%= link_to 'Modifier', edit_comment_path(comment[:id]) %>
 			<% end %> </td>
-			<td> <% if do_authentication_comments(comment[:id]) then %>
+			<td class="actions"> <% if do_authentication_comments(comment[:id]) then %>
 			<%= link_to 'Effacer', comment, method: :delete, data: { confirm: 'Etes-vous certain?' } %>
 			<% end %> </td>
 
@@ -30,8 +31,4 @@
 		<% end %>
 	</table>
 
-</div>
-
-<div id="right">
-	<%= link_to 'Retour', recette_path(@recette) %>
 </div>

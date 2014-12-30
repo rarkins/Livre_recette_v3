@@ -1,11 +1,9 @@
 <%= form_for(@comment) do |f| %>
-<div class="field">
+<div id="contenu">
 	<%= f.hidden_field :recette_id, :value => @recette.id %>
-	<%= f.label :content %>
-	<br />
+	<%= f.label :commentaire %>
 	<%= f.text_area :content, :class => "tinymce" %>
-</div>
-<div class="actions">
+	<br />
 	<%= f.submit 'Soumettre' %>
 </div>
 <% end %>

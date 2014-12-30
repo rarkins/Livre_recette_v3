@@ -71,7 +71,7 @@ module ApplicationHelper
   end
 
   def get_user_id_name(an_id)
-    User.find(an_id).username
+    User.find(an_id).email
   end
 
   def generate_title
@@ -86,7 +86,7 @@ module ApplicationHelper
     if a_count % 2 == 1 then
       "#ffffff"
     else
-      "#cccccc"
+      "#efefef"
     end
   end
   

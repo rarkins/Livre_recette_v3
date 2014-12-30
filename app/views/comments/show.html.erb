@@ -1,13 +1,15 @@
-<div id="intro">
+<div id="contenu">
 	<h3>Commentaire</h3>
-</div>
-<div id="left">
 	<%= flash[:notice] %>
 	</p>
 	<p id="error">
 		<%= flash[:error] %>
 	</p>
 	<table width="100%">
+		<tr class="actions">
+			<td align="center"> <%= link_to 'Modifier', edit_comment_path(@comment) %> |
+			<%= link_to 'Retour', recette_path(@comment.recette_id) %> </td>
+		</tr>
 		<tr align="left">
 			<th>Commentaire</th>
 		</tr>
@@ -20,10 +22,4 @@
 		</tr>
 
 	</table>
-
-</div>
-
-<div id="right">
-	<%= link_to 'Modifier', edit_comment_path(@comment) %> |
-	<%= link_to 'Retour', recette_path(@comment.recette_id) %>
 </div>

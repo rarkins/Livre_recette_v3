@@ -2,8 +2,8 @@
 <%= f.label :ajouter_un_commentaire %>
 
 <%= f.text_area :content, :class => "tinymce", :cols => 90 %>
-<p>
-	<%= f.submit "Ajouter le commentaire" %>
+<p class="actions">
+	<%= link_to "Ajouter le commentaire", "#", :id => "Commentaire" %>
 </p>
 <hr />
 <% end %>

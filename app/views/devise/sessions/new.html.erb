@@ -1,17 +1,17 @@
-<div id="intro">
+<div id="contenu">
 	<h3>Connexion</h3>
-</div>
-
-<div id="left">
+	<p id="notice">
+		<%= notice %>
+	</p>
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 	<table width="100%">
-		<tr>
+		<tr align="left">
 			<th><%= f.label :email %></th>
 		</tr>
 		<tr>
 			<td><%= f.email_field :email %></td>
 		</tr>
-		<tr>
+		<tr align="left">
 			<th><%= f.label :password %></th>
 		</tr>
 		<tr>
@@ -22,12 +22,10 @@
 			<td><%= f.check_box :remember_me %> <%= f.label :remember_me %></td>
 		</tr>
 		<% end -%>
-		<tr>
-			<td><%= f.submit "Connexion" %></td>
+		<tr class="actions">
+			<td><%= link_to "Soumettre", "#", :id => "connexion" %> <%= render "devise/shared/links" %></td>
 		</tr>
 	</table>
 	<% end %>
 </div>
-<div id="right">
-	<%= render "devise/shared/links" %>
-</div>
+

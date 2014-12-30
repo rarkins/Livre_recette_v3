@@ -1,27 +1,27 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Connexion", new_session_path(resource_name) %><br />
+| <%= link_to "Connexion", new_session_path(resource_name) %>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Creer un compte", new_registration_path(resource_name) %><br />
+| <%= link_to "Creer un compte", new_registration_path(resource_name) %>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <%= link_to "Mot de passe oublie?", new_password_path(resource_name) %><br />
+| <%= link_to "Mot de passe oublie?", new_password_path(resource_name) %>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Envoyer confirmation a nouveau", new_confirmation_path(resource_name) %><br />
+| <%= link_to "Envoyer confirmation a nouveau", new_confirmation_path(resource_name) %>
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Envoyer instructions a nouveau", new_unlock_path(resource_name) %><br />
+| <%= link_to "Envoyer instructions a nouveau", new_unlock_path(resource_name) %>
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Se connecter via #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
-  <% end -%>
+<%- resource_class.omniauth_providers.each do |provider| %>
+| <%= link_to "Se connecter via #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %>
+<% end -%>
 <% end -%>
 
 <% @current_page = "connexion" %>

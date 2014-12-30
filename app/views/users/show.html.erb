@@ -1,20 +1,23 @@
-<div id="intro">
+<div id="content">
 	<h3><%= get_username(@user[:id]) %></h3>
-</div>
-<div id="left">
-	<table width="100%%">
-		<tr>
+	<table width="100%">
+		<tr align="left">
+			<th>Photos</th>
 			<th>Recettes</th>
 		</tr>
 		<tr>
-			<td>
+			<td colspan="2">
 			<hr />
 			</td>
 		</tr>
 		<% @recettes.each do |recette| %>
-		<tr>
+		<tr bgcolor="<%= get_row_color(@pos) %>">
+			<td> <% if recette.photo then %>
+			<%= link_to(cl_image_tag(recette.photo.path, { size: '125x125', crop: :fit }), "http://res.cloudinary.com/livre-recettes/image/upload/#{recette.photo.path}", target: :blank)%>
+			<% end %> </td>
 			<td><%= link_to recette[:titre], recette_path(recette[:id]) %></td>
 		</tr>
+		<% @pos = @pos + 1 %>
 		<% end %>
 	</table>
 </div>

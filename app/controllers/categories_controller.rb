@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   def index
 
     @current_page = "categories"
-
+    @pos = 0
     @categories = Category.all.order("nom")
 
     respond_to do |format|
@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @current_page = "categories"
-
+    @pos = 0
     @category = Category.find(params[:id])
 
     recettes_pour_category(@category[:id])
@@ -100,13 +100,7 @@ class CategoriesController < ApplicationController
   private
 
   def recettes_pour_category(une_categorie)
-    data = Category.find(une_categorie).recettes.order("titre asc")
-    @recettes = []
-    data.each do |row|
-
-      @recettes << row[:id]
-    end
-    @recettes
+    @recettes = Category.find(une_categorie).recettes.order("titre asc")
   end
 
 end

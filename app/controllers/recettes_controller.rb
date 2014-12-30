@@ -15,6 +15,7 @@ class RecettesController < ApplicationController
   # GET /recettes.json
   def index
     @current_page = "recettes"
+    @pos = 0
     if params != nil then
       if params[:sort] == "creation" then
         @recettes = Recette.all.order("id desc")

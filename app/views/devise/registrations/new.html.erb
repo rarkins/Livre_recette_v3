@@ -1,23 +1,21 @@
-<div id="intro">
+<div id="contenu">
 	<h3>Cr&eacute;er un compte</h3>
-</div>
-<div id="left">
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 	<%= devise_error_messages! %>
 	<table width="100%">
-		<tr>
+		<tr align="left">
 			<th><%= f.label :email %></th>
 		</tr>
 		<tr>
 			<td><%= f.email_field :email %></td>
 		</tr>
-		<tr>
+		<tr align="left">
 			<th><%= f.label :password %></th>
 		</tr>
 		<tr>
 			<td><%= f.password_field :password %></td>
 		</tr>
-		<tr>
+		<tr align="left">
 			<th><%= f.label :password_confirmation %></th>
 		</tr>
 		<tr>
@@ -26,13 +24,11 @@
 		<tr>
 			<td><%= recaptcha_tags %></td>
 		</tr>
-		<tr>
-			<td><%= f.submit "Soumettre" %></td>
+		<tr class="actions">
+			<td><%= link_to "Soumettre", "#", :id => "sign_up" %> <%= render "devise/shared/links" %></td>
 		</tr>
 	</table>
 
 	<% end %>
 </div>
-<div id="right">
-	<%= render "devise/shared/links" %>
-</div>
+
