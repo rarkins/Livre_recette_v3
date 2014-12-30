@@ -52,12 +52,19 @@ $mediaMinWidth: 480px;
   @media #{$query}  { @content; }
 }
 
+// 57656B => 1er bandeau du haut
+// FDE8E2 => 2e bandeau du haut
+// DF9287 => liens
+// 000000 => mauve texte
+// AFB8D0 => "nos" texte
+// CBE8EA => couleur TR alterne
+
 #header {
 			position: absolute;
 			top: 50px;
 			width: 100%;
 			min-width:920px;
-			background-color: #ECDFBD;
+			background-color: #FDE8E2;
 			font-family:           $helvetica;
 			h1 {
 					text-align: right;
@@ -65,10 +72,10 @@ $mediaMinWidth: 480px;
 					margin-top: -30px;
 					font-size: golden-ratio(21px,  1);
 					.nos{
-							color:#3B3A35;	
+							color:#AFB8D0;	
 					}
 					a {
-							color: #5E3448;
+							color: #000000;
 							text-decoration: none;
 					}
 			}
@@ -77,9 +84,9 @@ $mediaMinWidth: 480px;
 						margin-top: 15px;
 						margin-left: 20px;
 						a {
-								color: #ECDFBD;
+								color: #FDE8E2;
 								text-decoration: none;
-								background-color: #20457C;
+								background-color: #57656B;
 								padding-left: 5px;
 								padding-right: 5px;
 								padding-top: 5px;
@@ -91,7 +98,7 @@ $mediaMinWidth: 480px;
 								@include border-left-radius(5px);
 						}
 						a:hover {
-									color: #FB6648;
+									color: #DF9287;
 						}
 			}
 
@@ -102,22 +109,22 @@ $mediaMinWidth: 480px;
 			width: 100%;
 			margin-top: -30px;
 			padding-top: 30px;
-			background-color: #20457C;
+			background-color: #57656B;
 			ul {
 					font-family:          $helvetica;
 					list-style-type: none;
 			}
 			a {
-					color: #ECDFBD;
+					color: #FDE8E2;
 					text-decoration: none;
 					font-size:16px;			
 
 			}
 			.current{
-						color:#FB6648;
+						color:#DF9287;
 			}
 			a:hover {
-						color: #FB6648;
+						color: #DF9287;
 			}
 			li {
 					display: inline;
@@ -133,10 +140,10 @@ $mediaMinWidth: 480px;
 			a {
 					font-family:        $helvetica;
 					text-decoration: none;
-					color: #FB6648;
+					color: #DF9287;
 			}
 			a:hover {
-						color: #5E3448;
+						color: #000000;
 			}
 			td {
 					padding-top:5px;
@@ -144,12 +151,15 @@ $mediaMinWidth: 480px;
 					padding-left:5px;
 			}
 			tr:hover {
-          				background-color: #ffff99;
+          				background-color: #AFB8D0;
+          				a{
+          				  color:#FDE8E2;
+          				}
         	}
 			.nouvelle_recette {
-								color: #ECDFBD;
+								color: #FDE8E2;
 								text-decoration: none;
-								background-color: #20457C;
+								background-color: #57656B;
 								padding-left: 5px;
 								padding-right: 5px;
 								padding-top: 5px;
@@ -161,14 +171,14 @@ $mediaMinWidth: 480px;
 								@include border-left-radius(5px);
 						}
 			th {
-				color:#5E3448;
+				color:#000000;
 			}
 			h3{
 				padding-top:15px;
-				color:#5E3448;
+				color:#000000;
 			}
 			h2 {
-				color:#20457C;
+				color:#57656B;
 			}			
 
 @include media( "retina" ){
@@ -198,10 +208,10 @@ $mediaMinWidth: 480px;
 			a {
 					font-family:        $helvetica;
 					text-decoration: none;
-					color: #FB6648;
+					color: #DF9287;
 			}
 			a:hover {
-						color: #5E3448;
+						color: #000000;
 			}
 			td {
 					padding-top:5px;
@@ -210,9 +220,9 @@ $mediaMinWidth: 480px;
 			}
 			
 			.nouvelle_recette {
-								color: #ECDFBD;
+								color: #FDE8E2;
 								text-decoration: none;
-								background-color: #20457C;
+								background-color: #57656B;
 								padding-left: 5px;
 								padding-right: 5px;
 								padding-top: 5px;
@@ -224,20 +234,20 @@ $mediaMinWidth: 480px;
 								@include border-left-radius(5px);
 						}
 			th {
-				color:#5E3448;
+				color:#000000;
 			}
 			h3{
 				padding-top:15px;
-				color:#5E3448;
+				color:#000000;
 			}
 			h2 {
-				color:#20457C;
+				color:#57656B;
 			}
 			.actions {
 						a {
-								color: #ECDFBD;
+								color: #FDE8E2;
 								text-decoration: none;
-								background-color: #20457C;
+								background-color: #57656B;
 								padding-left: 5px;
 								padding-right: 5px;
 								padding-top: 5px;
@@ -250,11 +260,11 @@ $mediaMinWidth: 480px;
 								@include border-left-radius(5px);
 						}
 						a:hover {
-									color: #FB6648;
+									color: #DF9287;
 						}
 						label {
 							text-align: left;
-							color:#5E3448;
+							color:#000000;
 							font-weight:bold;
 						} 	
 			}

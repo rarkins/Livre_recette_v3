@@ -86,7 +86,7 @@ module ApplicationHelper
     if a_count % 2 == 1 then
       "#ffffff"
     else
-      "#efefef"
+      "#CBE8EA"
     end
   end
   
