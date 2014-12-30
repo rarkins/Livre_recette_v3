@@ -1,0 +1,310 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_mixins
+ */
+/**
+* Conditional Media Query Mixin
+* by @sheiko (http://dsheiko.com)
+* 
+* The problem this mixin solves is explained there 
+* http://css-tricks.com/conditional-media-query-mixins/
+*
+* https://github.com/dsheiko
+* MIT license: http://www.opensource.org/licenses/mit-license.php
+*/
+/* line 55, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  min-width: 920px;
+  background-color: #ECDFBD;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+/* line 62, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header h1 {
+  text-align: right;
+  padding-right: 25px;
+  margin-top: -30px;
+  font-size: 33.978px;
+}
+/* line 67, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header h1 .nos {
+  color: #3B3A35;
+}
+/* line 70, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header h1 a {
+  color: #5E3448;
+  text-decoration: none;
+}
+/* line 76, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header #search {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+/* line 79, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header #search a {
+  color: #ECDFBD;
+  text-decoration: none;
+  background-color: #20457C;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+/* line 93, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header #search a:hover {
+  color: #FB6648;
+}
+
+/* line 99, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu {
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  margin-top: -30px;
+  padding-top: 30px;
+  background-color: #20457C;
+}
+/* line 106, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu ul {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  list-style-type: none;
+}
+/* line 110, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu a {
+  color: #ECDFBD;
+  text-decoration: none;
+  font-size: 16px;
+}
+/* line 116, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu .current {
+  color: #FB6648;
+}
+/* line 119, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu a:hover {
+  color: #FB6648;
+}
+/* line 122, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu li {
+  display: inline;
+  padding-right: 25px;
+}
+
+/* line 127, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content {
+  padding-top: 60px;
+  margin-left: 40px;
+  padding-right: 60px;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 21px;
+}
+/* line 133, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content a {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  text-decoration: none;
+  color: #FB6648;
+}
+/* line 138, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content a:hover {
+  color: #5E3448;
+}
+/* line 141, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+/* line 146, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content tr:hover {
+  background-color: #ffff99;
+}
+/* line 149, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content .nouvelle_recette {
+  color: #ECDFBD;
+  text-decoration: none;
+  background-color: #20457C;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+/* line 163, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content th {
+  color: #5E3448;
+}
+/* line 166, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content h3 {
+  padding-top: 15px;
+  color: #5E3448;
+}
+/* line 170, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content h2 {
+  color: #20457C;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi) {
+  /* line 127, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #content {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 961px) and (max-width: 1260px) {
+  /* line 127, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #content {
+    font-size: 36px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+  /* line 127, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #content {
+    font-size: 36px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  /* line 127, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #content {
+    font-size: 16px;
+  }
+}
+
+/* line 192, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu {
+  padding-top: 60px;
+  margin-left: 40px;
+  padding-right: 60px;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 21px;
+}
+/* line 198, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu a {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  text-decoration: none;
+  color: #FB6648;
+}
+/* line 203, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu a:hover {
+  color: #5E3448;
+}
+/* line 206, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+/* line 212, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu .nouvelle_recette {
+  color: #ECDFBD;
+  text-decoration: none;
+  background-color: #20457C;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+/* line 226, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu th {
+  color: #5E3448;
+}
+/* line 229, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu h3 {
+  padding-top: 15px;
+  color: #5E3448;
+}
+/* line 233, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu h2 {
+  color: #20457C;
+}
+/* line 237, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu .actions a {
+  color: #ECDFBD;
+  text-decoration: none;
+  background-color: #20457C;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+/* line 252, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu .actions a:hover {
+  color: #FB6648;
+}
+/* line 255, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu .actions label {
+  text-align: left;
+  color: #5E3448;
+  font-weight: bold;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi) {
+  /* line 192, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #contenu {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 961px) and (max-width: 1260px) {
+  /* line 192, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #contenu {
+    font-size: 48px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+  /* line 192, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #contenu {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  /* line 192, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #contenu {
+    font-size: 16px;
+  }
+}
+
+/* line 280, /Users/dcloutie/Documents/workspace/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#messages {
+  margin-left: 40px;
+  margin-top: 100px;
+  margin-bottom: -60px;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: bold;
+  color: #FF0000;
+}

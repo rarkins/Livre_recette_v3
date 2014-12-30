@@ -7,10 +7,56 @@
  *= require_mixins
  */
 
+/**
+* Conditional Media Query Mixin
+* by @sheiko (http://dsheiko.com)
+* 
+* The problem this mixin solves is explained there 
+* http://css-tricks.com/conditional-media-query-mixins/
+*
+* https://github.com/dsheiko
+* MIT license: http://www.opensource.org/licenses/mit-license.php
+*/
+
+
+// Predefined Break-points
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
+@function translate-media-condition($c) {
+  $condMap: (
+    "screen": "only screen",
+    "print": "only print",
+    "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+     ">maxWidth": "(min-width: #{$mediaMaxWidth + 1})",
+    "<maxWidth": "(max-width: #{$mediaMaxWidth})",    
+    ">bp1Width": "(min-width: #{$mediaBp1Width + 1})",
+    "<bp1Width": "(max-width: #{$mediaBp1Width})",
+    ">minWidth": "(min-width: #{$mediaMinWidth + 1})",
+    "<minWidth": "(max-width: #{$mediaMinWidth})"
+  );
+  @return map-get( $condMap, $c );
+}
+
+// The mdia mixin
+@mixin media($args...) {
+  $query: "";
+  @each $arg in $args {
+    $op: "";
+    @if ( $query != "" ) {
+      $op: " and ";
+    }
+    $query: $query + $op + translate-media-condition($arg);
+  }
+  @media #{$query}  { @content; }
+}
+
 #header {
 			position: absolute;
 			top: 50px;
 			width: 100%;
+			min-width:920px;
 			background-color: #ECDFBD;
 			font-family:           $helvetica;
 			h1 {
@@ -83,7 +129,7 @@
 			margin-left:40px;
 			padding-right:60px;
 			font-family:           $helvetica;
-			font-size:16px;
+			font-size:21px;
 			a {
 					font-family:        $helvetica;
 					text-decoration: none;
@@ -124,13 +170,31 @@
 			h2 {
 				color:#20457C;
 			}			
+
+@include media( "retina" ){
+    font-size:16px;
+  };
+  @include media( "screen", ">bp1Width", "<maxWidth" ){
+    // Cell phone dimension
+    font-size:36px;
+    
+  };
+  @include media( "screen", ">minWidth", "<bp1Width" ){
+    // small screen
+    font-size:36px;
+  };
+  @include media( "screen", "<minWidth" ){
+    // very small screen
+    font-size:16px;
+  };
+
 }
 #contenu {
 			padding-top:60px;
 			margin-left:40px;
 			padding-right:60px;
 			font-family:           $helvetica;
-			font-size:16px;
+			font-size:21px;
 			a {
 					font-family:        $helvetica;
 					text-decoration: none;
@@ -194,6 +258,23 @@
 							font-weight:bold;
 						} 	
 			}
+@include media( "retina" ){
+    font-size:16px;
+  };
+  @include media( "screen", ">bp1Width", "<maxWidth" ){
+    // Cell phone dimension
+    font-size:48px;
+    
+  };
+  @include media( "screen", ">minWidth", "<bp1Width" ){
+    // small screen
+    font-size:16px;
+  };
+  @include media( "screen", "<minWidth" ){
+    // very small screen
+    font-size:16px;
+  };
+
 }
 
 #messages {
