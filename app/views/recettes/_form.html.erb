@@ -13,19 +13,19 @@
 </div>
 <% end %>
 <table width="100%">
-	<tr>
+	<tr align="left">
 		<th colspan="2"><%= f.label :titre %></th>
 	</tr>
 	<tr>
 		<td colspan="2"><%= f.text_field :titre, :size => 128 %></td>
 	</tr>
-	<tr>
+	<tr align="left">
 		<th colspan="2"> <%= f.label :photo %> </th>
 	</tr>
 	<tr>
 		<td colspan="2"> <%= f.attachinary_file_field :photo %> </td>
 	</tr>
-	<tr>
+	<tr align="left">
 		<th colspan="2"><%= f.label :categories %></th>
 	</tr>
 
@@ -55,7 +55,7 @@
 	</tr>
 </table>
 </td>
-<tr>
+<tr align="left">
 	<th><%= f.label :preparation %></th>
 	<th><%= f.label :cuisson %></th>
 </tr>
@@ -63,7 +63,7 @@
 	<td><%= f.text_field :preparation %></td>
 	<td><%= f.text_field :cuisson %></td>
 </tr>
-<tr>
+<tr align="left">
 	<th><%= f.label :marinage %></th>
 	<th><%= f.label :portion %></th>
 </tr>
@@ -71,45 +71,45 @@
 	<td><%= f.text_field :marinage %></td>
 	<td><%= f.text_field :portion %></td>
 </tr>
-<tr>
+<tr align="left">
 	<th colspan="2"><%= f.label :ingredient %></th>
 </tr>
 <tr>
 	<td colspan="2"><%= f.text_area :ingredient,:class => "tinymce", :cols => 90 %></td>
 </tr>
-<tr>
+<tr align="left">
 	<th colspan="2"><%= f.label :instruction %></th>
 </tr>
 <tr>
 	<td colspan="2"><%= f.text_area :instruction,:class => "tinymce", :rows => 20, :cols => 90   %></td>
 </tr>
-<tr>
+<tr align="left">
 	<th colspan="2"><%= f.label :note %></th>
 </tr>
 <tr>
 	<td colspan="2"><%= f.text_area :note,:class => "tinymce", :cols => 90   %></td>
 </tr>
-<tr>
+<tr align="left">
 	<th colspan="2"><%= f.label :accompagnement %></th>
 </tr>
 <tr>
 	<td colspan="2"><%= f.text_area :accompagnement, :class => "tinymce", :cols => 40, :rows => 5  %></td>
 </tr>
-<tr>
+<tr align="left">
 	<th colspan="2"><%= f.label :vin %></th>
 </tr>
 <tr>
 	<td colspan="2"><%= f.text_area :vin,:class => "tinymce", :cols => 40, :rows => 5 %></td>
 </tr>
-<tr>
+<tr align="left">
 	<th colspan="2"><%= f.label :source %></th>
 </tr>
 <tr>
 	<td colspan="2"><%= f.text_field :source, :size => 128 %></td>
 </tr>
 </table>
-
+<br />
 <div class="actions">
-	<%= f.submit 'Soumettre' %>
+	<%= link_to 'Soumettre', "#", :id => "soumettre_recette" %>
 </div>
 <% end %>

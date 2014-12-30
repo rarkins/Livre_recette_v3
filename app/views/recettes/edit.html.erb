@@ -1,10 +1,9 @@
-<div id="intro">
+<div id="contenu">
 	<h3>Modification d'une recette</h3>
-</div>
-<div id="left">
-<%= render 'form' %>
-</div>
-<div id="right">
-<%= link_to 'Voir', @recette %> |
-<%= link_to 'Retour', recettes_path %>
+	<div align="center" class="actions">
+		<%= link_to 'Voir', @recette %> |
+		<%= link_to 'Retour', recettes_path %>
+	</div>
+	<%= render 'form' %>
+
 </div>

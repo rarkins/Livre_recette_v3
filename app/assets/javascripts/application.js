@@ -53,3 +53,8 @@ $(function() {
     $('#edit_comment').submit();
   });
 });
+$(function() {
+  $('#soumettre_recette').click(function() {
+    $('#new_recette').submit();
+  });
+});
