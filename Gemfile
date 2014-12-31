@@ -12,7 +12,6 @@ gem 'tinymce-rails'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'attachinary'
-gem 'letsrate', "1.0.8"
 gem 'devise_security_extension'
 gem 'rails_email_validator'
 gem "recaptcha", :require => "recaptcha/rails"
