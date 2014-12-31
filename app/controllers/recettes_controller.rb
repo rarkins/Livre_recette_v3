@@ -92,17 +92,10 @@ class RecettesController < ApplicationController
   def update
     @current_page = "recettes"
     @recette = Recette.find(params[:id])
-    params[:recette][:category_ids] ||= []
+    #params[:recette][:category_ids] ||= []
 
-    respond_to do |format|
-      if @recette.update_attributes(params[:recette])
-        format.html { redirect_to @recette, notice: 'Recette was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @recette.errors, status: :unprocessable_entity }
-      end
-    end
+    @recette.update_attributes!(recette_params)
+    redirect_to @recette
   end
 
   # DELETE /recettes/1
@@ -117,4 +110,15 @@ class RecettesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  # Using a private method to encapsulate the permissible parameters is just a good pattern
+  # since you'll be able to reuse the same permit list between create and update. Also, you
+  # can specialize this method with per-user checking of permissible attributes.
+  def recette_params
+    params.require(:recette).permit(:user_id, :ingredient, :instruction, :portion, :preparation, :titre, :category_ids, :photo, :vin, :source, :note, :marinage, :cuisson, :accompagnement, :signature, :created_at, :tags, :bytes, :type, :url, :secure_url, :etag, :public_id, :version, :width, :height, :format, :resource_type)
+  end
+
 end
+

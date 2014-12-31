@@ -55,6 +55,6 @@ $(function() {
 });
 $(function() {
   $('#soumettre_recette').click(function() {
-    $('#new_recette').submit();
+    $('#edit_comment').submit();
   });
 });
