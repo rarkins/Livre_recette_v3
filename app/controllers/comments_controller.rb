@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
 
   before_filter :do_authentication_comments, only: [:edit, :update, :destroy]
   before_filter :signed_in?, only: [:new]
- 
   def new
     @recette = Recette.find(params[:recette_id])
     @comment = @recette.comments.new(:user_id => current_user[:id], :recette_id => @recette[:id])
@@ -49,15 +48,9 @@ class CommentsController < ApplicationController
     @recette = @comment.recette_id
     @comment[:content] = params[:comment][:content]
 
-    respond_to do |format|
-      if @comment.update_attributes(params[:recette])
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
+    @comment.update_attributes!(comments_params)
+    redirect_to @comment, notice: 'Comment was successfully updated.'
+
   end
 
   def destroy
@@ -85,6 +78,13 @@ class CommentsController < ApplicationController
       @comment = Comment.find(an_id)
       @comment[:user_id] == current_user[:id]
     end
+  end
+
+  # Using a private method to encapsulate the permissible parameters is just a good pattern
+  # since you'll be able to reuse the same permit list between create and update. Also, you
+  # can specialize this method with per-user checking of permissible attributes.
+  def comments_params
+    params.require(:comment).permit(:content)
   end
 
 end

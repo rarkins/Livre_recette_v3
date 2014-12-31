@@ -71,7 +71,7 @@ class RecettesController < ApplicationController
   # POST /recettes.json
   def create
     @current_page = "recettes"
-    @recette = Recette.new(params[:recette])
+    @recette = Recette.new(recette_params)
     @recette.user_id = current_user[:id]
     if params[:comment] != nil then
       @comment = @recette.comments.new(:content => params[:comment][:content], :user_id => current_user[:id], :recette_id => @recette[:id])
@@ -117,7 +117,7 @@ class RecettesController < ApplicationController
   # since you'll be able to reuse the same permit list between create and update. Also, you
   # can specialize this method with per-user checking of permissible attributes.
   def recette_params
-    params.require(:recette).permit(:user_id, :ingredient, :instruction, :portion, :preparation, :titre, :category_ids, :photo, :vin, :source, :note, :marinage, :cuisson, :accompagnement, :signature, :created_at, :tags, :bytes, :type, :url, :secure_url, :etag, :public_id, :version, :width, :height, :format, :resource_type)
+    params.require(:recette).permit( {:category_ids => []}, :user_id, :ingredient, :instruction, :portion, :preparation, :titre, :vin, :source, :note, :marinage, :cuisson, :accompagnement, :photo, :photos_attributes => [:signature, :created_at, :tags, :bytes, :type, :url, :secure_url, :etag, :public_id, :version, :width, :height, :format, :resource_type])
   end
 
 end

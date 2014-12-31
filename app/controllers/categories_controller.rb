@@ -53,7 +53,7 @@ class CategoriesController < ApplicationController
   # POST /categories.json
   def create
     @current_page = "categories"
-    @category = Category.new(params[:category])
+    @category = Category.new(category_params)
 
     respond_to do |format|
       if @category.save
@@ -72,15 +72,8 @@ class CategoriesController < ApplicationController
     @current_page = "categories"
     @category = Category.find(params[:id])
 
-    respond_to do |format|
-      if @category.update_attributes(params[:category])
-        format.html { redirect_to @category, notice: 'Categorie was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
-    end
+    @category.update_attributes!(category_params)
+    redirect_to category_path(@category)
   end
 
   # DELETE /categories/1
@@ -101,6 +94,13 @@ class CategoriesController < ApplicationController
 
   def recettes_pour_category(une_categorie)
     @recettes = Category.find(une_categorie).recettes.order("titre asc")
+  end
+
+  # Using a private method to encapsulate the permissible parameters is just a good pattern
+  # since you'll be able to reuse the same permit list between create and update. Also, you
+  # can specialize this method with per-user checking of permissible attributes.
+  def category_params
+    params.require(:category).permit(:nom)
   end
 
 end

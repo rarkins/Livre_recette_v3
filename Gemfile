@@ -15,8 +15,7 @@ gem 'attachinary'
 gem 'devise_security_extension'
 gem 'rails_email_validator'
 gem "recaptcha", :require => "recaptcha/rails"
-gem 'protected_attributes'
-gem "pg"
+gem "pg"  
 group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
