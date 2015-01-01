@@ -205,6 +205,10 @@ $mediaMinWidth: 480px;
 			padding-right:60px;
 			font-family:           $helvetica;
 			font-size:21px;
+			ul {
+			     list-style-type: circle;
+			}
+			
 			a {
 					font-family:        $helvetica;
 					text-decoration: none;
@@ -266,7 +270,7 @@ $mediaMinWidth: 480px;
 							text-align: left;
 							color:#000000;
 							font-weight:bold;
-						} 	
+						}
 			}
 @include media( "retina" ){
     font-size:16px;

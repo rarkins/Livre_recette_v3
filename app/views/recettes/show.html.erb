@@ -26,109 +26,96 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-			<table width="100%" border="0">
+			<ul>
 				<%
-				count = 1
-				just_changed = false
 				@recette.categories.each do |categorie|
 				%>
-				<% if just_changed then %>
-				<tr>
-					<% just_changed = false %>
-					<% end %>
-					<td><%= categorie.nom %></td>
-					<% if (count % 4 == 0) then %>
-				</tr>
-				<% just_changed = true %>
+				<li>
+					<%= categorie.nom %>
+				</li>
 				<% end %>
-				<%
-				count += 1
-				end
-				%>
-				<%= raw(fill_blanks(count)) %>
+			</ul></td>
 		</tr>
-	</table></td>
-	</tr>
-	<tr align="left">
-		<th>Preparation:</th>
-		<th>Cuisson:</th>
-	</tr>
-	<tr>
-		<td><%= @recette.preparation %></td>
-		<td><%= @recette.cuisson %></td>
-	</tr>
-	<tr align="left">
-		<th>Marinage:</th>
-		<th>Portion:</th>
-	</tr>
-	<tr>
-		<td><%= @recette.marinage %></td>
-		<td><%= @recette.portion %></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-		<hr />
-		</td>
-	</tr>
-	<tr align="left">
-		<th colspan="2">Ingredients:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.ingredient) %></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-		<hr />
-		</td>
-	</tr>
-	<tr align="left">
-		<th colspan="2">Instructions:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.instruction) %></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-		<hr />
-		</td>
-	</tr>
-	<tr align="left">
-		<th colspan="2">Note:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.note) %></td>
-	</tr>
-	<tr align="left">
-		<th colspan="2">Accompagnement:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.accompagnement) %></td>
-	</tr>
-	<tr align="left">
-		<th colspan="2">Vin:</th>
-	</tr>
-	<tr>
-		<td colspan="2" class="td_padded"><%= raw(@recette.vin) %></td>
-	</tr>
-	<tr align="left">
-		<th colspan="2">Source:</th>
-	</tr>
-	<tr>
-		<td colspan="2"><% if check_if_link(@recette[:source]) then %> <a href="<%= @recette[:source] %>" target ="_blank"><%= @recette[:source] %></a> <% else %>
-		<%= @recette[:source] %>
-		<% end %></td>
-	</tr>
-	<tr align="left">
-		<th colspan="2">Auteur:</th>
-	</tr>
-	<tr align="left">
-		<td colspan="2"><%= link_to get_username(@recette[:user_id]), user_path(@recette[:user_id]) %></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-		<hr />
-		</td>
-	</tr>
+		<tr align="left">
+			<th>Preparation:</th>
+			<th>Cuisson:</th>
+		</tr>
+		<tr>
+			<td><%= @recette.preparation %></td>
+			<td><%= @recette.cuisson %></td>
+		</tr>
+		<tr align="left">
+			<th>Marinage:</th>
+			<th>Portion:</th>
+		</tr>
+		<tr>
+			<td><%= @recette.marinage %></td>
+			<td><%= @recette.portion %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<tr align="left">
+			<th colspan="2">Ingredients:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.ingredient) %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<tr align="left">
+			<th colspan="2">Instructions:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.instruction) %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+		<tr align="left">
+			<th colspan="2">Note:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.note) %></td>
+		</tr>
+		<tr align="left">
+			<th colspan="2">Accompagnement:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.accompagnement) %></td>
+		</tr>
+		<tr align="left">
+			<th colspan="2">Vin:</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="td_padded"><%= raw(@recette.vin) %></td>
+		</tr>
+		<tr align="left">
+			<th colspan="2">Source:</th>
+		</tr>
+		<tr>
+			<td colspan="2"><% if check_if_link(@recette[:source]) then %> <a href="<%= @recette[:source] %>" target ="_blank"><%= @recette[:source] %></a> <% else %>
+			<%= @recette[:source] %>
+			<% end %></td>
+		</tr>
+		<tr align="left">
+			<th colspan="2">Auteur:</th>
+		</tr>
+		<tr align="left">
+			<td colspan="2"><%= link_to get_username(@recette[:user_id]), user_path(@recette[:user_id]) %></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
 	</table>
 	<div id="comments">
 		<% if current_user then %>
