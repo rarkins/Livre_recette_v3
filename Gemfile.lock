@@ -113,6 +113,7 @@ GEM
     newrelic_rpm (3.9.8.273)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
+    observr (1.0.5)
     orm_adapter (0.5.0)
     pg (0.21.0)
     rack (1.6.0)
@@ -209,7 +210,6 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
-    watchr (0.7)
     web-console (2.0.0)
       activemodel (~> 4.0)
       binding_of_caller (>= 0.7.2)
@@ -234,6 +234,7 @@ DEPENDENCIES
   factory_girl_rails
   jquery-rails
   newrelic_rpm
+  observr
   pg (= 0.21.0)
   rails (~> 4.2.0)
   rails_12factor
@@ -245,7 +246,6 @@ DEPENDENCIES
   thin
   tinymce-rails
   uglifier (>= 1.0.3)
-  watchr
   web-console (~> 2.0)
 
 RUBY VERSION
