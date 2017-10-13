@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.5"
+ruby "2.3.3"
 gem 'rails', '~> 4.2.0'
 
 # Bundle edge Rails instead:
@@ -15,7 +15,7 @@ gem 'attachinary'
 gem 'devise_security_extension'
 gem 'rails_email_validator'
 gem "recaptcha", :require => "recaptcha/rails"
-gem "pg"  
+gem 'pg', '0.21.0'
 group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
