@@ -1,4 +1,5 @@
 @import "bourbon";
+
 /*
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
@@ -18,7 +19,6 @@
 * MIT license: http://www.opensource.org/licenses/mit-license.php
 */
 
-
 // Predefined Break-points
 $mediaMaxWidth: 1260px;
 $mediaBp1Width: 960px;
@@ -26,17 +26,17 @@ $mediaMinWidth: 480px;
 
 @function translate-media-condition($c) {
   $condMap: (
-    "screen": "only screen",
-    "print": "only print",
-    "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
-     ">maxWidth": "(min-width: #{$mediaMaxWidth + 1})",
-    "<maxWidth": "(max-width: #{$mediaMaxWidth})",    
-    ">bp1Width": "(min-width: #{$mediaBp1Width + 1})",
-    "<bp1Width": "(max-width: #{$mediaBp1Width})",
-    ">minWidth": "(min-width: #{$mediaMinWidth + 1})",
-    "<minWidth": "(max-width: #{$mediaMinWidth})"
+          "screen": "only screen",
+          "print": "only print",
+          "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+          ">maxWidth": "(min-width: #{$mediaMaxWidth + 1})",
+          "<maxWidth": "(max-width: #{$mediaMaxWidth})",
+          ">bp1Width": "(min-width: #{$mediaBp1Width + 1})",
+          "<bp1Width": "(max-width: #{$mediaBp1Width})",
+          ">minWidth": "(min-width: #{$mediaMinWidth + 1})",
+          "<minWidth": "(max-width: #{$mediaMinWidth})"
   );
-  @return map-get( $condMap, $c );
+  @return map-get($condMap, $c);
 }
 
 // The mdia mixin
@@ -44,12 +44,14 @@ $mediaMinWidth: 480px;
   $query: "";
   @each $arg in $args {
     $op: "";
-    @if ( $query != "" ) {
+    @if ($query != "") {
       $op: " and ";
     }
     $query: $query + $op + translate-media-condition($arg);
   }
-  @media #{$query}  { @content; }
+  @media #{$query}  {
+    @content;
+  }
 }
 
 // 57656B => 1er bandeau du haut
@@ -60,242 +62,262 @@ $mediaMinWidth: 480px;
 // CBE8EA => couleur TR alterne
 
 #header {
-			position: absolute;
-			top: 50px;
-			width: 100%;
-			min-width:920px;
-			background-color: #FDE8E2;
-			font-family:           $helvetica;
-			h1 {
-					text-align: right;
-					padding-right: 25px;
-					margin-top: -30px;
-					font-size: modular-scale(3);
-					.nos{
-							color:#AFB8D0;	
-					}
-					a {
-							color: #000000;
-							text-decoration: none;
-					}
-			}
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  min-width: 920px;
+  background-color: #4F84C4;
+  font-family: $helvetica;
+  h1 {
+    text-align: right;
+    padding-right: 25px;
+    margin-top: -30px;
+    font-size: modular-scale(3);
+    .element {
+    }
+    #element-0 {
+      color: #FFFFFF;
+      margin-right: 175px;
+      margin-bottom: -25px;
+      z-index: 10;
+    }
+    #element-1 {
+      z-index: 1;
+      margin-right: 25px;
+    }
+    a {
+      color: #000000;
+      text-decoration: none;
+    }
+  }
 
-			#search {
-						margin-top: 15px;
-						margin-left: 20px;
-						a {
-								color: #FDE8E2;
-								text-decoration: none;
-								background-color: #57656B;
-								padding-left: 5px;
-								padding-right: 5px;
-								padding-top: 5px;
-								padding-bottom: 5px;
-								margin-left:15px;
-								@include border-top-radius(5px);
-								@include border-right-radius(5px);
-								@include border-bottom-radius(5px);
-								@include border-left-radius(5px);
-						}
-						a:hover {
-									color: #DF9287;
-						}
-			}
+  #search {
+    margin-top: 15px;
+    margin-left: 20px;
+    a {
+      color: #EBCED5;
+      text-decoration: none;
+      background-color: #00585E;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-left: 15px;
+      @include border-top-radius(5px);
+      @include border-right-radius(5px);
+      @include border-bottom-radius(5px);
+      @include border-left-radius(5px);
+    }
+    a:hover {
+      color: #DF3F32;
+    }
+  }
 
 }
+
 #topmenu {
-			top: 0px;
-			height: 50px;
-			width: 100%;
-			margin-top: -30px;
-			padding-top: 30px;
-			background-color: #57656B;
-			ul {
-					font-family:          $helvetica;
-					list-style-type: none;
-			}
-			a {
-					color: #FDE8E2;
-					text-decoration: none;
-					font-size:16px;			
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  margin-top: -30px;
+  padding-top: 30px;
+  background-color: #223A5E;
+  ul {
+    font-family: $helvetica;
+    list-style-type: none;
+  }
+  a {
+    color: #C46215;
+    text-decoration: none;
+    font-size: 16px;
 
-			}
-			.current{
-						color:#DF9287;
-			}
-			a:hover {
-						color: #DF9287;
-			}
-			li {
-					display: inline;
-					padding-right: 25px;
-			}
+  }
+  .current {
+    color: #DF3F32;
+  }
+  a:hover {
+    color: #EBCED5;
+  }
+  li {
+    display: inline;
+    padding-right: 25px;
+  }
 }
+
 #content {
-			padding-top:60px;
-			margin-left:40px;
-			padding-right:60px;
-			font-family:           $helvetica;
-			font-size:21px;
-			a {
-					font-family:        $helvetica;
-					text-decoration: none;
-					color: #DF9287;
-			}
-			a:hover {
-						color: #000000;
-			}
-			td {
-					padding-top:5px;
-					padding-bottom:5px;
-					padding-left:5px;
-			}
-			tr:hover {
-          				background-color: #AFB8D0;
-          				a{
-          				  color:#FDE8E2;
-          				}
-        	}
-			.nouvelle_recette {
-								color: #FDE8E2;
-								text-decoration: none;
-								background-color: #57656B;
-								padding-left: 5px;
-								padding-right: 5px;
-								padding-top: 5px;
-								padding-bottom: 5px;
-								margin-left:15px;
-								@include border-top-radius(5px);
-								@include border-right-radius(5px);
-								@include border-bottom-radius(5px);
-								@include border-left-radius(5px);
-						}
-			th {
-				color:#000000;
-			}
-			h3{
-				padding-top:15px;
-				color:#000000;
-			}
-			h2 {
-				color:#57656B;
-			}			
+  padding-top: 60px;
+  margin-left: 40px;
+  padding-right: 60px;
+  font-family: $helvetica;
+  font-size: 21px;
+  a {
+    font-family: $helvetica;
+    text-decoration: none;
+    color: #5C2C35;
+  }
+  a:hover {
+    color: #DF3F32;
+  }
+  td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+  tr:hover {
+    background-color: #AFB8D0;
+    a {
+      color: #DF3F32;
+    }
+  }
+  .nouvelle_recette {
+    color: #FDE8E2;
+    text-decoration: none;
+    background-color: #223A5E;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+    @include border-top-radius(5px);
+    @include border-right-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+  }
+  th {
+    color: #000000;
+  }
+  h3 {
+    padding-top: 15px;
+    color: #000000;
+  }
+  h2 {
+    color: #57656B;
+  }
 
-@include media( "retina" ){
-    font-size:16px;
-  };
-  @include media( "screen", ">bp1Width", "<maxWidth" ){
+  @include media("retina") {
+    font-size: 21px;
+  }
+;
+  @include media("screen", ">bp1Width", "<maxWidth") {
     // Cell phone dimension
-    font-size:36px;
-    
-  };
-  @include media( "screen", ">minWidth", "<bp1Width" ){
+    font-size: 21px;
+
+  }
+;
+  @include media("screen", ">minWidth", "<bp1Width") {
     // small screen
-    font-size:36px;
-  };
-  @include media( "screen", "<minWidth" ){
+    font-size: 16px;
+  }
+;
+  @include media("screen", "<minWidth") {
     // very small screen
-    font-size:16px;
-  };
+    font-size: 16px;
+  }
+;
 
 }
+
 #contenu {
-			padding-top:60px;
-			margin-left:40px;
-			padding-right:60px;
-			font-family:           $helvetica;
-			font-size:21px;
-			ul {
-			     list-style-type: circle;
-			}
-			
-			a {
-					font-family:        $helvetica;
-					text-decoration: none;
-					color: #DF9287;
-			}
-			a:hover {
-						color: #000000;
-			}
-			td {
-					padding-top:5px;
-					padding-bottom:5px;
-					padding-left:5px;
-			}
-			
-			.nouvelle_recette {
-								color: #FDE8E2;
-								text-decoration: none;
-								background-color: #57656B;
-								padding-left: 5px;
-								padding-right: 5px;
-								padding-top: 5px;
-								padding-bottom: 5px;
-								margin-left:15px;
-								@include border-top-radius(5px);
-								@include border-right-radius(5px);
-								@include border-bottom-radius(5px);
-								@include border-left-radius(5px);
-						}
-			th {
-				color:#000000;
-			}
-			h3{
-				padding-top:15px;
-				color:#000000;
-			}
-			h2 {
-				color:#57656B;
-			}
-			.actions {
-						a {
-								color: #FDE8E2;
-								text-decoration: none;
-								background-color: #57656B;
-								padding-left: 5px;
-								padding-right: 5px;
-								padding-top: 5px;
-								padding-bottom: 5px;
-								margin-left:10px;
-								margin-right:10px;
-								@include border-top-radius(5px);
-								@include border-right-radius(5px);
-								@include border-bottom-radius(5px);
-								@include border-left-radius(5px);
-						}
-						a:hover {
-									color: #DF9287;
-						}
-						label {
-							text-align: left;
-							color:#000000;
-							font-weight:bold;
-						}
-			}
-@include media( "retina" ){
-    font-size:16px;
-  };
-  @include media( "screen", ">bp1Width", "<maxWidth" ){
+  padding-top: 60px;
+  margin-left: 40px;
+  padding-right: 60px;
+  font-family: $helvetica;
+  font-size: 21px;
+  ul {
+    list-style-type: circle;
+  }
+
+  a {
+    font-family: $helvetica;
+    text-decoration: none;
+    color: #DF9287;
+  }
+  a:hover {
+    color: #000000;
+  }
+  td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+
+  .nouvelle_recette {
+    color: #FDE8E2;
+    text-decoration: none;
+    background-color: #57656B;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+    @include border-top-radius(5px);
+    @include border-right-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+  }
+  th {
+    color: #000000;
+  }
+  h3 {
+    padding-top: 15px;
+    color: #000000;
+  }
+  h2 {
+    color: #57656B;
+  }
+  .actions {
+    a {
+      color: #FDE8E2;
+      text-decoration: none;
+      background-color: #223A5E;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-left: 10px;
+      margin-right: 10px;
+      @include border-top-radius(5px);
+      @include border-right-radius(5px);
+      @include border-bottom-radius(5px);
+      @include border-left-radius(5px);
+    }
+    a:hover {
+      color: #DF9287;
+    }
+    label {
+      text-align: left;
+      color: #000000;
+      font-weight: bold;
+    }
+  }
+  @include media("retina") {
+    font-size: 21px;
+  }
+;
+  @include media("screen", ">bp1Width", "<maxWidth") {
     // Cell phone dimension
-    font-size:48px;
-    
-  };
-  @include media( "screen", ">minWidth", "<bp1Width" ){
+    font-size: 21px;
+
+  }
+;
+  @include media("screen", ">minWidth", "<bp1Width") {
     // small screen
-    font-size:16px;
-  };
-  @include media( "screen", "<minWidth" ){
+    font-size: 16px;
+  }
+;
+  @include media("screen", "<minWidth") {
     // very small screen
-    font-size:16px;
-  };
+    font-size: 16px;
+  }
+;
 
 }
 
 #messages {
-	margin-left: 	40px;
-	margin-top:		100px;
-	margin-bottom:	-60px;
-	font-family:    $helvetica;
-	font-weight:	bold;
-	color:			#FF0000;
+  margin-left: 40px;
+  margin-top: 100px;
+  margin-bottom: -60px;
+  font-family: $helvetica;
+  font-weight: bold;
+  color: #FF0000;
 }
