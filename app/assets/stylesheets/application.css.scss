@@ -54,8 +54,8 @@ $mediaMinWidth: 480px;
   }
 }
 
-// 57656B => 1er bandeau du haut
-// FDE8E2 => 2e bandeau du haut
+// 4F84C4 => 1er bandeau du haut
+// 4F84C4 => 2e bandeau du haut
 // DF9287 => liens
 // 000000 => mauve texte
 // AFB8D0 => "nos" texte
@@ -66,7 +66,7 @@ $mediaMinWidth: 480px;
   top: 50px;
   width: 100%;
   min-width: 920px;
-  background-color: #4F84C4;
+  background-color: #8E918F;
   font-family: $helvetica;
   h1 {
     text-align: right;
@@ -95,9 +95,9 @@ $mediaMinWidth: 480px;
     margin-top: 15px;
     margin-left: 20px;
     a {
-      color: #EBCED5;
+      color: #ffffff;
       text-decoration: none;
-      background-color: #00585E;
+      background-color: #223A5E;
       padding-left: 5px;
       padding-right: 5px;
       padding-top: 5px;
@@ -109,7 +109,8 @@ $mediaMinWidth: 480px;
       @include border-left-radius(5px);
     }
     a:hover {
-      color: #DF3F32;
+      color: #ffffff;
+      background-color: #4F84C4;
     }
   }
 
@@ -127,7 +128,7 @@ $mediaMinWidth: 480px;
     list-style-type: none;
   }
   a {
-    color: #C46215;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
 
@@ -164,9 +165,9 @@ $mediaMinWidth: 480px;
     padding-left: 5px;
   }
   tr:hover {
-    background-color: #AFB8D0;
+    background-color: #00585E;
     a {
-      color: #DF3F32;
+      color: #8E918F;
     }
   }
   .nouvelle_recette {
@@ -184,11 +185,11 @@ $mediaMinWidth: 480px;
     @include border-left-radius(5px);
   }
   th {
-    color: #000000;
+    color: #C46215;
   }
   h3 {
     padding-top: 15px;
-    color: #000000;
+    color: #DF3F32;
   }
   h2 {
     color: #57656B;
@@ -244,7 +245,6 @@ $mediaMinWidth: 480px;
   .nouvelle_recette {
     color: #FDE8E2;
     text-decoration: none;
-    background-color: #57656B;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 5px;
@@ -256,11 +256,11 @@ $mediaMinWidth: 480px;
     @include border-left-radius(5px);
   }
   th {
-    color: #000000;
+    color: #C46215;
   }
   h3 {
     padding-top: 15px;
-    color: #000000;
+    color: #DF3F32;
   }
   h2 {
     color: #57656B;

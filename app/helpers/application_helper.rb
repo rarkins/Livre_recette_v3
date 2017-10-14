@@ -1,27 +1,20 @@
+# helper module is accessible from the globally throughout the application
+# consider teh scope of the helper before adding it at this level
 module ApplicationHelper
-  def current_page?(aPage)
-    if aPage == @current_page then
-      "current"
-    end
+  def current_page?(a_page)
+    'current' if a_page == @current_page
   end
 
   def get_username(an_id)
-    
     email = User.find(an_id).email
-    
-    email[0..email.index("@")-1]
-    
+    email[0..email.index('@') - 1]
   end
 
   def check_if_link(a_source)
-    if a_source.index("http://") then
-    true
-    else
-      if a_source.index("https://") then
+    if a_source.index('http://') || a_source.index('https://')
       true
-      else
+    else
       false
-      end
     end
   end
 
@@ -34,40 +27,32 @@ module ApplicationHelper
   end
 
   def user_is_author?
-    if current_user then
+    return unless current_user
 
-      if params[:id] == nil then
-        @recette = Recette.find(params[:recette_id])
-      else
-        @recette = Recette.find(params[:id])
-      end
-      @recette[:user_id] == current_user[:id]
-    end
+    @recette = if params[:id].nil?
+                 Recette.find(params[:recette_id])
+               else
+                 Recette.find(params[:id])
+               end
+    @recette[:user_id] == current_user[:id]
   end
 
   def user_is_author_comments?(an_id)
-    if current_user then
-      @comment = Comment.find(an_id)
-      @comment[:user_id] == current_user[:id]
-    end
+    return unless current_user
+    @comment = Comment.find(an_id)
+    @comment[:user_id] == current_user[:id]
   end
 
   def user_is_admin?
-    if current_user then
-      current_user.admin
-    end
+    current_user.admin if current_user
   end
 
   def do_authentication
-    if user_is_author? or user_is_admin? then
-    true
-    end
+    true if user_is_author? || user_is_admin?
   end
 
   def do_authentication_comments(an_id)
-    if user_is_author_comments?(an_id) or user_is_admin? then
-    true
-    end
+    true if user_is_author_comments?(an_id) || user_is_admin?
   end
 
   def get_user_id_name(an_id)
@@ -75,19 +60,18 @@ module ApplicationHelper
   end
 
   def generate_title
-    if @recette != nil then
+    if !@recette.nil?
       "#{@recette[:titre]} - Nos Recettes"
     else
-      "Nos Recettes"
+      'Nos Recettes'
     end
   end
-  
+
   def get_row_color(a_count)
-    if a_count % 2 == 1 then
-      "#ffffff"
+    if a_count.odd?
+      '#ffffff'
     else
-      "#CBE8EA"
+      '#9C9A40'
     end
   end
-  
 end
