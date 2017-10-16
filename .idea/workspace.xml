@@ -347,7 +347,7 @@
       <workItem from="1507897868286" duration="6869000" />
       <workItem from="1507909654946" duration="1017000" />
       <workItem from="1507910750077" duration="4209000" />
-      <workItem from="1507918678033" duration="12048000" />
+      <workItem from="1507918678033" duration="12056000" />
     </task>
     <task id="LOCAL-00001" summary="ruby 2.3.3 support">
       <created>1507916653731</created>
@@ -391,11 +391,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507943406944</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new UI colors (still working)">
+      <created>1508155874080</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1508155874080</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24143000" />
+    <option name="totallyTimeSpent" value="24151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
