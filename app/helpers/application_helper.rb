@@ -69,9 +69,11 @@ module ApplicationHelper
 
   def get_row_color(a_count)
     if a_count.odd?
-      '#ffffff'
+      #'#ffffff'
+      'odd'
     else
-      '#9C9A40'
+      #'#8E918F'
+      'even'
     end
   end
 end

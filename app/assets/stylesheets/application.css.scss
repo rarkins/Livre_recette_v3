@@ -145,6 +145,20 @@ $mediaMinWidth: 480px;
   }
 }
 
+// table headers
+th {
+  color: #C46215;
+}
+
+h3 {
+  padding-top: 15px;
+  color: #DF3F32;
+}
+
+h2 {
+  color: #57656B;
+}
+
 #content {
   padding-top: 60px;
   margin-left: 40px;
@@ -165,10 +179,23 @@ $mediaMinWidth: 480px;
     padding-left: 5px;
   }
   tr:hover {
-    background-color: #00585E;
+    background-color: #223A5E;
     a {
-      color: #8E918F;
+      color: #EBCED5;
     }
+    white {
+      background-color: #ffffff;
+    }
+  }
+  .even {
+    color: #ffffff;
+    background-color: #57656B;
+    a {
+      color: #ffffff;
+    }
+  }
+  .odd {
+    background-color: #ffffff;
   }
   .nouvelle_recette {
     color: #FDE8E2;
@@ -183,16 +210,6 @@ $mediaMinWidth: 480px;
     @include border-right-radius(5px);
     @include border-bottom-radius(5px);
     @include border-left-radius(5px);
-  }
-  th {
-    color: #C46215;
-  }
-  h3 {
-    padding-top: 15px;
-    color: #DF3F32;
-  }
-  h2 {
-    color: #57656B;
   }
 
   @include media("retina") {
@@ -255,16 +272,7 @@ $mediaMinWidth: 480px;
     @include border-bottom-radius(5px);
     @include border-left-radius(5px);
   }
-  th {
-    color: #C46215;
-  }
-  h3 {
-    padding-top: 15px;
-    color: #DF3F32;
-  }
-  h2 {
-    color: #57656B;
-  }
+
   .actions {
     a {
       color: #FDE8E2;
