@@ -344,7 +344,7 @@
       <workItem from="1507897868286" duration="6869000" />
       <workItem from="1507909654946" duration="1017000" />
       <workItem from="1507910750077" duration="4209000" />
-      <workItem from="1507918678033" duration="12499000" />
+      <workItem from="1507918678033" duration="12571000" />
     </task>
     <task id="LOCAL-00001" summary="ruby 2.3.3 support">
       <created>1507916653731</created>
@@ -406,7 +406,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24594000" />
+    <option name="totallyTimeSpent" value="24666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
