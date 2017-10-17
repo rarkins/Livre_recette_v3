@@ -14,7 +14,7 @@
 			</td>
 		</tr>
 		<% @categories.each do |category| %>
-		<tr bgcolor="<%= get_row_color(@pos) %>">
+		<tr class="<%= get_row_color(@pos) %>">
 			<td><%= link_to category.nom, category %></td>
 			<td><%= pluralize(nombre_recette_pour_category(category), "recette") %></td>
 			<td> <% if user_is_admin? then %>

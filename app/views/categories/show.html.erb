@@ -22,7 +22,7 @@
 			</td>
 		</tr>
 		<% @recettes.each do |recette| %>
-		<tr bgcolor="<%= get_row_color(@pos) %>">
+		<tr class="<%= get_row_color(@pos) %>">
 			<td> <% if recette.photo then %>
 			<%= link_to(cl_image_tag(recette.photo.path, { size: '125x125', crop: :fit }), "http://res.cloudinary.com/livre-recettes/image/upload/#{recette.photo.path}", target: :blank)%>
 			<% end %> </td>

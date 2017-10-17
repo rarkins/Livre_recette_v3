@@ -36,4 +36,5 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :flash => { :info => "Seul un administrateur peut acceder a cette page" }
   end
 
+
 end
