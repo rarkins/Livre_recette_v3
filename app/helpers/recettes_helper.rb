@@ -1,7 +1,7 @@
 # helper module is accessible from the Recettes views
 module RecettesHelper
   def fill_blanks(count)
-    count -= 1
+    count -= 1 if count > 0
     the_string = ''
     while count % 4 != 0
       the_string += '<td></td>'
