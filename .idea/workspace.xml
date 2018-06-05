@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d0689c6-e99e-4acc-b0f9-d8e0f56f8cab" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/helpers/recettes_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/recettes_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/recettes/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recettes/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recettes/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recettes/new.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -38,15 +36,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/recettes/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/recettes/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="129">
-              <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+              <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -80,8 +69,8 @@
       <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+            <state relative-caret-position="179">
+              <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -96,6 +85,7 @@
       <find>tr</find>
       <find>$helvetica</find>
       <find>tinymce</find>
+      <find>if count % 4.zero?</find>
     </findStrings>
     <replaceStrings>
       <replace>modular-scale</replace>
@@ -135,9 +125,9 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/views/recettes/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/recettes_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/recettes/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/recettes/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -414,7 +404,7 @@
       <workItem from="1508954283578" duration="568000" />
       <workItem from="1512047131105" duration="453000" />
       <workItem from="1528135369882" duration="3105000" />
-      <workItem from="1528221520346" duration="3465000" />
+      <workItem from="1528221520346" duration="3856000" />
     </task>
     <task id="LOCAL-00001" summary="ruby 2.3.3 support">
       <created>1507916653731</created>
@@ -490,22 +480,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33368000" />
+    <option name="totallyTimeSpent" value="33759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="23" width="1786" height="955" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22247706" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22247706" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50807756" side_tool="true" weight="0.252443" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5097477" side_tool="true" weight="0.525641" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="8" sideWeight="0.4994266" weight="0.32983682" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4918256" weight="0.32912987" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49192247" weight="0.252443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49046323" visible="true" weight="0.525641" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4902523" visible="true" weight="0.525641" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -776,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -797,10 +780,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recettes/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/recettes/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+        <state relative-caret-position="90">
+          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -811,10 +794,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recettes/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="179">
+          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recettes/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
         </state>
       </provider>
     </entry>

@@ -43,7 +43,7 @@
 				<% end %>
 				<td> <%= check_box_tag "recette[category_ids][]", category.id, @recette.categories.include?(category) %>
 				<%= category.nom %> </td>
-				<% if count % 4.zero? %>
+				<% if (count % 4).zero? %>
 			</tr>
 			<% just_changed = true %>
 			<% end %>
