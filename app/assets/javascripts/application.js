@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require tinymce-jquery
+//= require quill.global
 //= require cloudinary
 //= require attachinary
 //= require application
@@ -58,3 +58,4 @@ $(function() {
     $('#edit_comment').submit();
   });
 });
+

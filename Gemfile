@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.3'
+ruby '2.4.3'
 gem 'rails', '~> 4.2.0'
 
 # Bundle edge Rails instead:
@@ -8,12 +8,16 @@ gem 'rails', '~> 4.2.0'
 gem 'thin'
 gem 'eventmachine'
 gem 'devise'
-gem 'tinymce-rails'
+#gem 'tinymce-rails'
+gem 'quilljs-rails' ## tinymce replacement
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'attachinary'
 gem 'devise_security_extension'
 gem 'rails_email_validator'
+
+gem 'turbolinks'
+
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'pg', '0.21.0'
 group :production do
