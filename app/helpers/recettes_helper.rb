@@ -5,7 +5,7 @@ module RecettesHelper
     the_string = ''
     while count % 4 != 0
       the_string += '<td></td>'
-      break if count % 4.zero?
+      break if (count % 4).zero?
       count += 1
     end
     the_string
