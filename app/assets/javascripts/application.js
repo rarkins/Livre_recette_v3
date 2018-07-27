@@ -60,3 +60,5 @@ $(function() {
 });
 
 //= require quill.global
+//= require quill.min
+//= require quill.global
