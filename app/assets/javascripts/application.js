@@ -20,6 +20,24 @@
 //= require quill.global
 //= require quill.min
 //= require quill.global
+
+var defaults = {
+    theme: 'snow',
+    modules: {
+        toolbar: [
+            [{ 'header': [1, 2, 3, false] }],
+            ['bold', 'italic', 'underline'],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            ['clean']
+        ]
+    }
+};
+
+//This is the global config object
+Quilljs.setDefaults(defaults)
+
+
+
 $(function() {
   $('#soumettre').click(function() {
     $('#search_form').submit();
