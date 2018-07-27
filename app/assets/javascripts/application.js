@@ -17,7 +17,9 @@
 //= require attachinary
 //= require application
 //= require_tree .
-
+//= require quill.global
+//= require quill.min
+//= require quill.global
 $(function() {
   $('#soumettre').click(function() {
     $('#search_form').submit();
@@ -58,7 +60,3 @@ $(function() {
     $('#edit_comment').submit();
   });
 });
-
-//= require quill.global
-//= require quill.min
-//= require quill.global
