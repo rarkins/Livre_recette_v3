@@ -1,0 +1,333 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_mixins
+ */
+/**
+* Conditional Media Query Mixin
+* by @sheiko (http://dsheiko.com)
+* 
+* The problem this mixin solves is explained there 
+* http://css-tricks.com/conditional-media-query-mixins/
+*
+* https://github.com/dsheiko
+* MIT license: http://www.opensource.org/licenses/mit-license.php
+*/
+/* line 64, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  min-width: 920px;
+  background-color: #8E918F;
+  font-family: helvetica;
+}
+/* line 71, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header h1 {
+  text-align: right;
+  padding-right: 25px;
+  margin-top: -30px;
+  font-size: 1.953125em;
+}
+/* line 78, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header h1 #element-0 {
+  color: #FFFFFF;
+  margin-right: 175px;
+  margin-bottom: -25px;
+  z-index: 10;
+}
+/* line 84, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header h1 #element-1 {
+  z-index: 1;
+  margin-right: 25px;
+}
+/* line 88, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header h1 a {
+  color: #000000;
+  text-decoration: none;
+}
+/* line 94, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header #search {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+/* line 97, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header #search a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #223A5E;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+/* line 111, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#header #search a:hover {
+  color: #ffffff;
+  background-color: #4F84C4;
+}
+
+/* line 119, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu {
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  margin-top: -30px;
+  padding-top: 30px;
+  background-color: #223A5E;
+}
+/* line 126, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu ul {
+  font-family: helvetica;
+  list-style-type: none;
+}
+/* line 130, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+/* line 136, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu .current {
+  color: #DF3F32;
+}
+/* line 139, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu a:hover {
+  color: #EBCED5;
+}
+/* line 142, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#topmenu li {
+  display: inline;
+  padding-right: 25px;
+}
+
+/* line 149, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+th {
+  color: #C46215;
+}
+
+/* line 153, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+h3 {
+  padding-top: 15px;
+  color: #DF3F32;
+}
+
+/* line 158, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+h2 {
+  color: #57656B;
+}
+
+/* line 162, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content {
+  padding-top: 60px;
+  margin-left: 40px;
+  padding-right: 60px;
+  font-family: helvetica;
+  font-size: 21px;
+}
+/* line 168, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content a {
+  font-family: helvetica;
+  text-decoration: none;
+  color: #5C2C35;
+}
+/* line 173, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content a:hover {
+  color: #DF3F32;
+}
+/* line 176, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+/* line 181, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content tr:hover {
+  background-color: #223A5E;
+}
+/* line 183, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content tr:hover a {
+  color: #EBCED5;
+}
+/* line 186, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content tr:hover white {
+  background-color: #ffffff;
+}
+/* line 190, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content .even {
+  color: #ffffff;
+  background-color: #57656B;
+}
+/* line 193, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content .even a {
+  color: #ffffff;
+}
+/* line 197, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content .odd {
+  background-color: #ffffff;
+}
+/* line 200, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#content .nouvelle_recette {
+  color: #FDE8E2;
+  text-decoration: none;
+  background-color: #223A5E;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi) {
+  /* line 162, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #content {
+    font-size: 21px;
+  }
+}
+@media only screen and (min-width: 961px) and (max-width: 1260px) {
+  /* line 162, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #content {
+    font-size: 21px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+  /* line 162, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #content {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  /* line 162, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #content {
+    font-size: 16px;
+  }
+}
+
+/* line 238, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu {
+  padding-top: 60px;
+  margin-left: 40px;
+  padding-right: 60px;
+  font-family: helvetica;
+  font-size: 21px;
+}
+/* line 244, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu ul {
+  list-style-type: circle;
+}
+/* line 248, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu a {
+  font-family: helvetica;
+  text-decoration: none;
+  color: #DF9287;
+}
+/* line 253, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu a:hover {
+  color: #000000;
+}
+/* line 256, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+/* line 262, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu .nouvelle_recette {
+  color: #FDE8E2;
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+/* line 277, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu .actions a {
+  color: #FDE8E2;
+  text-decoration: none;
+  background-color: #223A5E;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+/* line 292, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu .actions a:hover {
+  color: #DF9287;
+}
+/* line 295, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#contenu .actions label {
+  text-align: left;
+  color: #000000;
+  font-weight: bold;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi) {
+  /* line 238, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #contenu {
+    font-size: 21px;
+  }
+}
+@media only screen and (min-width: 961px) and (max-width: 1260px) {
+  /* line 238, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #contenu {
+    font-size: 21px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+  /* line 238, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #contenu {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  /* line 238, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+  #contenu {
+    font-size: 16px;
+  }
+}
+
+/* line 324, /mnt/c/Users/lesla/RubymineProjects/Livre_recette_v3/app/assets/stylesheets/application.css.scss */
+#messages {
+  margin-left: 40px;
+  margin-top: 100px;
+  margin-bottom: -60px;
+  font-family: helvetica;
+  font-weight: bold;
+  color: #FF0000;
+}
