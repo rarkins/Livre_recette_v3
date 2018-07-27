@@ -59,3 +59,4 @@ $(function() {
   });
 });
 
+//= require quill.global

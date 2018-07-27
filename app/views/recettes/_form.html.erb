@@ -1,3 +1,5 @@
+
+
 <%= form_for(@recette) do |f| %>
 <% if @recette.errors.any? %>
 <div id="error_explanation">
@@ -81,7 +83,10 @@
 	<th colspan="2"><%= f.label :instruction %></th>
 </tr>
 <tr>
-	<td colspan="2"><%= f.text_area :instruction,:class => 'quill_container', :rows => 20, :cols => 90   %></td>
+  <td colspan="2">
+    <%=  f.text_area :instruction, :class => 'quill_container', :cols => 90  %>
+
+  </td>
 </tr>
 <tr align="left">
 	<th colspan="2"><%= f.label :note %></th>
