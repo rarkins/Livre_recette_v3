@@ -242,14 +242,40 @@ h2 {
   display: grid;
   grid-gap: 2rem 1rem;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 90%;
   align-content: center;
 }
+
+@media only screen and (max-width: 361px) {
+  .recettes_list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .recettes_list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .recettes_list {
+    grid-template-columns: 35%;
+  }
+}
+
+
+@media only screen and (max-width: 1025px) {
+  .recettes_list {
+    grid-template-columns: 40%;
+  }
+}
+
 
 .recette {
   border: 1px solid #222;
   text-align: center;
   color: slategray;
+  min-width: 325px;
 }
 
 a.user {
@@ -263,4 +289,9 @@ a.user {
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
+}
+
+#body {
+  width: 100%;
+  height: 100%;
 }
