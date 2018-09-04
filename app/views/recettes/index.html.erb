@@ -1,27 +1,18 @@
 <div id="content">
   <h3>15 Derni&egrave;res recettes</h3>
-
-  <table width="100%%" border="0">
-    <tr align="left" class="white">
-      <th>Photo</th>
-      <th>Titre</th>
-      <th>Auteur</th>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <hr/>
-      </td>
-    </tr>
+  <div class="recettes_list">
     <% @recettes.each do |recette| %>
-        <tr class="<%= get_row_color(@pos) %>">
-          <td>
-            <% if recette.photo %>
-                <%= link_to(cl_image_tag(recette.photo.path, {size: '125x125', crop: :fit}), recette, target: '_blank') %>
-            <% end %> </td>
-          <td><%= link_to recette.titre, recette %></td>
-          <td><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]) %></td>
-        </tr>
-        <% @pos = @pos + 1 %>
+      <div class="recette">
+        <p>
+          <% if recette.photo %>
+            <%= link_to(cl_image_tag(recette.photo.path, :transformation => {:width => 275, :height => 275, :crop => "fit"}), recette, target: '_blank') %>
+          <% else %>
+            <i class="fas fa-utensils fa-5x"></i>
+          <% end %>
+        </p>
+        <p><%= link_to(recette.titre, recette, target: '_blank') %></p>
+        <p><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]), class: 'user' %></p>
+      </div>
     <% end %>
-  </table>
+  </div>
 </div>

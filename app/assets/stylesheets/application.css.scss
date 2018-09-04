@@ -8,52 +8,6 @@
  *= require_mixins
  */
 
-/**
-* Conditional Media Query Mixin
-* by @sheiko (http://dsheiko.com)
-* 
-* The problem this mixin solves is explained there 
-* http://css-tricks.com/conditional-media-query-mixins/
-*
-* https://github.com/dsheiko
-* MIT license: http://www.opensource.org/licenses/mit-license.php
-*/
-
-// Predefined Break-points
-$mediaMaxWidth: 1260px;
-$mediaBp1Width: 960px;
-$mediaMinWidth: 480px;
-
-@function translate-media-condition($c) {
-  $condMap: (
-          "screen": "only screen",
-          "print": "only print",
-          "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
-          ">maxWidth": "(min-width: #{$mediaMaxWidth + 1})",
-          "<maxWidth": "(max-width: #{$mediaMaxWidth})",
-          ">bp1Width": "(min-width: #{$mediaBp1Width + 1})",
-          "<bp1Width": "(max-width: #{$mediaBp1Width})",
-          ">minWidth": "(min-width: #{$mediaMinWidth + 1})",
-          "<minWidth": "(max-width: #{$mediaMinWidth})"
-  );
-  @return map-get($condMap, $c);
-}
-
-// The mdia mixin
-@mixin media($args...) {
-  $query: "";
-  @each $arg in $args {
-    $op: "";
-    @if ($query != "") {
-      $op: " and ";
-    }
-    $query: $query + $op + translate-media-condition($arg);
-  }
-  @media #{$query}  {
-    @content;
-  }
-}
-
 // 4F84C4 => 1er bandeau du haut
 // 4F84C4 => 2e bandeau du haut
 // DF9287 => liens
@@ -72,7 +26,6 @@ $mediaMinWidth: 480px;
     text-align: right;
     padding-right: 25px;
     margin-top: -30px;
-    font-size: modular-scale(3);
     .element {
     }
     #element-0 {
@@ -164,7 +117,6 @@ h2 {
   margin-left: 40px;
   padding-right: 60px;
   font-family: helvetica;
-  font-size: 21px;
   a {
     font-family: helvetica;
     text-decoration: none;
@@ -211,28 +163,6 @@ h2 {
     @include border-bottom-radius(5px);
     @include border-left-radius(5px);
   }
-
-  @include media("retina") {
-    font-size: 21px;
-  }
-;
-  @include media("screen", ">bp1Width", "<maxWidth") {
-    // Cell phone dimension
-    font-size: 21px;
-
-  }
-;
-  @include media("screen", ">minWidth", "<bp1Width") {
-    // small screen
-    font-size: 16px;
-  }
-;
-  @include media("screen", "<minWidth") {
-    // very small screen
-    font-size: 16px;
-  }
-;
-
 }
 
 #contenu {
@@ -240,7 +170,6 @@ h2 {
   margin-left: 40px;
   padding-right: 60px;
   font-family: helvetica;
-  font-size: 21px;
   ul {
     list-style-type: circle;
   }
@@ -298,27 +227,6 @@ h2 {
       font-weight: bold;
     }
   }
-  @include media("retina") {
-    font-size: 21px;
-  }
-;
-  @include media("screen", ">bp1Width", "<maxWidth") {
-    // Cell phone dimension
-    font-size: 21px;
-
-  }
-;
-  @include media("screen", ">minWidth", "<bp1Width") {
-    // small screen
-    font-size: 16px;
-  }
-;
-  @include media("screen", "<minWidth") {
-    // very small screen
-    font-size: 16px;
-  }
-;
-
 }
 
 #messages {
@@ -328,4 +236,31 @@ h2 {
   font-family: helvetica;
   font-weight: bold;
   color: #FF0000;
+}
+
+.recettes_list {
+  display: grid;
+  grid-gap: 2rem 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 90%;
+  align-content: center;
+}
+
+.recette {
+  border: 1px solid #222;
+  text-align: center;
+  color: slategray;
+}
+
+a.user {
+  size: 0.5rem !important;
+}
+
+.actions {
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
 }
