@@ -249,37 +249,57 @@ h2 {
   .recettes_list {
     grid-template-columns: 1fr;
   }
+  .recette {
+    font-size: 3rem;
+  }
+  .user {
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width: 412px) {
   .recettes_list {
     grid-template-columns: 1fr;
   }
+  .recette {
+    font-size: 2rem;
+  }
 }
 
 @media only screen and (max-width: 769px) {
   .recettes_list {
-    grid-template-columns: 35%;
+    grid-template-columns: 40%;
+  }
+  .recette {
+    font-size: 2rem;
+  }
+  .user {
+    font-size: 1.5rem;
   }
 }
-
 
 @media only screen and (max-width: 1025px) {
   .recettes_list {
-    grid-template-columns: 40%;
+    grid-template-columns: 50%;
+  }
+  .recette {
+    font-size: 2rem;
+  }
+  .user {
+    font-size: 1.5rem;
   }
 }
-
 
 .recette {
   border: 1px solid #222;
   text-align: center;
   color: slategray;
   min-width: 325px;
+  vertical-align: center;
 }
 
-a.user {
-  size: 0.5rem !important;
+.user {
+  font-size: 0.8rem;
 }
 
 .actions {
