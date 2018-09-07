@@ -18,8 +18,6 @@
 //= require application
 //= require_tree .
 //= require quill.global
-//= require quill.min
-//= require quill.global
 
 var defaults = {
     theme: 'snow',

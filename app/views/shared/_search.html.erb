@@ -1,12 +1,8 @@
-<div id="search">
-	<%= form_tag home_path, :method => 'get', :id => 'search_form' do %>
-	<%= text_field_tag :search, params[:search], :size => 32 %>
-	<%= link_to 'Rechercher', '#', :id=>"soumettre" %>
-	<% if current_user  then%>
-	<%= link_to 'Nouvelle Recette', new_recette_path %>
-	<% end %>
-	<% if user_is_admin?  then%>
-	<%= link_to 'Nouvelle Categorie', new_category_path %>
-	<% end %>
-	<% end %>
+<div id="search_section">
+  <div class="search_form">
+    <%= form_tag home_path, :method => 'get', :id => 'search_form' do %>
+      <%= text_field_tag :search, params[:search], :size => 28 %>
+      <%= submit_tag 'Rechercher', :id => "soumettre" %>
+    <% end %>
+  </div>
 </div>
