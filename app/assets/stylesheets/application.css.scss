@@ -132,9 +132,13 @@ nav {
     color: #EBCED5;
   }
 
+  @media only screen and (min-width: 1023px) {
+    li {
+      display: inline;
+    }
+  }
   li {
-    display: inline;
-    padding-right: 2rem;
+    padding: 0.5rem 2rem 0.5rem 0rem;
     white-space: nowrap;
   }
   .current {
@@ -148,8 +152,10 @@ th {
 }
 
 h3 {
-  padding-top: 15px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: #DF3F32;
+  text-align: center;
 }
 
 h2 {
@@ -157,9 +163,7 @@ h2 {
 }
 
 #content {
-  padding-top: 60px;
-  margin-left: 40px;
-  padding-right: 60px;
+  text-align: center;
   font-family: helvetica;
   a {
     font-family: helvetica;
@@ -207,9 +211,6 @@ h2 {
 }
 
 #contenu {
-  padding-top: 60px;
-  margin-left: 40px;
-  padding-right: 60px;
   font-family: helvetica;
   ul {
     list-style-type: circle;
@@ -232,11 +233,7 @@ h2 {
   .nouvelle_recette {
     color: #FDE8E2;
     text-decoration: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left: 15px;
+    padding: 1rem;
     border-radius: 5px;
   }
 
@@ -245,10 +242,7 @@ h2 {
       color: #FDE8E2;
       text-decoration: none;
       background-color: #223A5E;
-      padding-left: 5px;
-      padding-right: 5px;
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding: 0.45rem;
       margin-left: 10px;
       margin-right: 10px;
       border-radius: 5px;
@@ -277,27 +271,20 @@ h2 {
   display: grid;
   grid-gap: 2rem 1rem;
   grid-template-columns: 1fr 1fr 1fr;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 1rem 0rem 1rem;
 }
 
-@media only screen and (max-width: 361px) {
+@media only screen and (max-width: 1025px) {
   .recettes_list {
-    grid-template-columns: 1fr;
-  }
-  .recette {
-    font-size: 3rem;
-  }
-  .user {
-    font-size: 1.5rem;
-  }
-}
-
-@media only screen and (max-width: 412px) {
-  .recettes_list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 50%;
   }
   .recette {
     font-size: 2rem;
+  }
+  .user {
+    font-size: 1.5rem;
   }
 }
 
@@ -313,12 +300,21 @@ h2 {
   }
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 412px) {
   .recettes_list {
-    grid-template-columns: 50%;
+    grid-template-columns: 1fr;
   }
   .recette {
     font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  .recettes_list {
+    grid-template-columns: 1fr;
+  }
+  .recette {
+    font-size: 3rem;
   }
   .user {
     font-size: 1.5rem;
@@ -329,8 +325,9 @@ h2 {
   border: 1px solid #222;
   text-align: center;
   color: slategray;
-  min-width: 325px;
-  vertical-align: center;
+  min-width: 225px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .user {
