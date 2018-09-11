@@ -90,6 +90,9 @@ h3 {
 
 h2 {
   color: #57656B;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 h4 {
@@ -169,6 +172,32 @@ nav {
     padding: 0.5rem 2rem 0.5rem 0rem;
     white-space: nowrap;
   }
+
+
+  @media screen and (max-width: 1022px) {
+    ul {
+      columns: 3;
+      -webkit-columns: 3;
+      -moz-columns: 3;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
+    ul {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
+  }
+
+  @media screen and (max-width: 321px) {
+    ul {
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;
+    }
+  }
+
   .current {
     color: #DF3F32;
   }
@@ -221,7 +250,7 @@ input {
 
 @media only screen and (max-width: 1025px) {
   .recettes_list {
-    grid-template-columns: 50%;
+    grid-template-columns: 50% 50%;
   }
   .recette {
     font-size: 2rem;
@@ -233,7 +262,7 @@ input {
 
 @media only screen and (max-width: 769px) {
   .recettes_list {
-    grid-template-columns: 40%;
+    grid-template-columns: 50% 50%;
   }
   .recette {
     font-size: 2rem;
@@ -344,7 +373,6 @@ li {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-
 
 .devise_links {
   margin-top: 1rem;
