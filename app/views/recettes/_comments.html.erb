@@ -1,9 +1,8 @@
 <%= form_for([@recette, @recette.comments.build]) do |f| %>
-<%= f.label :ajouter_un_commentaire %>
-
-<%= f.text_area :content, :class => "tinymce", :cols => 90 %>
-<p class="actions">
-	<%= link_to "Ajouter le commentaire", "#", :id => "Commentaire" %>
-</p>
-<hr />
+  <p><%= f.label :ajouter_un_commentaire %></p>
+  <br>
+  <p><%= f.text_area :content, :class => 'quill_container', cols: 40, rows: 20 %></p>
+  <br>
+  <p><%= f.submit 'Ajouter le commentaire', class: 'actions comments' %></p>
+  <br>
 <% end %>

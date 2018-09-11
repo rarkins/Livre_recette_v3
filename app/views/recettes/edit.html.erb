@@ -1,9 +1,9 @@
-<div id="contenu">
+<main class="contenu">
 	<h3>Modification d'une recette</h3>
-	<div align="center" class="actions">
-		<%= link_to 'Voir', @recette %> |
-		<%= link_to 'Retour', recettes_path %>
-	</div>
+	<header class="header">
+		<%= link_to 'Voir', @recette, class:'actions' %> |
+		<%= link_to 'Retour', recettes_path, class: 'actions' %>
+	</header>
 	<%= render 'form' %>
 
-</div>
+</main>

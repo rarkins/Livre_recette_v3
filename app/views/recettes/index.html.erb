@@ -1,18 +1,18 @@
-<div id="content">
+<main class="contenu">
   <h3>15 Derni&egrave;res recettes</h3>
-  <div class="recettes_list">
+  <article class="recettes_list">
     <% @recettes.each do |recette| %>
-      <div class="recette">
+      <section class="recette">
         <p>
           <% if recette.photo %>
             <%= link_to(cl_image_tag(recette.photo.path, :transformation => {:width => 275, :height => 275, :crop => "fit"}), recette, target: '_blank') %>
           <% else %>
-            <i class="fas fa-utensils fa-5x"></i>
+            <i class="fas fa-utensils fa-5x icon-padding"></i>
           <% end %>
         </p>
         <p><%= link_to(recette.titre, recette, target: '_blank') %></p>
         <p><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]), class: 'user' %></p>
-      </div>
+      </section>
     <% end %>
-  </div>
-</div>
+  </article>
+</main>

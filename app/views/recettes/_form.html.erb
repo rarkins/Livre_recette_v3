@@ -1,120 +1,79 @@
-
-
 <%= form_for(@recette) do |f| %>
-<% if @recette.errors.any? %>
-<div id="error_explanation">
-	<h2><%= pluralize(@recette.errors.count, "error") %> prohibited this recette from being saved:</h2>
+  <% if @recette.errors.any? %>
+    <section id="error_explanation">
+      <h2><%= pluralize(@recette.errors.count, "error") %> prohibited this recette from being saved:</h2>
 
-	<ul>
-		<% @recette.errors.full_messages.each do |msg| %>
-		<li>
-			<%= msg %>
-		</li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
-<table width="100%">
-	<tr align="left">
-		<th colspan="2"><%= f.label :titre %></th>
-	</tr>
-	<tr>
-		<td colspan="2"><%= f.text_field :titre, :size => 128 %></td>
-	</tr>
-	<tr align="left">
-		<th colspan="2"> <%= f.label :photo %> </th>
-	</tr>
-	<tr>
-		<td colspan="2"> <%= f.attachinary_file_field :photo %> </td>
-	</tr>
-	<tr align="left">
-		<th colspan="2"><%= f.label :categories %></th>
-	</tr>
+      <ul>
+        <% @recette.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
 
-	<tr>
-		<td colspan="2">
-		<table width="100%" border="0">
-			<%
-			count = 1
-			just_changed = false
-			for category in Category.all
-			%>
-			<% if just_changed then %>
-			<tr>
-				<% just_changed = false %>
-				<% end %>
-				<td> <%= check_box_tag "recette[category_ids][]", category.id, @recette.categories.include?(category) %>
-				<%= category.nom %> </td>
-				<% if (count % 4).zero? %>
-			</tr>
-			<% just_changed = true %>
-			<% end %>
-			<%
-			count += 1
-			end
-			%>
-			<%= raw(fill_blanks(count)) %>
-	</tr>
-</table>
-</td>
-<tr align="left">
-	<th><%= f.label :preparation %></th>
-	<th><%= f.label :cuisson %></th>
-</tr>
-<tr>
-	<td><%= f.text_field :preparation %></td>
-	<td><%= f.text_field :cuisson %></td>
-</tr>
-<tr align="left">
-	<th><%= f.label :marinage %></th>
-	<th><%= f.label :portion %></th>
-</tr>
-<tr>
-	<td><%= f.text_field :marinage %></td>
-	<td><%= f.text_field :portion %></td>
-</tr>
-<tr align="left">
-	<th colspan="2"><%= f.label :ingredient %></th>
-</tr>
-<tr>
-	<td colspan="2"><%= f.text_area :ingredient,:class => 'quill_container', :cols => 90 %></td>
-</tr>
-<tr align="left">
-	<th colspan="2"><%= f.label :instruction %></th>
-</tr>
-<tr>
-  <td colspan="2">
-    <%=  f.text_area :instruction, :class => 'quill_container', :cols => 90  %>
-
-  </td>
-</tr>
-<tr align="left">
-	<th colspan="2"><%= f.label :note %></th>
-</tr>
-<tr>
-	<td colspan="2"><%= f.text_area :note,:class => 'quill_container', :cols => 90   %></td>
-</tr>
-<tr align="left">
-	<th colspan="2"><%= f.label :accompagnement %></th>
-</tr>
-<tr>
-	<td colspan="2"><%= f.text_area :accompagnement, :class => 'quill_container', :cols => 40, :rows => 5  %></td>
-</tr>
-<tr align="left">
-	<th colspan="2"><%= f.label :vin %></th>
-</tr>
-<tr>
-	<td colspan="2"><%= f.text_area :vin,:class => 'quill_container', :cols => 40, :rows => 5 %></td>
-</tr>
-<tr align="left">
-	<th colspan="2"><%= f.label :source %></th>
-</tr>
-<tr>
-	<td colspan="2"><%= f.text_field :source, :size => 128 %></td>
-</tr>
-</table>
-<br />
-<div class="actions">
-	<%= f.submit 'Soumettre' %>
-</div>
+  <article class="recette_details">
+    <section class="wide">
+      <h4>Titre:</h4>
+      <p><%= f.text_field :titre, :size => 48 %></p>
+    </section>
+    <section class="wide_no_bar">
+      <h4>Photos:</h4>
+      <p><%= f.attachinary_file_field :photo %></p>
+    </section>
+    <section class="wide_no_bar">
+      <h4>Cat&eacute;gories:</h4>
+      <p class="wide_no_bar">
+      <ul class="categories">
+        <% Category.all.each do |category| %>
+          <li><%= check_box_tag "recette[category_ids][]", category.id, @recette.categories.include?(category) %> <%= category.nom %></li>
+        <% end %>
+      </ul>
+      </p>
+    </section>
+    <section>
+      <h4>Pr&eacuteparation:</h4>
+      <p><%= f.text_field :preparation %></p>
+    </section>
+    <section>
+      <h4>Cuisson:</h4>
+      <p><%= f.text_field :cuisson %></p>
+    </section>
+    <section>
+      <h4>Marinage:</h4>
+      <p><%= f.text_field :marinage %></p>
+    </section>
+    <section>
+      <h4>Portions:</h4>
+      <p><%= f.text_field :portion %></p>
+    </section>
+    <section class="wide">
+      <h4>Ingr&eacute;dients:</h4>
+      <p><%= f.text_area :ingredient, :class => 'quill_container', :cols => 90 %></p>
+    </section>
+    <section class="wide">
+      <h4>Instructions:</h4>
+      <p><%= f.text_area :instruction, :class => 'quill_container', :cols => 90 %></p>
+    </section>
+    <section class="wide_no_bar">
+      <h4>Notes:</h4>
+      <p><%= f.text_area :note, :class => 'quill_container', :cols => 90 %></p>
+    </section>
+    <section class="wide_no_bar">
+      <h4>Accompagnement:</h4>
+      <p><%= f.text_area :accompagnement, :class => 'quill_container', :cols => 40, :rows => 5 %></p>
+    </section>
+    <section class="wide_no_bar">
+      <h4>Vin:</h4>
+      <p><%= f.text_area :vin, :class => 'quill_container', :cols => 40, :rows => 5 %></p>
+    </section>
+    <section class="wide_no_bar">
+      <h4>Source:</h4>
+      <p><%= f.text_field :source, :size => 48 %></p>
+    </section>
+    <section>
+      <p><%= f.submit 'Soumettre', class: 'actions' %></p>
+    </section>
+  </article>
 <% end %>

@@ -52,6 +52,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #top_header {
@@ -61,6 +63,10 @@ body {
   font-family: helvetica;
   padding: 1rem 5rem 2rem 1rem;
   text-align: right;
+}
+
+.header {
+  text-align: center;
 }
 
 .site_name {
@@ -73,6 +79,28 @@ body {
 h1 {
   font-size: 4rem;
   color: white;
+}
+
+h3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #DF3F32;
+  text-align: center;
+}
+
+h2 {
+  color: #57656B;
+}
+
+h4 {
+  color: #C46215;
+  padding-bottom: 1rem;
+}
+
+h5 {
+  font-style: italic;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .nos {
@@ -146,88 +174,22 @@ nav {
   }
 }
 
-// table headers
-th {
-  color: #C46215;
+.icon-padding {
+  padding-bottom: 2rem;
 }
 
-h3 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  color: #DF3F32;
-  text-align: center;
+input {
+  border: solid 1px slategray;
+  margin-bottom: 1rem;
 }
 
-h2 {
-  color: #57656B;
-}
-
-#content {
-  text-align: center;
+.contenu {
   font-family: helvetica;
-  a {
-    font-family: helvetica;
-    text-decoration: none;
-    color: #5C2C35;
-  }
-  a:hover {
-    color: #DF3F32;
-  }
-  td {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-  }
-  tr:hover {
-    background-color: #223A5E;
-    a {
-      color: #EBCED5;
-    }
-    white {
-      background-color: #ffffff;
-    }
-  }
-  .even {
-    color: #ffffff;
-    background-color: #57656B;
-    a {
-      color: #ffffff;
-    }
-  }
-  .odd {
-    background-color: #ffffff;
-  }
-  .nouvelle_recette {
-    color: #FDE8E2;
-    text-decoration: none;
-    background-color: #223A5E;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left: 15px;
-    border-radius: 5px;
-  }
-}
-
-#contenu {
-  font-family: helvetica;
-  ul {
-    list-style-type: circle;
-  }
 
   a {
     font-family: helvetica;
     text-decoration: none;
     color: #DF9287;
-  }
-  a:hover {
-    color: #000000;
-  }
-  td {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
   }
 
   .nouvelle_recette {
@@ -235,26 +197,6 @@ h2 {
     text-decoration: none;
     padding: 1rem;
     border-radius: 5px;
-  }
-
-  .actions {
-    a {
-      color: #FDE8E2;
-      text-decoration: none;
-      background-color: #223A5E;
-      padding: 0.45rem;
-      margin-left: 10px;
-      margin-right: 10px;
-      border-radius: 5px;
-    }
-    a:hover {
-      color: #DF9287;
-    }
-    label {
-      text-align: left;
-      color: #000000;
-      font-weight: bold;
-    }
   }
 }
 
@@ -269,10 +211,11 @@ h2 {
 
 .recettes_list {
   display: grid;
-  grid-gap: 2rem 1rem;
+  grid-gap: 1rem 1rem;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
+  vertical-align: center;
   padding: 0rem 1rem 0rem 1rem;
 }
 
@@ -328,6 +271,52 @@ h2 {
   min-width: 225px;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.recette_details {
+  display: grid;
+  grid-gap: 1rem 1rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  vertical-align: center;
+  padding: 3rem 1rem 0rem 1rem;
+
+  .categories {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+  }
+
+  @media screen and (max-width: 767px) {
+    .categories {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
+  }
+}
+
+li {
+  list-style: none;
+  line-height: 2rem;
+}
+
+.wide {
+  grid-column: span 2;
+  border-top: 1px solid slategray;
+  padding-top: 1rem;
+}
+
+.wide_no_bar {
+  grid-column: span 2;
+}
+
+.icon {
+  color: slategray;
 }
 
 .user {
@@ -335,15 +324,30 @@ h2 {
 }
 
 .actions {
+  color: #FDE8E2;
   text-decoration: none;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
+  background-color: #223A5E;
+  padding: 0.45rem;
+  border-radius: 5px;
+
+  a:hover {
+    color: #DF9287;
+  }
+  label {
+    text-align: left;
+    color: #000000;
+    font-weight: bold;
+  }
 }
 
-#body {
-  width: 100%;
-  height: 100%;
+.comment {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.debug {
+  max-width: 1vw;
+  @media screen and (max-width: 359px) {
+    display: none;
+  }
 }

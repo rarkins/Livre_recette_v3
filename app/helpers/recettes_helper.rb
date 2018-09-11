@@ -10,4 +10,9 @@ module RecettesHelper
     end
     the_string
   end
+
+  def print_dash_if_empty(an_attribute)
+    an_attribute.empty? ? '--': an_attribute
+  end
+
 end
