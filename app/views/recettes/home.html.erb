@@ -1,7 +1,7 @@
-<div id='content'>
+<main class='contenu'>
   <% if current_user %>
       <h2><%= "Bienvenue #{get_username(current_user)} sur Nos Recettes" %></h2>
   <% end %>
 
   <%= render 'results' %>
-</div>
+</main>
