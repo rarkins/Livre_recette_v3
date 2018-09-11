@@ -1,8 +1,8 @@
-<div id="intro">
+<header id="intro">
 <h3>Edit <%= resource_name.to_s.humanize %></h3>
-</div>
+</header>
 
-<div id="left">
+<section id="left">
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 <%= devise_error_messages! %>
 <table width="100%">
@@ -23,8 +23,8 @@
 <h3>Annuler mon compte</h3>
 
 <p>
-	Insatisfait ? <%= link_to "Annuler mon compte", registration_path(resource_name), :data => { :confirm => "Etes-vous certain?" }, :method => :delete %>.
+	Insatisfait ? <%= link_to "Annuler mon compte", registration_path(resource_name), :data => { :confirm => "Etes-vous certain?" }, :method => :delete, class: 'actions' %>.
 </p>
 
-<%= link_to "Retour", :back %>
-</div>
+<%= link_to "Retour", :back, class: 'actions' %>
+</section>

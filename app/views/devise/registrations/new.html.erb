@@ -1,4 +1,4 @@
-<div id="contenu">
+<main class="contenu">
 	<h3>Cr&eacute;er un compte</h3>
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 	<%= devise_error_messages! %>
@@ -24,11 +24,11 @@
 		<tr>
 			<td><%= recaptcha_tags %></td>
 		</tr>
-		<tr class="actions">
-			<td><%= link_to "Soumettre", "#", :id => "sign_up" %> <%= render "devise/shared/links" %></td>
+		<tr>
+			<td><%= link_to "Soumettre", "#", :id => "sign_up", class: 'actions' %> <%= render "devise/shared/links" %></td>
 		</tr>
 	</table>
 
 	<% end %>
-</div>
+</main>
 

@@ -11,8 +11,8 @@
 		<tr>
 			<td><%= f.email_field :email %></td>
 		</tr>
-		<tr class="actions">
-			<td><%= link_to "Envoyer les instructions", "#", :id => "instructions" %> <%= render "devise/shared/links" %></td>
+		<tr>
+			<td><%= link_to "Envoyer les instructions", "#", :id => "instructions", class: 'actions' %> <%= render "devise/shared/links" %></td>
 		</tr>
 	</table>
 	<% end %>
