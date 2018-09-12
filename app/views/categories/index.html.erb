@@ -1,32 +1,24 @@
-<div id="content">
-	<h3>Liste des cat&eacute;gories</h3>
+<main class="contenu">
+  <header>
+    <h3>Liste des cat&eacute;gories</h3>
+  </header>
+  <section class="categories_header">
+    <h4>Nom</h4>
+    <hr>
+  </section>
+  <section>
+    <% @categories.each do |category| %>
+      <section class="categories_recettes_list">
+        <%= link_to category.nom, category %>
+        <%= pluralize(nombre_recette_pour_category(category), "recette") %>
+        <% if user_is_admin? then %>
+          <%= link_to 'Modifier', edit_category_path(category), class: 'categories_actions' %>
+        <% end %>
+        <% if user_is_admin? then %>
+          <%= link_to 'Effacer', category, method: :delete, data: {confirm: 'Etes-vous certain?'}, class: 'categories_actions' %>
+        <% end %>
+      </section>
+    <% end %>
 
-	<table width="100%">
-		<tr align="left">
-			<th>Nom</th>
-			<th></th>
-			<th></th>
-			<th></th>
-		</tr>
-		<tr>
-			<td colspan="4">
-			<hr />
-			</td>
-		</tr>
-		<% @categories.each do |category| %>
-		<tr class="<%= get_row_color(@pos) %>">
-			<td><%= link_to category.nom, category %></td>
-			<td><%= pluralize(nombre_recette_pour_category(category), "recette") %></td>
-			<td> <% if user_is_admin? then %>
-			<%= link_to 'Modifier', edit_category_path(category) %>
-			<% end %> </td>
-			<td><% if user_is_admin? then %>
-			<%= link_to 'Effacer', category, method: :delete, data: { confirm: 'Etes-vous certain?' } %>
-			<% end %>
-			</td>
-		</tr>
-		<% @pos = @pos + 1 %>
-		<% end %>
-	</table>
-
-</div>
+  </section>
+</main>

@@ -173,7 +173,6 @@ nav {
     white-space: nowrap;
   }
 
-
   @media screen and (max-width: 1022px) {
     ul {
       columns: 3;
@@ -245,7 +244,34 @@ input {
   align-items: center;
   justify-content: center;
   vertical-align: center;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.categories_header {
+  padding: 1rem;
+}
+
+.categories_recettes_list {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-gap: 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .categories_actions {
+    display: none;
+  }
+
+  .categories_recettes_list {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-gap: 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width: 1025px) {

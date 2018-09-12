@@ -1,16 +1,16 @@
-<div id="content">
+<main class="contenu">
   <h3><%= @category.nom %></h3>
 
   <p id="notice">
     <%= notice %>
   </p>
-  <div class="actions">
+  <header class="header">
     <% if user_is_admin? then %>
-      <%= link_to 'Modifier', edit_category_path(@category) %> |
+      <%= link_to 'Modifier', edit_category_path(@category), class: 'actions' %> |
     <% end %>
-    <%= link_to 'Retour', categories_path %>
-  </div>
-  <div class="recettes_list">
+    <%= link_to 'Retour', categories_path, class: 'actions' %>
+  </header>
+  <section class="recettes_list">
     <% @recettes.each do |recette| %>
       <div class="recette">
         <p>
@@ -24,5 +24,5 @@
         <p><%= link_to get_username(recette[:user_id]), user_path(recette[:user_id]), class: 'user' %></p>
       </div>
     <% end %>
-  </div>
-</div>
+  </section>
+</main>
