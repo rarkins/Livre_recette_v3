@@ -3,7 +3,7 @@ class RecettesController < ApplicationController
   before_filter :signed_in?, only: [:new]
 
   def home
-    @recettes = Recette.search(params[:search])
+    @recettes = Recette.includes(:photo_files).search(params[:search])
     @pos = 0
     respond_to do |format|
       format.html # index.html.erb
@@ -15,10 +15,7 @@ class RecettesController < ApplicationController
   # GET /recettes.json
   def index
     @current_page = 'recettes'
-    @pos = 0
-    puts '################'
-    puts params
-    @recettes = Recette.all.order('id desc').limit(15)
+    @recettes = Recette.includes(:photo_files).all.order('id desc').limit(15)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,7 +28,7 @@ class RecettesController < ApplicationController
   def show
     @current_page = 'recettes'
 
-    @recette = Recette.find(params[:id])
+    @recette = Recette.includes(:photo_files).find(params[:id])
     @categories = Category.all
 
     @comments = Recette.find(params[:id]).comments.limit(3).order('id desc')
