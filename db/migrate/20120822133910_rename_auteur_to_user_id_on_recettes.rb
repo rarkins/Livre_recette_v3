@@ -1,4 +1,4 @@
-class RenameAuteurToUserIdOnRecettes < ActiveRecord::Migration
+class RenameAuteurToUserIdOnRecettes < ActiveRecord::Migration[4.2]
   def up
     rename_column :recettes, :auteur, :user_id
   end

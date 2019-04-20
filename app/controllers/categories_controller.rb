@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 
-  before_filter :do_authentication_admin, :except => [:show, :index]
+  before_action :do_authentication_admin, :except => [:show, :index]
   # GET /categories
   # GET /categories.json
   def index

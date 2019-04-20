@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
-  before_filter :do_authentication_comments, only: [:edit, :update, :destroy]
-  before_filter :signed_in?, only: [:new]
+  before_action :do_authentication_comments, only: [:edit, :update, :destroy]
+  before_action :signed_in?, only: [:new]
   def new
     @recette = Recette.find(params[:recette_id])
     @comment = @recette.comments.new(:user_id => current_user[:id], :recette_id => @recette[:id])
