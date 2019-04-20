@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def nombre_recette_pour_category(une_categorie)
-    Category.find(une_categorie).recettes.count
+    Category.find(une_categorie.id).recettes.count
   end
 
   def show_recette_info(une_recette)
