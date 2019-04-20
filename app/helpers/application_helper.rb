@@ -22,10 +22,6 @@ module ApplicationHelper
     Category.find(une_categorie.id).recettes.count
   end
 
-  def show_recette_info(une_recette)
-    Recette.find(une_recette)
-  end
-
   def user_is_author?
     return unless current_user
 
@@ -55,10 +51,6 @@ module ApplicationHelper
     true if user_is_author_comments?(an_id) || user_is_admin?
   end
 
-  def get_user_id_name(an_id)
-    User.find(an_id).email
-  end
-
   def generate_title
     if !@recette.nil?
       "#{@recette[:titre]} - Nos Recettes"
@@ -67,13 +59,4 @@ module ApplicationHelper
     end
   end
 
-  def get_row_color(a_count)
-    if a_count.odd?
-      #'#ffffff'
-      'odd'
-    else
-      #'#8E918F'
-      'even'
-    end
-  end
 end
