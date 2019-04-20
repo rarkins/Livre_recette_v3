@@ -1,6 +1,6 @@
 <main class='contenu'>
   <% if current_user %>
-      <h3><%= "Bienvenue #{get_username(current_user)} sur Nos Recettes" %></h3>
+      <h3><%= "Bienvenue #{get_username(current_user.id)} sur Nos Recettes" %></h3>
   <% end %>
 
   <%= render 'results' %>
