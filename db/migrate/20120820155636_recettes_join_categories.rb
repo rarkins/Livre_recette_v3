@@ -1,4 +1,4 @@
-class RecettesJoinCategories < ActiveRecord::Migration
+class RecettesJoinCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :categories_recettes, :id => false do |t|
       t.integer :recette_id

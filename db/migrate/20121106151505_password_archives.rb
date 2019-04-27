@@ -1,4 +1,4 @@
-class PasswordArchives < ActiveRecord::Migration
+class PasswordArchives < ActiveRecord::Migration[4.2]
   def self.up
     create_table :old_passwords do |t|
       t.string   :encrypted_password, :null => false, :limit => 128

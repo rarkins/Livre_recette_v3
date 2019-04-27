@@ -1,6 +1,6 @@
 class RecettesController < ApplicationController
-  before_filter :do_authentication, only: %i[edit update destroy]
-  before_filter :signed_in?, only: [:new]
+  before_action :do_authentication, only: %i[edit update destroy]
+  before_action :signed_in?, only: [:new]
 
   def home
     @recettes = Recette.includes(:photo_files).search(params[:search])
